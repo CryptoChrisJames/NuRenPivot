@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+export const store = new Vuex.Store({
     state:{
         videos:[
             { name: "The 'L' Word", link:"https://www.youtube.com/watch?v=ytJOKMdWgzU"},
@@ -11,6 +11,7 @@ const store = new Vuex.Store({
             { name: "Good Vibes Music Video", link:"https://www.youtube.com/watch?v=4jABhS5gkVk"},
             { name: "Arreic Summer Soul Funk Jam", link:"https://www.youtube.com/watch?v=33c-dTbLU6U"},
             { name: "Nefi Promo Video", link:"https://www.youtube.com/watch?v=4nhfKVNGj1A"}
-        ]
+        ],
+        featurefilm: "https://www.youtube.com/watch?v=ytJOKMdWgzU"
     }
 })
