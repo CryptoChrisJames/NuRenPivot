@@ -12,6 +12,6 @@ export const store = new Vuex.Store({
             { name: "Arreic Summer Soul Funk Jam", link:"https://www.youtube.com/watch?v=33c-dTbLU6U"},
             { name: "Nefi Promo Video", link:"https://www.youtube.com/watch?v=4nhfKVNGj1A"}
         ],
-        featurefilm: "https://www.youtube.com/watch?v=ytJOKMdWgzU"
+        featurefilm: "https://www.youtube.com/watch?v=74w5w8Hib6c"
     }
 })
