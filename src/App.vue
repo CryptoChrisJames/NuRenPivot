@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link>
-    <router-link to="/contact">Contact</router-link>
-    <router-link to="/about">About</router-link>
-    <router-view></router-view>
+    <img src='./assets/white.jpg'>
+    <div class="grid-container">
+      <router-link to="/">Home</router-link>
+      <router-link to="/contact">Contact</router-link>
+      <router-link to="/about">About</router-link>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -21,6 +24,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: 8% 1fr 8%;
+  grid-template-areas: ". . .";
+}
+
 </style>
