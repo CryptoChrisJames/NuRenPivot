@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    {{ this.$store.state.featurefilm }}
+    <router-link to="/">Home</router-link>
+    <router-link to="/contact">Contact</router-link>
+    <router-link to="/about">About</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    //HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
