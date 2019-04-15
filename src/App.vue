@@ -1,14 +1,6 @@
 <template>
   <div id="app">
     <div class="container">
-      <!--
-      <img class="banner" src='./assets/white.jpg'>
-      <div class="customnav">
-        <router-link class="tabs" to="/">Home</router-link>
-        <router-link class="tabs" to="/contact">Contact</router-link>
-        <router-link class="tabs" to="/about">About</router-link>
-      </div>
-      -->
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="nurenproductions.com"><span><img class="banner" src='./assets/white.jpg'></span></a>
         <button class="navbar-toggler" style="border: none; margin: 0 auto; color:#2c3e50; padding-top: 5px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +26,9 @@
       <div class="contentcontainer">        
         <router-view></router-view>
       </div>
+      <div class="footer">
+        <video src="./assets/Render .mp4" type="video/mp4" autoplay loop muted></video>
+      </div>
     </div>
   </div>
 </template>
@@ -47,7 +42,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -86,5 +81,11 @@ export default {
 
 .contentcontainer{
   margin:5%;
+}
+
+video{
+  width: 100%;
+  height: 180px;
+  
 }
 </style>
