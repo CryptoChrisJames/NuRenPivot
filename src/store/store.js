@@ -7,6 +7,11 @@ export const store = new Vuex.Store({
     state:{
         videos:[
             { 
+                name: "2019 Demo Reel", 
+                link: "https://www.youtube.com/embed/74w5w8Hib6c",
+                msg: ""
+            },
+            { 
                 name: "The 'L' Word", 
                 link: "https://www.youtube.com/embed/ytJOKMdWgzU",
                 msg: "A broken couple decides to try therapy for the first time, and a troubled woman is forced to make a confession when her partner doesn't show."
@@ -36,7 +41,6 @@ export const store = new Vuex.Store({
                 link: "https://www.youtube.com/embed/XktIAd_Xg9g",
                 msg: ""
             }
-        ],
-        featurefilm: "https://www.youtube.com/embed/74w5w8Hib6c"
+        ]
     }
-})
+});

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from './components/home.vue'
 import About from './components/about.vue'
 import Contact from './components/contact.vue'
+import FutureWork from './components/futurework'
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,11 @@ export default new VueRouter({
             path: '/contact',
             name: 'contact',
             component: Contact
+        }
+        ,{
+            path: '/futurework',
+            name: 'futurework',
+            component: FutureWork
         }
     ]
 });
