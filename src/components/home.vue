@@ -29,4 +29,14 @@ export default {
 .title{
     padding-top: 30px;
 }
+
+@media only screen and (min-width: 760px) {
+  .video{
+      height: 350px;
+  }
+
+  p{
+      font-size: 1.5em;
+  }
+}
 </style>

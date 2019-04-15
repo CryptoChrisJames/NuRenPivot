@@ -26,9 +26,6 @@
       <div class="contentcontainer">        
         <router-view></router-view>
       </div>
-      <div class="footer">
-        <video src="./assets/Render .mp4" type="video/mp4" autoplay loop muted></video>
-      </div>
     </div>
   </div>
 </template>
@@ -85,7 +82,20 @@ export default {
 
 video{
   width: 100%;
-  height: 180px;
-  
+  height: 180px;  
+}
+
+@media only screen and (min-width: 760px) {
+  video{
+      height: 350px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .banner{
+    width: 30%;
+    padding-bottom: 15px;
+    float: left;
+  } 
 }
 </style>

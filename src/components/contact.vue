@@ -9,7 +9,7 @@
             <input type="text"/>
             <h3>Comments</h3>
             <textarea />
-            <input type="submit" />
+            <input class="submit" type="submit" />
         </form>
     </div>
 </template>
@@ -35,5 +35,29 @@ textarea{
     border: 1px solid black;
     margin-bottom: 3em;
     border-radius: 10px;
+}
+
+.submit:hover{
+    background-color: white;
+}
+
+@media only screen and (min-width: 700px) {
+  h3{
+      float: left;
+      margin-left: 50px;
+  }
+
+  form{
+      width: 75%;
+      margin: 0 auto;
+  }
+}
+
+
+@media only screen and (min-width: 1020px) {
+  form{
+      width: 50%;
+      margin: 0 auto;
+  }
 }
 </style>
