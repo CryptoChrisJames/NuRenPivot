@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from './components/home.vue'
 import About from './components/about.vue'
 import Contact from './components/contact.vue'
-import FutureWork from './components/futurework'
+import FilmsInDevelopment from './components/filmsindevelopment.vue'
 
 Vue.use(VueRouter);
 
@@ -23,9 +23,9 @@ export default new VueRouter({
             component: Contact
         }
         ,{
-            path: '/futurework',
-            name: 'futurework',
-            component: FutureWork
+            path: '/filmsindevelopment',
+            name: 'filmsindevelopment',
+            component: FilmsInDevelopment
         }
     ]
 });

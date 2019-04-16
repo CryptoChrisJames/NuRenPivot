@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="nurenproductions.com"><span><img class="banner" src='./assets/white.jpg'></span></a>
+        <a class="navbar-brand" href=""><span><img class="banner" src='./assets/white.jpg'></span></a>
         <button class="navbar-toggler" style="border: none; margin: 0 auto; color:#2c3e50; padding-top: 5px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <p><b>Menu</b></p>
         </button>
@@ -12,7 +12,7 @@
               <router-link class="tabs" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="tabs" to="/futurework">Future Work</router-link>
+              <router-link class="tabs" to="/filmsindevelopment">Films In Development</router-link>
             </li>  
             <li class="nav-item">
               <router-link class="tabs" to="/contact">Contact</router-link>
