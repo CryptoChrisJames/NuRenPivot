@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Contact</h1>
         <form>
             <h3>First Name</h3>
             <input type="text" />
