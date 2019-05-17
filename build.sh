@@ -1,2 +1,1 @@
-ECHO "TESTING TESTING 123"
-ECHO "TESTING CONSOLE"
+docker build -t "NuRenUI" .
