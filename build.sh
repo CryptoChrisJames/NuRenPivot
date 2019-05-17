@@ -1,22 +1,22 @@
 sudo -i
 
 # Initializing Variables
-IMAGETAG = nurenui-v1
+_imagetag=nurenui-v1
 
 # Initializing functions
 buildImage()
 {    
-    docker build -t "$IMAGETAG" .
+    docker build -t "$_imagetag" .
 }
 
 removeOldImage()
 {
-    docker rmi nurenui-v1
+    docker rmi $_imagetag
 }
 
 
 
-if [[ "$(docker images $IMAGETAG)" == "" ]]; then
+if [[ "$(docker images $_imagetag)" == "" ]]; then
     buildImage
 else
     removeOldImage
