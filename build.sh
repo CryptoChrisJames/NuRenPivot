@@ -1,1 +1,1 @@
-docker build -t "NuRenUI" .
+docker build -t "nurenui-v1" .
