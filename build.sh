@@ -11,6 +11,7 @@ buildImage()
 
 removeOldImage()
 {
+    docker rmi $(docker images -f “dangling=true” -q)
     docker rmi $_imagetag
 }
 
