@@ -16,7 +16,7 @@ removeOldImage()
 
 
 
-if [[ "$(docker images $_imagetag)" == "" ]]; then
+if [ "$(docker images $_imagetag)" == "" ]; then
     buildImage
 else
     removeOldImage
