@@ -10,7 +10,7 @@
             <img class="picture" src="../assets/FutureWork/TheLight.jpg"/>
             <p>When an officer gets shot, a vivid guy and his provocative white friend are forced to choose between risking arrest or running away.</p>
         </div>
-        <div >
+        <div>
             <h4>The Choice Is Yours</h4>
             <h6>(Feature Film)</h6>
             <h6>Comedy</h6>
