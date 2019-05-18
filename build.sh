@@ -12,6 +12,7 @@ buildImage()
 removeOldImage()
 {
     docker image prune
+    y
     docker rmi $_imagetag
 }
 
