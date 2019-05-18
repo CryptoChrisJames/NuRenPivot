@@ -11,12 +11,17 @@ buildImage()
 
 removeOldImage()
 {
-    docker image prune
-    y
     docker rmi $_imagetag
 }
 
+removeDangling()
+{
+    docker image prune
+    y
+}
 
+
+removeDangling
 
 if [ "$(docker images $_imagetag)" == "" ]; then
     buildImage
