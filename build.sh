@@ -34,4 +34,4 @@ fi
 
 cd /
 
-docker save nurenui-v1 | ssh -i NewPrivateKey2.pem -C ubuntu@ec2-18-188-48-133.us-east-2.compute.amazonaws.com docker load
+docker save nurenui-v1 | ssh -C ubuntu@ec2-18-188-48-133.us-east-2.compute.amazonaws.com docker load
