@@ -14,13 +14,13 @@ removeOldImage()
     docker rmi $_imagetag
 }
 
-remove()
+pruneImages()
 {
     docker image prune --force
 }
 
 
-removeDangling
+pruneImages
 
 if [ "$(docker images $_imagetag)" == "" ]; then
     buildImage
@@ -31,5 +31,7 @@ fi
 
 
 cd /
+
+ls
 
 docker save nurenui-v1 | ssh -i NewPrivateKey2.pem -C ubuntu@ec2-18-188-48-133.us-east-2.compute.amazonaws.com docker load
