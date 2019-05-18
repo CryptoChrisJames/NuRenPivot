@@ -16,8 +16,7 @@ removeOldImage()
 
 removeDangling()
 {
-    docker image prune
-    y
+    docker image prune --force
 }
 
 
