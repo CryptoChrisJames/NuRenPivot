@@ -1,5 +1,7 @@
 sudo -i
 
+whoami
+
 # Initializing Variables
 _imagetag=nurenui-v1
 
