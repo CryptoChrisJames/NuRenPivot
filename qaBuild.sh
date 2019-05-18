@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Initializing Variables
 _imagetag=nurenui-v1
 
@@ -43,10 +41,10 @@ else
     buildImage
 fi
 
-# Deploy new container
-if [ "$(docker container inspect $_imagetag )" == "[]" ]; then
-    runNewContainer
-else
-    removeOldContainer
-    runNewContainer
-fi 
+# # Deploy new container
+# if [ "$(docker container inspect $_imagetag )" == "[]" ]; then
+#     runNewContainer
+# else
+#     removeOldContainer
+#     runNewContainer
+# fi 
