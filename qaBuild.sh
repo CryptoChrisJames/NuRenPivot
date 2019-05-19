@@ -1,6 +1,5 @@
+# Granting superuser
 sudo -i
-
-whoami
 
 # Initializing Variables
 _imagetag=nurenui-v1
@@ -16,13 +15,24 @@ removeOldImage()
     docker rmi $_imagetag
 }
 
-pruneImages()
+pruneImagesAndContainers()
 {
+    docker container prune --force
     docker image prune --force
 }
 
+runNewContainer()
+{
+    docker run --name $_imagetag -d -p 81:80 $_imagetag
+}
 
-pruneImages
+removeOldContainer()
+{
+    docker rm $_imagetag -f
+}
+
+
+pruneImagesAndContainers
 
 if [ "$(docker images $_imagetag)" == "" ]; then
     buildImage
@@ -31,13 +41,6 @@ else
     buildImage
 fi
 
+removeOldContainer
 
-cd /
-
-docker save nurenui-v1 
-
-ssh -i NewPrivateKey2.pem -C ubuntu@ec2-18-188-48-133.us-east-2.compute.amazonaws.com 
-
-sudo -i
-
-docker load
+runNewContainer
