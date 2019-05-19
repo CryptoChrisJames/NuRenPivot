@@ -23,7 +23,7 @@ pruneImagesAndContainers()
 
 runNewContainer()
 {
-    docker run --name $_imagetag -d -p 85:80 $_imagetag:latest
+    docker run --name $_imagetag -d -p 85:80 $_imagetag
 }
 
 removeOldContainer()
