@@ -1,7 +1,11 @@
+sudo -i
+
+whoami
+
 # Initializing Variables
 _imagetag=nurenui-v1
 
-# Initializing functions for images
+# Initializing functions
 buildImage()
 {    
     docker build -t "$_imagetag" .
@@ -9,40 +13,31 @@ buildImage()
 
 removeOldImage()
 {
-    docker rmi $_imagetag -f
+    docker rmi $_imagetag
 }
 
-# Initializing functions for containers
-runNewContainer()
+pruneImages()
 {
-    docker run --name $_imagetag -d -p 81:80 $_imagetag
-}
-
-removeOldContainer()
-{
-    docker rm $_imagetag -f
-}
-
-# Remove dangling images
-pruneImagesAndContainers()
-{
-    docker container prune --force
     docker image prune --force
 }
 
-# Action :
 
-# Get rid of dangling containers and images 
-pruneImagesAndContainers
+pruneImages
 
-# Remove old image 
-removeOldImage
+if [ "$(docker images $_imagetag)" == "" ]; then
+    buildImage
+else
+    removeOldImage
+    buildImage
+fi
 
-# Create new image
-buildImage
 
-# Remove old conrainter
-removeOldContainer
+cd /
 
-# Run new container
-runNewContainer
+docker save nurenui-v1 
+
+ssh -i NewPrivateKey2.pem -C ubuntu@ec2-18-188-48-133.us-east-2.compute.amazonaws.com 
+
+sudo -i
+
+docker load
