@@ -1,6 +1,3 @@
-# Granting superuser
-sudo -i
-
 # Initializing Variables
 _imagetag=nurenui-v1
 
