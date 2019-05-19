@@ -21,17 +21,6 @@ pruneImagesAndContainers()
     docker image prune --force
 }
 
-runNewContainer()
-{
-    docker run --name $_imagetag -d -p 85:80 $_imagetag
-}
-
-removeOldContainer()
-{
-    docker rm $_imagetag -f
-}
-
-
 pruneImagesAndContainers
 
 if [ "$(docker images $_imagetag)" == "" ]; then
@@ -40,7 +29,3 @@ else
     removeOldImage
     buildImage
 fi
-
-removeOldContainer
-
-runNewContainer
