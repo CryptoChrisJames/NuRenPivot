@@ -2,7 +2,6 @@
 _imagetag=nurenui-v1
 
 # Initializing functions for images
-
 buildImage()
 {    
     docker build -t "$_imagetag" .
@@ -12,12 +11,6 @@ removeOldImage()
 {
     docker rmi $_imagetag -f
 }
-
-pruneImages()
-{
-    docker image prune --force
-}
-
 
 # Initializing functions for containers
 runNewContainer()
@@ -31,20 +24,25 @@ removeOldContainer()
 }
 
 # Remove dangling images
-pruneImages
+pruneImagesAndContainers()
+{
+    docker container prune --force
+    docker image prune --force
+}
 
-# Build new image
-if [ "$(docker images $_imagetag)" == "" ]; then
-    buildImage
-else
-    removeOldImage
-    buildImage
-fi
+# Action :
 
-# # Deploy new container
-# if [ "$(docker container inspect $_imagetag )" == "[]" ]; then
-#     runNewContainer
-# else
-#     removeOldContainer
-#     runNewContainer
-# fi 
+# Get rid of dangling containers and images 
+pruneImagesAndContainers
+
+# Remove old image 
+removeOldImage
+
+# Create new image
+buildImage
+
+# Remove old conrainter
+removeOldContainer
+
+# Run new container
+runNewContainer
