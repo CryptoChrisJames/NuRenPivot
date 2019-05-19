@@ -1,7 +1,7 @@
-FROM node as build-stage
+FROM node:alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm --verbose install 
+RUN npm install 
 COPY . .
 RUN npm run build 
 
