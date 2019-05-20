@@ -1,5 +1,6 @@
 # Initializing Variables
 _imagetag=nurenui-v1
+echo $_imagetag
 
 # Initializing functions
 buildImage()
@@ -12,17 +13,19 @@ removeOldImage()
     docker rmi $_imagetag
 }
 
-pruneImagesAndContainers()
+pruneImages()
 {
-    docker container prune --force
     docker image prune --force
 }
 
-pruneImagesAndContainers
+pruneImages
+echo $?
 
 if [ "$(docker images $_imagetag)" == "" ]; then
+    echo $?
     buildImage
 else
+    echo $?
     removeOldImage
     buildImage
 fi
