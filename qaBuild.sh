@@ -18,6 +18,11 @@ pruneImages()
     docker image prune --force
 }
 
+awsLogin()
+{
+    aws ecr get-login --no-include-email --region us-east-2
+}
+
 pruneImages
 echo $?
 
@@ -29,3 +34,5 @@ else
     removeOldImage
     buildImage
 fi
+
+awsLogin
