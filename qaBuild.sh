@@ -1,5 +1,5 @@
 # Initializing Variables
-_imagetag=nurenui-v1
+_imagetag=nurenui
 echo $_imagetag
 
 # Initializing functions
