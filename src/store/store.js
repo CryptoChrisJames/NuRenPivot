@@ -7,8 +7,13 @@ export const store = new Vuex.Store({
     state:{
         videos:[
             { 
+                name: "Whole Lotta - Aric Wolf", 
+                link: "https://www.youtube.com/embed/-udaSuPen-I",
+                msg: ""
+            },
+            { 
                 name: "2019 Demo Reel", 
-                link: "https://www.youtube.com/embed/74w5w8Hib6c",
+                link: "https://www.youtube.com/embed/tZbIU7OLvEc",
                 msg: ""
             },
             { 
