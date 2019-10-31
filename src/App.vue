@@ -1,11 +1,10 @@
 <template>
-  <div id="app">
-    <h1 v-if="env != 'prod'">{{ env }}</h1>
-    <div class="header">
-        <a class="navbar-brand" href="#/"><span><img class="banner" src='./assets/white.jpg'></span></a>
-    </div>
-    <div class="content">
-    </div>
+  <div class="body-container" style="text-align: center">
+    <link 
+      href="https://fonts.googleapis.com/css?family=Biryani:200|Open+Sans+Condensed:300&display=swap" 
+      rel="stylesheet"
+    >
+    <h2>{{ env }}</h2>
   </div>
 </template>
 
@@ -21,5 +20,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.body-container {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 </style>
