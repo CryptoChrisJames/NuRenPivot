@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1 v-if="env != prod">{{ env }}</h1>
+    <h1 v-if="env != 'prod'">{{ env }}</h1>
     <div class="header">
         <a class="navbar-brand" href="#/"><span><img class="banner" src='./assets/white.jpg'></span></a>
     </div>
