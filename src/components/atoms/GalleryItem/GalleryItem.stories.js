@@ -8,12 +8,12 @@ export const GalleryItem = () => ({
     components: { galleryItem },
     computed: {
         image() {
-            return 'https://via.placeholder.com/150/92c952';
+            return 'UPDATED_2019_REEL_1080.mp4';
         }
     },
     template: `
         <gallery-item
-            :galleryImage="image"
+            :videoName="image"
         ></gallery-item>
     `,
 })

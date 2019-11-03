@@ -9,15 +9,10 @@ const currentEnv = () =>{
 };
 
 const currentEnvAPI = () => {
-    return Config.ManagementAPI[currentEnv()];
-};
-
-const currentEnvVideoStream = () => {
-    return Config.VideoAPI[currentEnv()];
+    return Config.env[currentEnv()];
 };
 
 export default {
     currentEnv,
     currentEnvAPI,
-    currentEnvVideoStream,
 }
