@@ -1,16 +1,17 @@
 <template>
-    <div 
-        class="card"
-        :class="isLoading ? 'loading' : ''" 
+  <div 
+    class="card"
+    :class="isLoading ? 'loading' : ''" 
+  >
+    <a 
+      :href="videoName"
+      @click="videoSelected"
     >
-        <div class="img__box">
-            <img :src="videoThumbnail">
-        </div>
-        <div class="detail__box">
-            <span>{{ videoName }}</span>
-            <span>{{ videoDescription }}</span>
-        </div>
-    </div>
+      <div class="img__box">
+        <img :src="videoThumbnail">
+      </div>
+    </a>
+  </div>
 </template>
 
 <script>
@@ -47,7 +48,12 @@ export default {
         this.video = videoObject.data;
         this.isLoading = false;
     },
-}
+    methods: {
+        videoSelected() {
+            this.$router.push({ path: '/view', params: { key: this.videoName }});
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -55,7 +61,6 @@ export default {
     position: relative;
     width: 500px;
 }
-
 .img__box {
     display: block;
     width: 100% ;
@@ -66,25 +71,8 @@ export default {
     img {
         max-width: 100%;
         transition: transform 1.4s;
-
-        &:hover {
-            transform: scale(1.2);
-        }
     }
 }
-
-.detail__box {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    background: rgba($color: #000000, $alpha: .35);
-    transition: transform 1.4s;
-    padding: 0;
-    margin: 0;
-}
-
 .loading {
   overflow: hidden;
   position: relative;
@@ -109,7 +97,6 @@ export default {
   right: 0;
   animation: border 1s 0.5s infinite, borderColor 1s 0.5s infinite;
 }
-
 @keyframes border {
   0% {
     width: 0;
@@ -146,5 +133,4 @@ export default {
     border-left-color: transparent;
   }
 }
-
 </style>
