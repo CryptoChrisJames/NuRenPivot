@@ -8,7 +8,7 @@ export const GalleryItem = () => ({
     components: { galleryItem },
     computed: {
         image() {
-            return 'UPDATED_2019_REEL_1080.mp4';
+            return '5db78e553358fb000742339b';
         }
     },
     template: `

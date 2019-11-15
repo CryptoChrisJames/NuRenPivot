@@ -1,14 +1,17 @@
 <template>
-  <div 
-    class="card"
-    :class="isLoading ? 'loading' : ''" 
-  >
-    <a 
-      :href="videoName"
-      @click="videoSelected"
-    >
+  <div class="card">
+    <span v-if="isLoading" class="loading"></span>
+    <a v-else @click="videoSelected">
       <div class="img__box">
         <img :src="videoThumbnail">
+      </div>
+      <div class="videoInfo">
+        <h3 class="videoName">
+          {{video.name}}
+        </h3>
+        <p class="videoDescription">
+          {{video.description}}
+        </p>
       </div>
     </a>
   </div>
@@ -20,7 +23,7 @@ import config from '../../../../config.js';
 export default {
     name: 'GalleryItem',
     props: {
-        videoName: {
+        videoId: {
             type: String,
             default: '',
         }
@@ -28,7 +31,8 @@ export default {
     data() {
         return {
             video: {},
-            isLoading: false,
+            isLoading: true,
+            hover: true,
         };
     },
     computed: {
@@ -44,93 +48,71 @@ export default {
         const videoObject = await axios.get('http://'
             + config.currentEnvAPI()
             + '/project/thumbnails/'
-            + this.videoName);
+            + this.videoId);
         this.video = videoObject.data;
         this.isLoading = false;
     },
     methods: {
         videoSelected() {
             this.$router.push({ path: '/view', params: { key: this.videoName }});
-        }
+        },
     }
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
-    position: relative;
-    width: 500px;
+  position: relative;
+  max-width: 500px;
+  max-height: 280px;
+  line-height: 25px;
+  transition: all .15s ease-in-out;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.card:hover {
+  background-color: lightgray;
 }
 .img__box {
-    display: block;
-    width: 100% ;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
+  display: block;
+  width: 100% ;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 
-    img {
-        max-width: 100%;
-        transition: transform 1.4s;
-    }
+  img {
+      max-width: 100%;
+      transition: transform 1.4s;
+  }
+}
+.videoName {
+  margin: 0;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 15px;
+
+}
+.videoDescription {
+  margin: 0;
+  font-family: 'Yantramanav', sans-serif;
+
 }
 .loading {
-  overflow: hidden;
-  position: relative;
+  display: inline-block;
+  margin: 20% 35%;
+  width: 85px;
+  height: 85px;
+  border: 3px solid rgba(190, 188, 188, 0.425);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
 }
-.loading::before, .loading::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  border: 2px solid transparent;
-  width: 0;
-  height: 0;
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }
-.loading::before {
-  top: 0;
-  left: 0;
-  border-top-color: #cf3030;
-  border-right-color: #cf3030;
-  animation: border 1s infinite;
-}
-.loading::after {
-  bottom: 0;
-  right: 0;
-  animation: border 1s 0.5s infinite, borderColor 1s 0.5s infinite;
-}
-@keyframes border {
-  0% {
-    width: 0;
-    height: 0;
-  }
-  25% {
-    width: 100%;
-    height: 0;
-  }
-  50% {
-    width: 100%;
-    height: 100%;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-  }
-}
-@keyframes borderColor {
-  0% {
-    border-bottom-color: #cf3030;
-    border-left-color: #cf3030;
-  }
-  50% {
-    border-bottom-color: #cf3030;
-    border-left-color: #cf3030;
-  }
-  51% {
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  100% {
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }
 </style>

@@ -1,6 +1,15 @@
 <template>
-  <span>
-  </span>
+  <div class="container">
+    <span 
+      v-for="key in projectKeys" 
+      v-bind:key="key.id"
+      class="vidBox"
+    >
+      <gallery-item 
+        :videoId="key"
+      />
+    </span>
+  </div>
 </template>
 
 <script>
@@ -18,12 +27,19 @@ export default {
   async mounted() {
     const keys = await axios.get('http://'
             + config.currentEnvAPI()
-            + '/keys');
-    this.projectKeys = videoObject.data;
+            + '/project/videos');
+    this.projectKeys = keys.data;
   },
 };
 </script>
 
 <style lang="scss" scoped>
-  
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.vidBox {
+  padding: 1%;
+}
 </style>
