@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
+  <div class="galleryContainer">
     <span 
       v-for="key in projectKeys" 
       v-bind:key="key.id"
-      class="vidBox"
     >
       <gallery-item 
         :videoId="key"
@@ -34,12 +33,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.galleryContainer {
+  padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.vidBox {
-  padding: 1%;
+  margin-bottom: 25px;
 }
 </style>

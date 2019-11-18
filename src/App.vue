@@ -1,27 +1,50 @@
 <template>
-  <div class="body-container" style="text-align: center">
-    <link 
-      href="https://fonts.googleapis.com/css?family=Biryani:200|Open+Sans+Condensed:300&display=swap" 
-      rel="stylesheet"
+  <div>
+    <div 
+      v-if="env !== 'prod'"
+      id="env-info"
     >
-    <h2>{{ env }}</h2>
+      <h2 
+        style="text-align: center"
+      >
+        {{ env }}
+      </h2>
+    </div>
+    <nav class="header">
+      <img class="banner" src='./assets/white.jpg'>
+    </nav>
+    <div class="body-container">
+      <Home />
+    </div>
   </div>
 </template>
 
 <script>
 import config from '../config.js';
+import Home from './pages/Home.vue';
 export default {
   name: 'app',
+  components: { Home },
   computed: {
     env() {
       return config.currentEnv();
     }
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import './styles/_colors.scss';
+
 .body-container {
+  position: relative;
   font-family: 'Open Sans Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, $white 0%, $orange 51%, $red 75%, $darkRed 100%);
+}
+.banner {
+  margin: 2% 0;
+  width: 25%;
 }
 </style>

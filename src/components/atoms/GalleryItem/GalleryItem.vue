@@ -1,17 +1,24 @@
 <template>
-  <div class="card">
+  <div 
+    class="galleryCard"
+  > 
     <span v-if="isLoading" class="loading"></span>
     <a v-else @click="videoSelected">
-      <div class="img__box">
-        <img :src="videoThumbnail">
-      </div>
-      <div class="videoInfo">
-        <h3 class="videoName">
-          {{video.name}}
-        </h3>
-        <p class="videoDescription">
-          {{video.description}}
-        </p>
+      <div class="img__box"
+        @mouseenter="isSelected"
+        @mouseleave="notSelected"
+      >
+        <div 
+          class="overlay"
+          v-if="isHovering"
+        >
+          <h5>
+            {{ video.name }}
+          </h5>
+        </div>
+        <img
+          :src="videoThumbnail"
+        >
       </div>
     </a>
   </div>
@@ -32,7 +39,7 @@ export default {
         return {
             video: {},
             isLoading: true,
-            hover: true,
+            isHovering: false,
         };
     },
     computed: {
@@ -56,15 +63,20 @@ export default {
         videoSelected() {
             this.$router.push({ path: '/view', params: { key: this.videoName }});
         },
-    }
+        isSelected() {
+            this.isHovering = true;
+        },
+        notSelected() {
+          this.isHovering = false;
+        }
+    },
 };
 </script>
 
 <style lang="scss" scoped>
-.card {
+.galleryCard {
   position: relative;
   max-width: 500px;
-  max-height: 280px;
   line-height: 25px;
   transition: all .15s ease-in-out;
   overflow: hidden;
@@ -76,6 +88,7 @@ export default {
 }
 .img__box {
   display: block;
+  position: relative;
   width: 100% ;
   overflow: hidden;
   padding: 0;
@@ -84,18 +97,28 @@ export default {
 
   img {
       max-width: 100%;
-      transition: transform 1.4s;
+      transition: transform 1.4s ease;
   }
+}
+.img--hovering {
+  transform: scale(1.2);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+}
+.overlay > h5 {
+  text-align: center;
+  padding-top: 25%;
 }
 .videoName {
   margin: 0;
-  font-family: 'Yantramanav', sans-serif;
+  padding: 0px 8px 0px 8px;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 15px;
-
-}
-.videoDescription {
-  margin: 0;
-  font-family: 'Yantramanav', sans-serif;
 
 }
 .loading {
@@ -103,7 +126,7 @@ export default {
   margin: 20% 35%;
   width: 85px;
   height: 85px;
-  border: 3px solid rgba(190, 188, 188, 0.425);
+  border: 3px solid white;
   border-radius: 50%;
   border-top-color: #000;
   animation: spin 1s ease-in-out infinite;
