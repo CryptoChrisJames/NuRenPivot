@@ -37,11 +37,13 @@ export default {
 @import './styles/_colors.scss';
 
 .body-container {
+  min-height: 100%;
+  min-width: 100%;
   position: relative;
   font-family: 'Open Sans Condensed', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, $white 0%, $orange 51%, $red 75%, $darkRed 100%);
+  // background: linear-gradient(180deg, $white 0%, $orange 51%, $red 75%, $darkRed 100%);
 }
 .banner {
   margin: 2% 0;

@@ -1,14 +1,16 @@
 <template>
   <div class="homepage">
+    <section-head>Feature Films and Creative Media</section-head>
     <gallery></gallery>
   </div>
 </template>
 
 <script>
 import gallery from '../components/molecules/Gallery/Gallery.vue';
+import sectionHead from '../components/atoms/Header/SectionHead.vue';
 export default {
   name: 'Home',
-  components: { gallery },
+  components: { gallery, sectionHead },
 };
 </script>
 

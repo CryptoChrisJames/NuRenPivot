@@ -83,9 +83,6 @@ export default {
   margin: 0;
   padding: 0;
 }
-.card:hover {
-  background-color: lightgray;
-}
 .img__box {
   display: block;
   position: relative;
@@ -109,10 +106,11 @@ export default {
   height: 100%;
   color: white;
   background: rgba(0, 0, 0, 0.6);
-}
-.overlay > h5 {
-  text-align: center;
-  padding-top: 25%;
+
+  h5 {
+    text-align: center;
+    padding-top: 25%;
+  }
 }
 .videoName {
   margin: 0;
