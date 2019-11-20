@@ -46,7 +46,7 @@ export default {
   // background: linear-gradient(180deg, $white 0%, $orange 51%, $red 75%, $darkRed 100%);
 }
 .banner {
-  margin: 2% 0;
-  width: 25%;
+  margin: 6px 0;
+  width: 18%;
 }
 </style>
