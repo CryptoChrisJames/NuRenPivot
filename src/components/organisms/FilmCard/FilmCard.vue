@@ -1,6 +1,11 @@
 <template>
   <div class="filmCard__contianer">
-    
+    <poster 
+      :url="posterUrl"
+    />
+    <div class="nameAndDesc">
+      {{ name }} {{ description }}
+    </div>
   </div>
 </template>
 

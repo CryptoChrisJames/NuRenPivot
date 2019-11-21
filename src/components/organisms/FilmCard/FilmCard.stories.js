@@ -8,9 +8,16 @@ export const FilmCard = () => ({
     components: { filmCard },
     data() {
         return {
+          posterUrl: require('../../../assets/FutureWork/AlloftheLights.jpg'),
+          name: 'test',
+          desc: 'test',
         };
     },
     template: `
-        <film-card></film-card>
+        <film-card
+          :posterUrl="posterUrl"
+          :name="name"
+          :description="desc"
+        ></film-card>
     `,
 })
