@@ -38,6 +38,5 @@ export default {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 25px;
 }
 </style>

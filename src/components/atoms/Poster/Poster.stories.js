@@ -8,7 +8,7 @@ export const Poster = () => ({
     components: { poster },
     data() {
         return {
-            url: require('../../../assets/FutureWork/TheLight.jpg'),
+            url: require('../../../assets/FutureWork/AlloftheLights.jpg'),
         };
     },
     template: `

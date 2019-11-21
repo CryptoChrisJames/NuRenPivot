@@ -2,6 +2,8 @@
   <div class="homepage">
     <section-head>Feature Films and Creative Media</section-head>
     <gallery></gallery>
+    <div class="divider"/>
+    <section-head>Films In Development</section-head>
   </div>
 </template>
 
@@ -15,4 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.divider {
+  min-width: 100%;
+  min-height: 55px;
+}
 </style>
