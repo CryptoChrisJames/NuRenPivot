@@ -10,14 +10,12 @@ export const FilmCard = () => ({
         return {
           posterUrl: require('../../../assets/FutureWork/AlloftheLights.jpg'),
           name: 'test',
-          desc: 'test',
         };
     },
     template: `
         <film-card
           :posterUrl="posterUrl"
           :name="name"
-          :description="desc"
-        ></film-card>
+        >test</film-card>
     `,
 })

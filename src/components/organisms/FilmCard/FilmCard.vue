@@ -1,10 +1,13 @@
 <template>
   <div class="filmCard__contianer">
-    <poster 
-      :url="posterUrl"
-    />
-    <div class="nameAndDesc">
-      {{ name }} {{ description }}
+    <div class="filmCard__column">
+      <poster 
+        :url="posterUrl"
+      />
+    </div>
+    <div class="filmCard__column">
+      {{ name }} 
+      <slot />
     </div>
   </div>
 </template>
@@ -23,16 +26,18 @@ export default {
       type: String,
       default: '',
     },
-    description: {
-      type: String,
-      default: '',
-    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .filmCard__contianer {
-  grid-template-columns: 1fr 1fr;
+  position: relative;
+  max-height: 450px;
+  display: inline-block;
+}
+
+.filmCard__column {
+  height: 350px;
 }
 </style>

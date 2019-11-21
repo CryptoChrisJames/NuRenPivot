@@ -76,7 +76,6 @@ export default {
 <style lang="scss" scoped>
 .galleryCard {
   position: relative;
-  max-width: 500px;
   line-height: 25px;
   transition: all .15s ease-in-out;
   overflow: hidden;

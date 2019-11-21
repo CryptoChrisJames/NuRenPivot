@@ -12,6 +12,8 @@ export const Poster = () => ({
         };
     },
     template: `
-        <poster :url="url"></poster>
+        <div style="height: 400px; width: auto;">
+            <poster :url="url"></poster>
+        </div>
     `,
 })
