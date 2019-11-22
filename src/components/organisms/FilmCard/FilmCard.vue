@@ -35,7 +35,7 @@ export default {
 .filmCard__contianer {
   height: auto;
   width: 100%;
-  padding: 0 77px;
+  padding: 0 125px;
 }
 
 .filmCard__column {
