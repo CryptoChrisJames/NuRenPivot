@@ -9,13 +9,16 @@ export const FilmCard = () => ({
     data() {
         return {
           posterUrl: require('../../../assets/FutureWork/AlloftheLights.jpg'),
-          name: 'test',
+          name: 'All Of The Lights',
         };
     },
     template: `
         <film-card
           :posterUrl="posterUrl"
           :name="name"
-        >test</film-card>
+        >
+          When an officer gets shot, a vivid guy and his provocative white friend are 
+          forced to choose between risking arrest or running away.
+        </film-card>
     `,
 })

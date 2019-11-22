@@ -2,12 +2,13 @@
   <div class="filmCard__contianer">
     <div class="filmCard__column">
       <poster 
+        class="filmCard__content"
         :url="posterUrl"
       />
     </div>
-    <div class="filmCard__column">
-      {{ name }} 
-      <slot />
+    <div class="filmCard__column filmCard__content">
+      <h2 class="filmCard__title">{{ name }}</h2>
+      <p class="filmCard__desc"><slot /></p>
     </div>
   </div>
 </template>
@@ -32,12 +33,31 @@ export default {
 
 <style lang="scss" scoped>
 .filmCard__contianer {
-  position: relative;
-  max-height: 450px;
-  display: inline-block;
+  height: auto;
+  width: 100%;
+  padding: 0 77px;
 }
 
 .filmCard__column {
+  display: block;
+  float: left;
   height: 350px;
+  width: 50%;
+}
+
+.filmCard__content {
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmCard__title {
+  padding: 30px;
+}
+
+.filmCard__desc {
+  padding: 30px;
+  overflow-y: auto;
 }
 </style>

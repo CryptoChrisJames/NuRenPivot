@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .poster {
-    display: block;
+    padding: 20px 0;
     max-height: 100%;
     max-width: 100%;
     width: auto;
