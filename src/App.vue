@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <div 
       v-if="env !== 'prod'"
       id="env-info"
@@ -12,19 +12,21 @@
     </div>
     <nav class="header">
       <img class="banner" src='./assets/white.jpg'>
+      <div class="links">
+        <router-link class="tabLink" to="/">Home</router-link>
+        <router-link class="tabLink" to="FilmsInDevelopment">Films In Development</router-link>
+      </div>
     </nav>
     <div class="body-container">
-      <Home />
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
 import config from '../config.js';
-import Home from './pages/Home.vue';
 export default {
   name: 'app',
-  components: { Home },
   computed: {
     env() {
       return config.currentEnv();
@@ -35,13 +37,33 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_colors.scss';
+.content {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 
 .body-container {
   font-family: 'Open Sans Condensed', sans-serif;
-  // background: linear-gradient(180deg, $white 0%, $orange 51%, $red 75%, $darkRed 100%);
 }
+
 .banner {
   margin: 6px 0;
   width: 18%;
+}
+
+.links {
+  float: right;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+.tabLink {
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 35px;
+  font-size: 25px;
 }
 </style>

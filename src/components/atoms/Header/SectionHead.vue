@@ -16,7 +16,7 @@ export default {
 @import '../../../styles/_colors.scss';
 .sectionHead {
     text-align: center;
-    padding-bottom: 15px;
+    padding: 30px;
     line-height: .75;
     font-weight: 500;
     color: $darkRed;
