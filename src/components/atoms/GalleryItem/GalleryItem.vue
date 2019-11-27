@@ -13,7 +13,7 @@
           v-if="isHovering"
         >
           <h5>
-            {{ video.name }}
+            {{ videoName }}
           </h5>
         </div>
         <img
@@ -37,26 +37,26 @@ export default {
     },
     data() {
         return {
-            video: {},
-            isLoading: true,
-            isHovering: false,
+          video: {},
+          isLoading: true,
+          isHovering: false,
         };
     },
     computed: {
+        videoObject() {
+          const Dtos = this.$store.state.videoIconDTOs;
+          return Dtos.find(x => x._id === this.videoId);
+        },
         videoThumbnail() {
-            return this.video.thumbnail;
+          return this.video.thumbnail;
         },
-        videoDescription() {
-            return this.video.description;
-        },
+        videoName() {
+          return this.video.name;
+        }
     },
     async mounted() {
         this.isLoading = true;
-        const videoObject = await axios.get('http://'
-            + config.currentEnvAPI()
-            + '/project/thumbnails/'
-            + this.videoId);
-        this.video = videoObject.data;
+        this.$store.dispatch('getVideoIconDTO', this.videoId);
         this.isLoading = false;
     },
     methods: {
@@ -70,6 +70,11 @@ export default {
           this.isHovering = false;
         }
     },
+    watch: {
+      videoObject(newVal) {
+        this.video = newVal;
+      }
+    }
 };
 </script>
 
