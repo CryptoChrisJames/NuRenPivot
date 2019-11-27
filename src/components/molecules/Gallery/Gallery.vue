@@ -12,23 +12,15 @@
 </template>
 
 <script>
-import axios from 'axios';
-import config from '../../../../config.js';
 import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
 export default {
   name: 'Gallery',
   components: { galleryItem },
-  data() {
-    return {
-      projectKeys: null,
-    };
-  },
-  async mounted() {
-    const keys = await axios.get('http://'
-            + config.currentEnvAPI()
-            + '/project/videos');
-    this.projectKeys = keys.data;
-  },
+  computed: {
+    projectKeys() {
+      return this.$store.state.videoList;
+    }
+  }
 };
 </script>
 

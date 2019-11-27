@@ -30,8 +30,11 @@ export default {
   computed: {
     env() {
       return config.currentEnv();
-    }
-  }
+    },
+  },
+  async mounted() {
+    await this.$store.dispatch('getVideoList');
+  },
 };
 </script>
 
