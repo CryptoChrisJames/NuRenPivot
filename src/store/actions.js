@@ -18,12 +18,6 @@ const getVideoIconDTO = async ({commit}, payload) => {
   commit('pushVideoDtoToStore', videoDto);
 };
 
-const videoIconResponse = async (id) => { 
-  return await axios.get(apiUrl 
-  + projectsRoute 
-  + 'thumbnails/'
-  + id);
-};
 export default {
   getVideoList,
   getVideoIconDTO,
