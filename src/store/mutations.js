@@ -1,5 +1,6 @@
-const addVideoListToStore = (state, keys) => {
-  state.videoList = keys;
+const addVideoListToStore = (state, videoPayload) => {
+  console.log(videoPayload);
+  //state.videoList = keys;
 };
 
 const pushVideoDtoToStore = (state, videoDto) => {

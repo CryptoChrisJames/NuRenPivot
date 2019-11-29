@@ -52,11 +52,6 @@ export default {
           return this.video.name;
         }
     },
-    async mounted() {
-        this.isLoading = true;
-        this.$store.dispatch('getVideoIconDTO', this.videoId);
-        this.isLoading = false;
-    },
     methods: {
         videoSelected() {
             this.$router.push({ path: '/view', params: { key: this.videoName }});

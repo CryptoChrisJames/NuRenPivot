@@ -33,7 +33,7 @@ export default {
     },
   },
   async mounted() {
-    await this.$store.dispatch('getVideoList');
+    await this.$store.dispatch('getVideoListandObjects');
   },
 };
 </script>

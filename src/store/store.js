@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 const state = {
   videoList: [],
-  videoIconDTOs: [],
+  videoObjects: [],
 }; 
 
 export default new Vuex.Store({
