@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         videoSelected() {
-            this.$router.push({ path: '/view', params: { key: this.videoName }});
+            this.$router.push({ name: 'stream', params: { video: this.video }});
         },
         isSelected() {
             this.isHovering = true;

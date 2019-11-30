@@ -14,7 +14,8 @@
       <img class="banner" src='./assets/white.jpg'>
       <div class="links">
         <router-link class="tabLink" to="/">Home</router-link>
-        <router-link class="tabLink" to="FilmsInDevelopment">Films In Development</router-link>
+        <router-link class="tabLink" to="/about">About</router-link>
+        <router-link class="tabLink" to="/contact">Contact</router-link>
       </div>
     </nav>
     <div class="body-container">
