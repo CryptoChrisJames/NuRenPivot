@@ -23,15 +23,8 @@ const getVideoListandObjects = async ({commit}) => {
     videoObjects: videoObjects,
   } 
   commit("addVideoListToStore", videoPayload );
-}; 
-
-const getVideoIconDTO = async ({commit}, payload) => {
-  const videoUrl = apiUrl + projectsRoute + `thumbnails/${payload}`;
-  const videoDto = await axios.get(videoUrl); 
-  commit('pushVideoDtoToStore', videoDto);
 };
 
 export default {
   getVideoListandObjects,
-  getVideoIconDTO,
 };

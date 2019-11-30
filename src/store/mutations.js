@@ -1,12 +1,13 @@
 const addVideoListToStore = (state, videoPayload) => {
-  console.log(videoPayload);
-  //state.videoList = keys;
+  state.videoList = videoPayload.keys;
+  state.videoObjects = videoPayload.videoObjects;
 };
 
-const pushVideoDtoToStore = (state, videoDto) => {
-  state.videoIconDTOs.push(videoDto.data);
-}
+const toggleLoading = (state) => {
+  state.loadingData = !state.loadingData;
+};
+
 export default {
   addVideoListToStore,
-  pushVideoDtoToStore,
+  toggleLoading,
 };

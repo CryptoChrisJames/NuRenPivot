@@ -33,7 +33,9 @@ export default {
     },
   },
   async mounted() {
+    this.$store.commit('toggleLoading');
     await this.$store.dispatch('getVideoListandObjects');
+    this.$store.commit('toggleLoading');
   },
 };
 </script>

@@ -1,26 +1,41 @@
 <template>
-  <div class="galleryContainer">
+  <span class="galleryWrapper">
     <span 
-      v-for="key in projectKeys" 
-      v-bind:key="key.id"
+      v-if="isLoading" 
+      class="loading"
     >
-      <gallery-item 
-        :videoId="key"
-      />
+      <loader />
     </span>
-  </div>
+    <div
+        v-else
+        class="galleryContainer"
+    >
+      <span 
+        v-for="key in projectKeys" 
+        v-bind:key="key.id"
+      >
+        <gallery-item 
+          :videoId="key"
+        />
+      </span>
+    </div>
+  </span>
 </template>
 
 <script>
 import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
+import loader from '../../atoms/Loader/Loader.vue';
 export default {
   name: 'Gallery',
-  components: { galleryItem },
+  components: { galleryItem, loader, },
   computed: {
     projectKeys() {
       return this.$store.state.videoList;
-    }
-  }
+    },
+    isLoading() {
+      return this.$store.state.loadingData;
+    },
+  },
 };
 </script>
 
@@ -30,5 +45,16 @@ export default {
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.loading {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }
 </style>

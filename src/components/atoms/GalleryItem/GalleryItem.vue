@@ -2,8 +2,7 @@
   <div 
     class="galleryCard"
   > 
-    <span v-if="isLoading" class="loading"></span>
-    <a v-else @click="videoSelected">
+    <a @click="videoSelected">
       <div class="img__box"
         @mouseenter="isSelected"
         @mouseleave="notSelected"
@@ -36,15 +35,14 @@ export default {
     data() {
         return {
           video: {},
-          isLoading: true,
           isHovering: false,
         };
     },
+    mounted() {
+      const Dtos = this.$store.state.videoObjects;
+      this.video = Dtos.find(x => x._id === this.videoId);
+    },
     computed: {
-        videoObject() {
-          const Dtos = this.$store.state.videoIconDTOs;
-          return Dtos.find(x => x._id === this.videoId);
-        },
         videoThumbnail() {
           return this.video.thumbnail;
         },
@@ -63,11 +61,6 @@ export default {
           this.isHovering = false;
         }
     },
-    watch: {
-      videoObject(newVal) {
-        this.video = newVal;
-      }
-    }
 };
 </script>
 
@@ -114,23 +107,5 @@ export default {
   padding: 0px 8px 0px 8px;
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 15px;
-
-}
-.loading {
-  display: inline-block;
-  margin: 20% 35%;
-  width: 85px;
-  height: 85px;
-  border: 3px solid white;
-  border-radius: 50%;
-  border-top-color: #000;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-@keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-  to { -webkit-transform: rotate(360deg); }
 }
 </style>
