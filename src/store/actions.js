@@ -13,11 +13,21 @@ const getVideoListandObjects = async ({commit}) => {
   for (let i = 0; i < keys.data.length; i ++) {
     videoObjectUrls.push(apiUrl + projectsRoute + `thumbnails/${keys.data[i]}`)
   }
-  const videoObjects = [];
-  for (let i = 0; i < videoObjectUrls.length; i ++) {
-    const obj = await axios.get(videoObjectUrls[i]);
-    videoObjects.push(obj.data);
-  }
+  const videoObjects = videoObjectUrls.map( async video => {
+    const response = await axios.get(video);
+    return response.data;
+  })
+  // Promise.all(videoObjectUrls.map( async video => {
+  //   return await axios.get(video)
+  //     .then(response => {
+  //       console.log(response.data);
+  //       //videoObjects.push(response.data);
+  //     })
+  // }))
+  // for (let i = 0; i < videoObjectUrls.length; i ++) {
+  //   const obj = await axios.get(videoObjectUrls[i]);
+  //   videoObjects.push(obj.data);
+  // }
   const videoPayload = {
     keys: keys.data,
     videoObjects: videoObjects,
