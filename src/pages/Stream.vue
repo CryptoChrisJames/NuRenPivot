@@ -2,6 +2,9 @@
   <div>
     <section-head>{{ currentVideo.name }}</section-head>
     <h3>{{ currentVideo.description }}</h3>
+    <video class="preview" controls>
+        <source :src="videoUrl" type="video/mp4">
+    </video>
   </div>
 </template>
 
