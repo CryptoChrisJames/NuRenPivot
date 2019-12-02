@@ -12,7 +12,7 @@ export default new VueRouter({
         name: 'home',
         component: Home,
     },{
-        path: '/stream',
+        path: '/stream/:video',
         name: 'stream',
         component: Stream,
         params: true,

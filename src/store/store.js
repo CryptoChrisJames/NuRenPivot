@@ -9,6 +9,7 @@ const state = {
   videoList: [],
   videoObjects: [],
   loadingData: false,
+  currentVideo: null,
 }; 
 
 export default new Vuex.Store({

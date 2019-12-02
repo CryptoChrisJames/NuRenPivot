@@ -52,7 +52,8 @@ export default {
     },
     methods: {
         videoSelected() {
-            this.$router.push({ name: 'stream', params: { video: this.video }});
+          this.$store.commit('setCurrentVideo', this.videoId);
+          this.$router.replace(`/stream/${this.videoId}`);
         },
         isSelected() {
             this.isHovering = true;
