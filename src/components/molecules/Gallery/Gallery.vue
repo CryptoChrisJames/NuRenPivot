@@ -27,7 +27,7 @@ import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
 import loader from '../../atoms/Loader/Loader.vue';
 export default {
   name: 'Gallery',
-  components: { galleryItem, loader, },
+  components: { galleryItem, loader },
   computed: {
     projectKeys() {
       return this.$store.state.currentGallery;

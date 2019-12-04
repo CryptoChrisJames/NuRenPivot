@@ -10,8 +10,8 @@
 
 <script>
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
-import gallery from '../components/molecules/Gallery/Gallery.vue';
 import config from '../../config.js';
+import gallery from '../components/molecules/Gallery/Gallery.vue';
 export default {
   name: 'Stream',
   components: { sectionHead, gallery },
@@ -23,11 +23,6 @@ export default {
       return 'http://' + config.currentEnvAPI() + '/stream/' + this.currentVideo.video;
     },
   },
-  watch: {
-    currentVideo() {
-      this.$forceUpdate();
-    }
-  }
 };
 </script>
 
