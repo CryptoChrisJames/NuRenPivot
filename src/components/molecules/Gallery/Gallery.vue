@@ -30,7 +30,7 @@ export default {
   components: { galleryItem, loader, },
   computed: {
     projectKeys() {
-      return this.$store.state.videoList;
+      return this.$store.state.currentGallery;
     },
     isLoading() {
       return this.$store.state.loadingData;

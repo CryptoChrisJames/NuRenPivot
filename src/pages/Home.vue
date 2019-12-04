@@ -11,6 +11,9 @@ import sectionHead from '../components/atoms/Header/SectionHead.vue';
 export default {
   name: 'Home',
   components: { gallery, sectionHead },
+  mounted() {
+    this.$store.commit('resetGallery');
+  }
 };
 </script>
 

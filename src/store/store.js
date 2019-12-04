@@ -10,6 +10,7 @@ const state = {
   videoObjects: [],
   loadingData: false,
   currentVideo: null,
+  currentGallery: [],
 }; 
 
 export default new Vuex.Store({
