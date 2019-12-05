@@ -15,6 +15,14 @@
             {{ videoName }}
           </h5>
         </div>
+        <div 
+          class="overlay"
+          v-else-if="currentlyWatching"
+        >
+          <h5>
+            Now Playing
+          </h5>
+        </div>
         <img
           :src="videoThumbnail"
         >
@@ -48,7 +56,13 @@ export default {
         },
         videoName() {
           return this.video.name;
-        }
+        },
+        currentlyWatching() {
+          if(this.$store.state.currentVideo){
+            return this.$store.state.currentVideo._id === this.videoId;
+          }
+          return false;
+        },
     },
     methods: {
         videoSelected() {
