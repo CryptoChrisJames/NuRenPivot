@@ -1,10 +1,16 @@
 <template>
   <div class="page-container">
-    <section-head>{{ currentVideo.name }}</section-head>
-    <p>{{ currentVideo.description }}</p>
-    <video class="stream" :src="videoUrl" controls autoplay />
-    <section-head>See More</section-head>
-    <gallery />
+    <div v-if="currentVideo" class="pageContent">
+      <section-head>{{ currentVideo.name }}</section-head>
+      <p>{{ currentVideo.description }}</p>
+      <video class="stream" :src="videoUrl" controls autoplay />
+      <section-head>See More</section-head>
+      <gallery />
+    </div>
+    <h1 v-else class="sorry">
+      If you're seeing this message, you may have accidently gone to the wrong page.
+      Please go to the <router-link to="/">Home</router-link> page.
+    </h1>
   </div>
 </template>
 
@@ -43,5 +49,10 @@ export default {
   width: 750px; 
   height: auto;
   outline: none;
+}
+
+.sorry {
+  text-align: center;
+  padding: 120px;
 }
 </style>
