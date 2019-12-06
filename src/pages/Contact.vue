@@ -9,7 +9,7 @@
             <input type="text"/>
             <h3 class="inputTitle">Comments</h3>
             <textarea />
-            <input type="submit" />
+            <button class="submit">Submit</button>
         </div>
     </div>
 </template>
@@ -21,28 +21,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/_colors.scss';
+
 .content {
     margin: 0 33%;
 
     h1 {
         text-align: center;
     }
-    input{
+    button {
         width:100%;
         box-shadow: none;
         border: 1px solid black;
-        margin-bottom: 3em;
         border-radius: 25px;
+        outline: none;
+        margin-bottom: 3em;
+    }    
+    button:hover{
+        background-color: lightgrey;
     }
-    textarea{
+    input {
+        margin: 5px;
         width:100%;
         box-shadow: none;
         border: 1px solid black;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
         margin-bottom: 3em;
-        border-radius: 10px;
+        outline: none;
     }
-    .submit:hover{
-        background-color: white;
+    textarea {
+        width:100%;
+        height: 155px;
+        box-shadow: none;
+        border: 1px solid black;
+        border-radius: 25px;
+        outline: none;
+        margin-bottom: 3em;
     }
     @media only screen and (min-width: 700px) {
         h1{
