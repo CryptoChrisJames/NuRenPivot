@@ -1,101 +1,90 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#/"><span><img class="banner" src='./assets/white.jpg'></span></a>
-        <button class="navbar-toggler" style="border: none; margin: 0 auto; color:#2c3e50; padding-top: 5px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <p><b>Menu</b></p>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <router-link class="tabs" to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="tabs" to="/filmsindevelopment">Films In Development</router-link>
-            </li>  
-            <li class="nav-item">
-              <router-link class="tabs" to="/contact">Contact</router-link>
-            </li><!--
-            <li class="nav-item">
-              <router-link class="tabs" to="/about">About</router-link>
-            </li>-->        
-          </ul>
-        </div>
-      </nav>
-      <div class="contentcontainer">        
-        <router-view></router-view>
+  <div class="content">
+    <div 
+      v-if="env !== 'prod'"
+      id="env-info"
+    >
+      <h2 
+        style="text-align: center"
+      >
+        {{ env }}
+      </h2>
+    </div>
+    <nav class="header">
+      <img class="banner" src='./assets/white.jpg'>
+      <div class="links">
+        <router-link class="tabLink" to="/">Home</router-link>
+        <router-link class="tabLink" to="/about">About</router-link>
+        <router-link class="tabLink" to="/contact">Contact</router-link>
       </div>
+    </nav>
+    <div class="body-container">
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-
+import config from '../config.js';
 export default {
-  name: 'app'
-}
+  name: 'app',
+  computed: {
+    env() {
+      return config.currentEnv();
+    },
+  },
+  async mounted() {
+    this.$store.commit('toggleLoading');
+    await this.$store.dispatch('getVideoListandObjects');
+    this.$store.commit('toggleLoading');
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Nunito', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: flex; 
-  
+<style lang="scss" scoped>
+@import './styles/_colors.scss';
+@import './styles/_variables.scss';
+.content {
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.grid-container {
-  flex: 100%;
+.body-container {
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.container{
-  min-width:100%;
-}
+.banner {
+  margin: 6px 0;
+  width: 18%;
 
-.banner{
-  width: 100%;
-  padding-bottom: 15px;
-}
+  @include tablet {
+    width: 43%;
+  }
 
-.customnav{
-  display: flex;
-}
-
-.tabs{
-  flex: 100%;
-  text-decoration: none;  
-  color: #2c3e50;
-  font-size: 25px;
-}
-
-.nav-item{  
-  margin: 15px;
-}
-
-.contentcontainer{
-  margin:5%;
-}
-
-video{
-  width: 100%;
-  height: 180px;  
-}
-
-@media only screen and (min-width: 760px) {
-  video{
-      height: 350px;
+  @include phone {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
   }
 }
 
-@media only screen and (min-width: 1020px) {
-  .banner{
-    width: 30%;
-    padding-bottom: 15px;
-    float: left;
-  } 
+.links {
+  float: right;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+
+  @include phone {
+    padding: 35px 20px;
+  }
+}
+
+.tabLink {
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 35px;
+  font-size: 25px;
 }
 </style>
