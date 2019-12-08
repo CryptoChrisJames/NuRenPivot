@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/_variables.scss';
 .page-container {
   margin: 0 auto;
 
@@ -49,6 +50,14 @@ export default {
   width: 750px; 
   height: auto;
   outline: none;
+
+  @include tablet {
+    width: 650px;     
+  }
+
+  @include phone {
+    width: 100%;     
+  }
 }
 
 .sorry {

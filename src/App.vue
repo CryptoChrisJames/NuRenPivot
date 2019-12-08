@@ -43,6 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './styles/_colors.scss';
+@import './styles/_variables.scss';
 .content {
   font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -54,6 +55,16 @@ export default {
 .banner {
   margin: 6px 0;
   width: 18%;
+
+  @include tablet {
+    width: 43%;
+  }
+
+  @include phone {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+  }
 }
 
 .links {
@@ -62,6 +73,10 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 35px;
+
+  @include phone {
+    padding: 35px 20px;
+  }
 }
 
 .tabLink {

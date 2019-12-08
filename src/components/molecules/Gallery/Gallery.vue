@@ -40,11 +40,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/_variables.scss';
 .galleryContainer {
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;    
+  }
+  
+  @include phone {
+    grid-template-columns: 1fr; 
+  }
 }
 .loading {
   display: block;

@@ -47,9 +47,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/_colors.scss';
+@import '../styles/_variables.scss';
 
 .content {
     margin: 0 33%;
+
+    @include tablet {
+        margin: 0 25%;
+    }
+    
+    @include phone {
+        margin: 0 15%;
+    }
 
     h1 {
         text-align: center;

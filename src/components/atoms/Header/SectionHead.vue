@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../styles/_colors.scss';
+@import '../../../styles/_variables.scss';
 .sectionHead {
     text-align: center;
     padding: 22px;
@@ -21,5 +22,9 @@ export default {
     font-weight: 500;
     color: $darkRed;
     margin: 0;
+
+    @include phone {
+    line-height: 1.15;
+  }
 }
 </style>
