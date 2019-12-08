@@ -23,9 +23,18 @@ const getVideoListandObjects = async ({commit}) => {
   commit("addVideoListToStore", videoPayload );
 };
 
+// eslint-disable-next-line
 const submitContact = async ({commit}, payload) => {
+  const commentsUrl = apiUrl + "/comment";
+  await axios.post(commentsUrl, {
+    firstName: payload.firstName,
+    lastName: payload.lastName,
+    email: payload.email,
+    comments: payload.comments,
+  })
 };
 
 export default {
   getVideoListandObjects,
+  submitContact,
 };
