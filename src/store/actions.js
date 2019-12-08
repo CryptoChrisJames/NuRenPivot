@@ -23,6 +23,9 @@ const getVideoListandObjects = async ({commit}) => {
   commit("addVideoListToStore", videoPayload );
 };
 
+const submitContact = async ({commit}, payload) => {
+};
+
 export default {
   getVideoListandObjects,
 };

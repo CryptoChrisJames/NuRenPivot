@@ -2,14 +2,14 @@
     <div class="content">
         <div class="inputField">
             <h3 class="inputTitle">First Name</h3>
-            <input type="text"/>
+            <input v-model="firstName" type="text"/>
             <h3 class="inputTitle">Last Name</h3>
-            <input type="text"/>
+            <input v-model="lastName" type="text"/>
             <h3 class="inputTitle">Email</h3>
-            <input type="text"/>
+            <input v-model="email" type="text"/>
             <h3 class="inputTitle">Comments</h3>
-            <textarea />
-            <button class="submit">Submit</button>
+            <textarea v-model="comments" />
+            <button @click="submit" class="submit">Submit</button>
         </div>
     </div>
 </template>
@@ -17,6 +17,25 @@
 <script>
 export default {
     'name': 'Contact',
+    data() {
+        return {
+            firstName: '',
+            lastName: '',
+            email: '',
+            comments: '',
+        };
+    },
+    methods: {
+        submit() {
+            const contact = {
+                firstName: this.firstName,
+                lastName: this.lastName,
+                email: this.email,
+                comments: this.comments,
+            };
+            this.$store.dispatch("submitContact", contact);
+        }
+    }
 };
 </script>
 
