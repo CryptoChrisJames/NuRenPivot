@@ -5,10 +5,11 @@
             <input v-model="firstName" type="text"/>
             <h3 class="inputTitle">Last Name</h3>
             <input v-model="lastName" type="text"/>
-            <h3 class="inputTitle">Email</h3>
+            <h3 class="inputTitle">Email*</h3>
             <input v-model="email" type="text"/>
-            <h3 class="inputTitle">Comments</h3>
+            <h3 class="inputTitle">Comments*</h3>
             <textarea v-model="comments" />
+            <h3 v-if="submitted" class="inputTitle">Thanks for contacting us! We will review your submission and respond to you soon.</h3>
             <button @click="submit" class="submit">Submit</button>
         </div>
     </div>
@@ -23,17 +24,22 @@ export default {
             lastName: '',
             email: '',
             comments: '',
+            submitted: false,
         };
     },
     methods: {
         submit() {
-            const contact = {
-                firstName: this.firstName,
-                lastName: this.lastName,
-                email: this.email,
-                comments: this.comments,
-            };
-            this.$store.dispatch("submitContact", contact);
+            if(this.email
+                && this.comments) {
+                const contact = {
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    email: this.email,
+                    comments: this.comments,
+                };
+                this.$store.dispatch("submitContact", contact);
+                this.submitted = true;
+            }
         }
     }
 };
