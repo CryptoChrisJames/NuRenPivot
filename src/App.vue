@@ -75,7 +75,10 @@ export default {
   padding: 35px;
 
   @include phone {
-    padding: 35px 20px;
+    display: block;
+    float: none;
+    margin: 0 20px;
+    padding: 35px 0;
   }
 }
 
