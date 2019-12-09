@@ -3,7 +3,9 @@
     <div v-if="currentVideo" class="pageContent">
       <section-head>{{ currentVideo.name }}</section-head>
       <p>{{ currentVideo.description }}</p>
-      <video playsinline class="stream" v-if="videoUrl" :src="videoUrl" type="video/mp4" controls />
+      <video playsinline class="stream" :key="videoUrl" v-if="videoUrl" controls controlslist="nodownload">
+        <source :src="videoUrl" type="video/mp4"/>
+      </video>
       <section-head>See More</section-head>
       <gallery />
     </div>
