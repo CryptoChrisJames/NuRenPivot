@@ -4,10 +4,8 @@
       <section-head>{{ currentVideo.name }}</section-head>
       <p>{{ currentVideo.description }}</p>
       <video 
-        v-if="videoUrl" 
-        autoplay 
-        loop 
-        muted 
+        v-if="videoUrl"
+        :poster="currentVideo.thumbnail"
         playsinline 
         controls 
         controlslist="nodownload"
