@@ -38,7 +38,7 @@ export default {
       return this.$store.state.currentVideo;
     },
     videoUrl() {
-      return 'http://' + config.currentEnvAPI() + '/stream/' + this.currentVideo.video;
+      return 'https://' + config.currentEnvAPI() + '/stream/' + this.currentVideo.video;
     },
   },
 };
