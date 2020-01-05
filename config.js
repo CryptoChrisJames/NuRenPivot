@@ -12,7 +12,12 @@ const currentEnvAPI = () => {
     return Config.env[currentEnv()];
 };
 
+const currentSecurity = () => {
+    return currentEnv() === 'dev' ? 'http://' : 'https://';
+}
+
 export default {
     currentEnv,
     currentEnvAPI,
+    currentSecurity,
 }

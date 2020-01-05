@@ -3,17 +3,9 @@
     <div v-if="currentVideo" class="pageContent">
       <section-head>{{ currentVideo.name }}</section-head>
       <p>{{ currentVideo.description }}</p>
-      <video 
-        v-if="videoUrl"
-        :poster="currentVideo.thumbnail"
-        playsinline 
-        controls 
-        controlslist="nodownload"
-        class="stream" 
-        type="video/mp4" 
-        :key="videoUrl" 
-        :src="videoUrl" 
-      />
+      <div class="stream" v-html="currentVideo.video">
+        {{ currentVideo.video }}
+      </div>
       <section-head>See More</section-head>
       <gallery />
     </div>
@@ -26,7 +18,6 @@
 
 <script>
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
-import config from '../../config.js';
 import gallery from '../components/molecules/Gallery/Gallery.vue';
 export default {
   name: 'Stream',
@@ -34,9 +25,6 @@ export default {
   computed: {
     currentVideo() {
       return this.$store.state.currentVideo;
-    },
-    videoUrl() {
-      return 'https://' + config.currentEnvAPI() + '/stream/' + this.currentVideo.video;
     },
   },
 };
@@ -47,7 +35,7 @@ export default {
 .page-container {
   margin: 0 auto;
 
-  p { 
+  p {
     text-align: center;
     font-size: 25px;
     margin: 0 0 6px;
@@ -55,19 +43,10 @@ export default {
 }
 
 .stream {
+  text-align: center;
   display: block;
   margin: 0 auto;
-  width: 750px; 
-  height: auto;
   outline: none;
-
-  @include tablet {
-    width: 650px;     
-  }
-
-  @include phone {
-    width: 100%;     
-  }
 }
 
 .sorry {

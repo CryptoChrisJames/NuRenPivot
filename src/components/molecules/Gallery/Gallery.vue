@@ -1,7 +1,7 @@
 <template>
   <span class="galleryWrapper">
-    <span 
-      v-if="isLoading" 
+    <span
+      v-if="isLoading"
       class="loading"
     >
       <loader />
@@ -10,11 +10,11 @@
         v-else
         class="galleryContainer"
     >
-      <span 
-        v-for="key in projectKeys" 
+      <span
+        v-for="key in projectKeys"
         v-bind:key="key.id"
       >
-        <gallery-item 
+        <gallery-item
           :videoId="key"
         />
       </span>

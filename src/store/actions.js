@@ -2,7 +2,7 @@ import config from '../../config.js';
 import axios from 'axios';
 
 
-const apiUrl = 'https://' + config.currentEnvAPI();
+const apiUrl = config.currentSecurity() + config.currentEnvAPI();
 
 const projectsRoute = "/project/";
 

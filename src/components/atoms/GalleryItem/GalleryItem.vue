@@ -1,13 +1,13 @@
 <template>
-  <div 
+  <div
     class="galleryCard"
-  > 
+  >
     <a @click="videoSelected">
       <div class="img__box"
         @mouseenter="isSelected"
         @mouseleave="notSelected"
       >
-        <div 
+        <div
           class="overlay"
           v-if="isHovering"
         >
@@ -15,7 +15,7 @@
             {{ videoName }}
           </h5>
         </div>
-        <div 
+        <div
           class="overlay"
           v-else-if="currentlyWatching"
         >
