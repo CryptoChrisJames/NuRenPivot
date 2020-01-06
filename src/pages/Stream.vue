@@ -44,9 +44,17 @@ export default {
 
 .stream {
   text-align: center;
-  display: block;
-  margin: 0 auto;
   outline: none;
+  height: 500px;
+
+  @include tablet {
+    height: 400px;
+
+  }
+
+  @include phone {
+    height: 250px;
+  }
 }
 
 .sorry {
