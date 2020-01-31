@@ -21,6 +21,17 @@
     <div class="body-container">
       <router-view />
     </div>
+    <div class="footer">
+      <a href="https://www.instagram.com/nu_ren_productions/" class="social">
+        <img src="./assets/034-instagram.svg">
+      </a>
+      <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
+        <img src="./assets/002-youtube.svg">
+      </a>
+      <a href="" class="social">
+        <img src="./assets/043-facebook-1.svg">
+      </a>
+    </div>
   </div>
 </template>
 
@@ -89,5 +100,29 @@ export default {
   color: black;
   padding: 35px;
   font-size: 25px;
+}
+
+.footer {
+  display: flex;
+  margin: 50px 35% 50px 35%;
+
+  @include tablet {
+    margin: 50px 15% 50px 15%;
+  }
+
+  @include phone {
+    margin: 50px 0 50px 0;
+  }
+}
+
+.social {
+  flex: 30%;
+
+  img {    
+    display: block;
+    margin: auto;
+    width: 77px;
+    height: auto;
+  }
 }
 </style>
