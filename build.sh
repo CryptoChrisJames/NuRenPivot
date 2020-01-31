@@ -1,6 +1,6 @@
 # Initializing Variables
 _env=$1
-_imagetag=nurenmanagement-$_env
+_imagetag=nurenwebsite-$_env
 echo $_imagetag
 
 #Stop container
