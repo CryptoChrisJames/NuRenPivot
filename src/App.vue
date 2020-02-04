@@ -28,9 +28,6 @@
       <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
         <img src="./assets/002-youtube.svg">
       </a>
-      <a href="" class="social">
-        <img src="./assets/043-facebook-1.svg">
-      </a>
     </div>
   </div>
 </template>
@@ -116,12 +113,12 @@ export default {
 }
 
 .social {
-  flex: 30%;
+  flex: 50%;
 
   img {    
     display: block;
     margin: auto;
-    width: 77px;
+    width: 50px;
     height: auto;
   }
 }
