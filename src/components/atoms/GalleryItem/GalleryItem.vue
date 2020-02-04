@@ -66,6 +66,7 @@ export default {
     },
     methods: {
         videoSelected() {
+          window.scrollTo(0,0);
           this.$store.commit('setCurrentVideo', this.videoId);
           this.$router.replace(`/stream/${this.videoId}`);
         },
