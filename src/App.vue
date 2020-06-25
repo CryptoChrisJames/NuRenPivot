@@ -87,6 +87,15 @@ export default {
 .links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 15% 0 50%;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  @include phone {
+    padding: 0;
+  }
 }
 
 .tabLink {
