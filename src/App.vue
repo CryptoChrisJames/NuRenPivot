@@ -87,9 +87,6 @@ export default {
 .links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  @include phone {
-  }
 }
 
 .tabLink {
