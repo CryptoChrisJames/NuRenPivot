@@ -2,7 +2,7 @@
   <div class="content">
     <section-head>About</section-head>
     <div class="aboutContainer">
-      <img src="../assets/About.jpg" class="pic">
+      <img src="../assets/Chan.gif" class="pic">
       <div class="description">
         <h3 class="desc">
           Nu Renaissance takes pride in offering opportunities to a diverse group of people.
@@ -29,7 +29,7 @@ export default {
   @media (min-width: 494px) and (max-width: 765px) {
     display: block;
     margin: 0 auto;
-  }  
+  }
 }
 .aboutContainer {
   padding: 25px 75px;
@@ -38,20 +38,21 @@ export default {
   grid-template-columns: 1fr 1fr;
 
   @include tablet {
-    grid-template-columns: 1fr;  
+    grid-template-columns: 1fr;
   }
   @media (min-width: 494px) and (max-width: 765px) {
-    margin: 35px;  
+    margin: 35px;
   }
 
   @include phone {
-    grid-template-columns: 1fr;  
+    grid-template-columns: 1fr;
     padding: 0;
   }
 }
 
 .pic {
-  width: 450px;
+  margin: 0 auto;
+  width: 500px;
   height: auto;
 
   @include tablet {
@@ -66,7 +67,7 @@ export default {
     width: 550px;
     height: auto;
   }
-  
+
   @include phone {
     display: block;
     margin: 0 auto;

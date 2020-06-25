@@ -5,6 +5,7 @@ import axios from 'axios';
 const apiUrl = config.currentSecurity() + config.currentEnvAPI();
 
 const projectsRoute = "/project/";
+const contentRoute = "/content/";
 
 const getVideoListandObjects = async ({commit}) => {
   const videoKeysUrl = apiUrl + projectsRoute + "videos";
@@ -34,7 +35,13 @@ const submitContact = async ({commit}, payload) => {
   })
 };
 
+const getVideoContent = async ({commit}) => {
+  const contentUrl = apiUrl + contentRoute;
+  const videoContent = await axios.get(contentUrl);
+  commit("addVideoContentToStore", videoContent.data);
+}
 export default {
   getVideoListandObjects,
   submitContact,
+  getVideoContent,
 };

@@ -1,10 +1,10 @@
 <template>
   <div class="content">
-    <div 
+    <div
       v-if="env !== 'prod'"
       id="env-info"
     >
-      <h2 
+      <h2
         style="text-align: center"
       >
         {{ env }}
@@ -43,7 +43,7 @@ export default {
   },
   async mounted() {
     this.$store.commit('toggleLoading');
-    await this.$store.dispatch('getVideoListandObjects');
+    await this.$store.dispatch('getVideoContent');
     this.$store.commit('toggleLoading');
   },
 };

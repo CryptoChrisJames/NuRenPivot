@@ -1,10 +1,10 @@
 <template>
   <div class="page-container">
     <div v-if="currentVideo" class="pageContent">
-      <section-head>{{ currentVideo.name }}</section-head>
+      <section-head>{{ currentVideo.displayName }}</section-head>
       <p>{{ currentVideo.description }}</p>
-      <div class="stream" v-html="currentVideo.video">
-        {{ currentVideo.video }}
+      <div class="stream" v-html="currentVideo.vimeoLink">
+        {{ currentVideo.vimeoLink }}
       </div>
       <section-head>See More</section-head>
       <gallery />

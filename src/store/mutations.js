@@ -9,7 +9,7 @@ const toggleLoading = (state) => {
 };
 
 const setCurrentVideo = (state, videoId) => {
-  state.currentVideo = state.videoObjects.find(vid => vid._id === videoId);   
+  state.currentVideo = state.videoContentObjs.find(vid => vid._id === videoId);
 };
 
 const resetGallery = (state) => {
@@ -26,9 +26,13 @@ const analyzeList = (state) => {
     state.currentGallery
       .splice(state.currentGallery
         .indexOf(state.currentGallery
-          .find(duplicate => 
+          .find(duplicate =>
             duplicate === state.currentVideo )), 1);
   }
+}
+
+const addVideoContentToStore = (state, videoContent) => {
+  state.videoContentObjs = videoContent;
 }
 
 export default {
@@ -38,4 +42,5 @@ export default {
   resetGallery,
   analyzeList,
   resetCurrentVideo,
+  addVideoContentToStore,
 };

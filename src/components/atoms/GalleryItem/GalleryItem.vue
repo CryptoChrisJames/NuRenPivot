@@ -25,6 +25,7 @@
         </div>
         <img
           :src="videoThumbnail"
+          alt=""
         >
       </div>
     </a>
@@ -32,50 +33,50 @@
 </template>
 
 <script>
+import config from '../../../../config.js';
+
 export default {
     name: 'GalleryItem',
     props: {
-        videoId: {
-            type: String,
-            default: '',
+        videoContent: {
+            type: Object,
+            default: () => {},
         }
     },
     data() {
         return {
-          video: {},
           isHovering: false,
         };
     },
-    mounted() {
-      const Dtos = this.$store.state.videoObjects;
-      this.video = Dtos.find(x => x._id === this.videoId);
-    },
     computed: {
         videoThumbnail() {
-          return this.video.thumbnail;
+          return this.getApiUrl() + this.videoContent.thumbnail;
         },
         videoName() {
-          return this.video.name;
+          return this.videoContent.displayName;
         },
         currentlyWatching() {
           if(this.$store.state.currentVideo){
-            return this.$store.state.currentVideo._id === this.videoId;
+            return this.$store.state.currentVideo._id === this.videoContent._id;
           }
           return false;
         },
     },
     methods: {
-        videoSelected() {
-          window.scrollTo(0,0);
-          this.$store.commit('setCurrentVideo', this.videoId);
-          this.$router.replace(`/stream/${this.videoId}`);
-        },
-        isSelected() {
-            this.isHovering = true;
-        },
-        notSelected() {
-          this.isHovering = false;
-        }
+      getApiUrl() {
+        return config.currentSecurity() + config.currentEnvAPI() + '/content/';
+      },
+      videoSelected() {
+        window.scrollTo(0,0);
+        this.$store.commit('setCurrentVideo', this.videoContent._id);
+        this.$router.replace(`/stream/${this.videoContent._id}`);
+      },
+      isSelected() {
+          this.isHovering = true;
+      },
+      notSelected() {
+        this.isHovering = false;
+      }
     },
 };
 </script>

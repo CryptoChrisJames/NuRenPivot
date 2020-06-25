@@ -11,11 +11,11 @@
         class="galleryContainer"
     >
       <span
-        v-for="key in projectKeys"
-        v-bind:key="key.id"
+        v-for="obj in projectObjs"
+        v-bind:key="obj.id"
       >
         <gallery-item
-          :videoId="key"
+          :videoContent="obj"
         />
       </span>
     </div>
@@ -29,8 +29,8 @@ export default {
   name: 'Gallery',
   components: { galleryItem, loader },
   computed: {
-    projectKeys() {
-      return this.$store.state.currentGallery;
+    projectObjs() {
+      return this.$store.state.videoContentObjs;
     },
     isLoading() {
       return this.$store.state.loadingData;
