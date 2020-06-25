@@ -75,27 +75,28 @@ export default {
   }
 }
 
-.links {
-  float: right;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  padding: 35px;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   @include phone {
-    display: block;
-    float: none;
-    margin: 0 20px;
-    padding: 35px 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @include phone {
   }
 }
 
 .tabLink {
+  margin: 0 auto;
+  padding: 20% 0;
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
   color: black;
-  padding: 35px;
   font-size: 25px;
 }
 
