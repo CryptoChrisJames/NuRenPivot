@@ -62,7 +62,7 @@ export default {
 
 .banner {
   margin: 6px 0;
-  width: 18%;
+  width: 30%;
 
   @include tablet {
     width: 43%;
@@ -100,7 +100,7 @@ export default {
 
 .tabLink {
   margin: 0 auto;
-  padding: 20% 0;
+  padding: 30% 0;
   text-decoration: none;
   color: black;
   font-size: 25px;
@@ -122,7 +122,7 @@ export default {
 .social {
   flex: 50%;
 
-  img {    
+  img {
     display: block;
     margin: auto;
     width: 50px;
