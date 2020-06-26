@@ -77,10 +77,11 @@ export default {
 }
 
 .description {
-  text-align: center;
+  text-align: justify;
 }
 
 .desc {
   padding: 25px;
+  justify-content: left;
 }
 </style>
