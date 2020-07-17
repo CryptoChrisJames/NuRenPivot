@@ -1,5 +1,6 @@
 <template>
-  <div class="content">
+  <img src="http://localhost:8000/design/header.jpg" alt="">
+  <!--<div class="content">
     <div
       v-if="env !== 'prod'"
       id="env-info"
@@ -29,7 +30,7 @@
         <img src="./assets/002-youtube.svg">
       </a>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>
