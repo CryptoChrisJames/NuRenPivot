@@ -21,6 +21,9 @@
           <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
             <img src="./assets/002-youtube.svg">
           </a>
+          <a href="https://www.facebook.com/AOTLShort" class="social">
+            <img src="./assets/043-facebook-1.svg">
+          </a>
         </span>
       </div>
       <img class="header" :src="getContent('header.jpg')" alt="">
@@ -79,7 +82,8 @@ export default {
       this.windowWidth = window.innerWidth;
     },
     generateMenuClass() {
-
+      const classString = 'mobileNav';
+      return classString;
     },
   },
 };
@@ -96,23 +100,29 @@ export default {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.mobileMenu {
+.mobileNav {
   padding: 0;
   margin: 0;
   display: grid;
+
+  @include phone {
+    grid-template-columns: 1fr;
+  }
 }
 
 .menuButton {
+  margin: 0 auto;
   box-shadow: none;
   background-color: transparent;
   color: lightgray;
   padding: 8px 20px;
-  border: 2px solid lightgray;
-  border-radius: 15px;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 
 .logo {
-  width: 15%;
+  margin: 0 auto;
+  width: 30%;
 }
 
 .header {
@@ -154,13 +164,20 @@ export default {
   }
 }
 
+.socials {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .social {
   flex: 50%;
 
   img {
     display: block;
-    margin: auto;
-    width: 50px;
+    margin: 10px auto;
+    width: 35px;
     height: auto;
   }
 }
