@@ -1,6 +1,5 @@
 <template>
-  <img src="http://localhost:8000/design/header.jpg" alt="">
-  <!--<div class="content">
+  <div class="content">
     <div
       v-if="env !== 'prod'"
       id="env-info"
@@ -11,7 +10,22 @@
         {{ env }}
       </h2>
     </div>
-    <nav class="header">
+    <div>
+      <div :class="generateMenuClass()">
+        <img class="logo" src="./assets/logo-trans.png" alt="" >
+        <button class="menuButton"><b>M E N U</b></button>
+        <span class="socials">
+          <a href="https://www.instagram.com/nu_ren_productions/" class="social">
+            <img src="./assets/034-instagram.svg">
+          </a>
+          <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
+            <img src="./assets/002-youtube.svg">
+          </a>
+        </span>
+      </div>
+      <img class="header" :src="getContent('header.jpg')" alt="">
+    </div>
+    <!-- <nav class="header">
       <img class="banner" src='./assets/white.jpg'>
       <div class="links">
         <router-link class="tabLink" to="/">Home</router-link>
@@ -29,14 +43,21 @@
       <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
         <img src="./assets/002-youtube.svg">
       </a>
-    </div>
-  </div>-->
+    </div> -->
+  </div>
 </template>
 
 <script>
 import config from '../config.js';
+import apiUrlGenerator from './funcitons/apiUrlGenerator.js';
+
 export default {
   name: 'app',
+  data() {
+    return {
+      windowWidth: window.innerWidth,
+    };
+  },
   computed: {
     env() {
       return config.currentEnv();
@@ -46,6 +67,20 @@ export default {
     this.$store.commit('toggleLoading');
     await this.$store.dispatch('getVideoContent');
     this.$store.commit('toggleLoading');
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    });
+  },
+  methods: {
+    getContent(content) {
+      return apiUrlGenerator.getApiURL() + 'design/' + content;
+    },
+    onResize(){
+      this.windowWidth = window.innerWidth;
+    },
+    generateMenuClass() {
+
+    },
   },
 };
 </script>
@@ -61,28 +96,27 @@ export default {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.banner {
-  margin: 6px 0;
-  width: 30%;
+.mobileMenu {
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
 
-  @include tablet {
-    width: 43%;
-  }
+.menuButton {
+  box-shadow: none;
+  background-color: transparent;
+  color: lightgray;
+  padding: 8px 20px;
+  border: 2px solid lightgray;
+  border-radius: 15px;
+}
 
-  @include phone {
-    display: block;
-    margin: 0 auto;
-    width: 75%;
-  }
+.logo {
+  width: 15%;
 }
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  @include phone {
-    grid-template-columns: 1fr;
-  }
+  width: 100vw;
 }
 
 .links {
