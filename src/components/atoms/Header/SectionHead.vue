@@ -16,11 +16,12 @@ export default {
 @import '../../../styles/_colors.scss';
 @import '../../../styles/_variables.scss';
 .sectionHead {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 22px;
     line-height: .75;
     font-weight: 500;
-    color: $darkRed;
+    color: lightgray;
     margin: 0;
 
     @include phone {

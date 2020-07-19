@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div
+    <!-- <div
       v-if="env !== 'prod'"
       id="env-info"
     >
@@ -9,25 +9,11 @@
       >
         {{ env }}
       </h2>
-    </div>
+    </div> -->
     <div>
-      <div :class="generateMenuClass()">
-        <img class="logo" src="./assets/logo-trans.png" alt="" >
-        <button class="menuButton"><b>M E N U</b></button>
-        <span class="socials">
-          <a href="https://www.instagram.com/nu_ren_productions/" class="social">
-            <img src="./assets/034-instagram.svg">
-          </a>
-          <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
-            <img src="./assets/002-youtube.svg">
-          </a>
-          <a href="https://www.facebook.com/AOTLShort" class="social">
-            <img src="./assets/043-facebook-1.svg">
-          </a>
-        </span>
-      </div>
-      <img class="header" :src="getContent('header.jpg')" alt="">
+      <!-- <img class="header" :src="getContent('design/header.jpg')" alt=""> -->
     </div>
+    <router-view />
     <!-- <nav class="header">
       <img class="banner" src='./assets/white.jpg'>
       <div class="links">
@@ -37,7 +23,6 @@
       </div>
     </nav>
     <div class="body-container">
-      <router-view />
     </div>
     <div class="footer">
       <a href="https://www.instagram.com/nu_ren_productions/" class="social">
@@ -76,7 +61,7 @@ export default {
   },
   methods: {
     getContent(content) {
-      return apiUrlGenerator.getApiURL() + 'design/' + content;
+      return apiUrlGenerator.getContent(content);
     },
     onResize(){
       this.windowWidth = window.innerWidth;
