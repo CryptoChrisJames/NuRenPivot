@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <header class="carContainer">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide carObj" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -48,24 +48,27 @@ export default {
 
 <style lang="scss" scoped>
 .carContainer {
-  min-height: 100vh;
+  min-height: 100vh !important;
   object-fit: cover;
-  position: relative;
 }
 
-.car-item {
-  position: absolute;
+.carObj {
+  min-height: 100vh !important;
+}
+
+.carousel-item {
   top: 0;
   left: 0;
-  min-height: 100vh;
-  width: auto;
+  min-height: 100vh !important;
+  width: auto !important;
   -webkit-background-size: cover;
   -moz-backrgound-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  transition: transform(-50%, -50%);
 }
 
-.car-item {
+.carousel-item {
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
