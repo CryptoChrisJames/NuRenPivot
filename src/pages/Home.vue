@@ -18,14 +18,6 @@
           <img class="carousel-item" :src="getContent('design/Crypto.png')" />
           <img class="carousel-item" :src="getContent('design/Aric2.png')" />
         </div>
-        <a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a href="#carouselExampleIndicators" class="carousel-control-next" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="false"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </header>
     <div class="content">
@@ -55,9 +47,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.carContainer {
+  min-height: 100vh;
+  object-fit: cover;
+  position: relative;
+}
 
 .car-item {
-  min-height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: auto;
   -webkit-background-size: cover;
   -moz-backrgound-size: cover;
   -o-background-size: cover;
