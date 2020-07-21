@@ -10,8 +10,8 @@
         {{ env }}
       </h2>
     </div> -->
-    <div>
-      <!-- <img class="header" :src="getContent('design/header.jpg')" alt=""> -->
+    <div class="navigation">
+      <img src="./assets/logo-trans.png" alt="" class="logo">
     </div>
     <router-view />
     <!-- <nav class="header">
@@ -106,7 +106,9 @@ export default {
 }
 
 .logo {
-  margin: 0 auto;
+  position: absolute;
+  z-index: 20;
+  margin: 15px auto;
   width: 30%;
 }
 
