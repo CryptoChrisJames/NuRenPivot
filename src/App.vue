@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <!-- <div
+    <div
       v-if="env !== 'prod'"
       id="env-info"
     >
@@ -9,10 +9,15 @@
       >
         {{ env }}
       </h2>
-    </div> -->
-    <div class="navigation">
-      <img src="./assets/logo-trans.png" alt="" class="logo">
     </div>
+    <!-- <div class="navigation">
+      <div class="logoWrapper">
+        <img src="./assets/logo-trans2.png" alt="" class="logo">
+      </div>
+      <div class="menuButtonWrapper">
+        <i class="fa fa-bars fa-4x"></i>
+      </div>
+    </div> -->
     <router-view />
     <!-- <nav class="header">
       <img class="banner" src='./assets/white.jpg'>
@@ -77,39 +82,22 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_colors.scss';
 @import './styles/_variables.scss';
-.content {
-  font-family: 'Open Sans Condensed', sans-serif;
+.navigation {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 20;
+}
+
+.menuButtonWrapper {
+
 }
 
 .body-container {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.mobileNav {
-  padding: 0;
-  margin: 0;
-  display: grid;
-
-  @include phone {
-    grid-template-columns: 1fr;
-  }
-}
-
-.menuButton {
-  margin: 0 auto;
-  box-shadow: none;
-  background-color: transparent;
-  color: lightgray;
-  padding: 8px 20px;
-  border: 1px solid gray;
-  border-radius: 8px;
-}
-
 .logo {
-  position: absolute;
-  z-index: 20;
-  margin: 15px auto;
-  width: 30%;
 }
 
 .header {
@@ -167,5 +155,9 @@ export default {
     width: 35px;
     height: auto;
   }
+}
+
+.content {
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 </style>
