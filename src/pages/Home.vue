@@ -1,26 +1,20 @@
 <template>
   <div class="homepage">
-    <header class="carContainer">
-      <div id="carouselExampleIndicators" class="carousel slide carObj" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <img class="carousel-item active" :src="getContent('design/FunkJam.png')" />
-          <img class="carousel-item" :src="getContent('design/Michelle.png')" />
-          <img class="carousel-item" :src="getContent('design/Blue.png')" />
-          <img class="carousel-item" :src="getContent('design/Aric.png')" />
-          <img class="carousel-item" :src="getContent('design/Crypto.png')" />
-          <img class="carousel-item" :src="getContent('design/Aric2.png')" />
-        </div>
+    <header class="videoHeaderContainer">
+      <div class="videoContainer">
+        <iframe src="https://player.vimeo.com/video/334230264?background=1"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <div class="videoHeaderConent">
+
       </div>
     </header>
-    <div class="content">
+    <div class="homeContent">
       <section-head>Feature Films and Creative Media</section-head>
       <gallery></gallery>
     </div>
@@ -47,36 +41,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.carContainer {
-  min-height: 100vh !important;
-  object-fit: cover;
+.videoHeaderContainer {
+  position: relative;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
 }
 
-.carObj {
-  min-height: 100vh !important;
-}
-
-.carousel-item {
+.videoContainer {
+  position: absolute;
   top: 0;
   left: 0;
-  min-height: 100vh !important;
-  width: auto !important;
-  -webkit-background-size: cover;
-  -moz-backrgound-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  transition: transform(-50%, -50%);
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  background: var(--primary-color) url('https://player.vimeo.com/video/334230264?background=1') no-repeat center center/cover;
 }
 
-.carousel-item {
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
+.videoContainer iframe {
+  height: 100vh !important;
+  width: 100vw !important;
+  min-height: 1020px !important;
+  min-width: 1980px !important;
+  object-fit: cover;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.content {
+.videoHeaderConent {
+  z-index: 10;
+}
+
+.homeContent {
   position: relative;
 }
 </style>
