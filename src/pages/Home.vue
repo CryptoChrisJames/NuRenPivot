@@ -41,10 +41,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.videoHeaderContainer {
+  position: relative;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
 .videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  background: var(--primary-color) url('https://player.vimeo.com/video/334230264?background=1') no-repeat center center/cover;
 }
 
 .videoContainer iframe {
+  height: 100vh !important;
+  width: 100vw !important;
+  min-height: 1020px !important;
+  min-width: 1980px !important;
+  object-fit: cover;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.videoHeaderConent {
+  z-index: 10;
 }
 
 .homeContent {
