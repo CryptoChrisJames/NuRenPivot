@@ -10,14 +10,14 @@
         {{ env }}
       </h2>
     </div>
-    <!-- <div class="navigation">
+    <div class="navigation">
       <div class="logoWrapper">
         <img src="./assets/logo-trans2.png" alt="" class="logo">
       </div>
       <div class="menuButtonWrapper">
         <i class="fa fa-bars fa-4x"></i>
       </div>
-    </div> -->
+    </div>
     <router-view />
     <!-- <nav class="header">
       <img class="banner" src='./assets/white.jpg'>

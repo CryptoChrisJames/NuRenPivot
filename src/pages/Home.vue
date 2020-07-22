@@ -2,7 +2,7 @@
   <div class="homepage">
     <header class="videoHeaderContainer">
       <div class="videoContainer">
-        <iframe src="https://player.vimeo.com/video/440484598?background=1"
+        <iframe src="https://player.vimeo.com/video/440484598?background=1&loop=1"
           frameborder="0"
           webkitallowfullscreen
           mozallowfullscreen
