@@ -15,7 +15,7 @@
         <img src="./assets/logo-trans2.png" alt="" class="logo">
       </div>
       <div class="menuButtonWrapper">
-        <i class="fa fa-bars fa-4x"></i>
+        <i :class="mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-4x menu' "></i>
       </div>
     </div>
     <router-view />
@@ -55,6 +55,9 @@ export default {
     env() {
       return config.currentEnv();
     },
+    mobile() {
+      return this.windowWidth <= 768;
+    }
   },
   async mounted() {
     this.$store.commit('toggleLoading');
@@ -84,21 +87,51 @@ export default {
 @import './styles/_variables.scss';
 .navigation {
   position: absolute;
+  width: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   z-index: 20;
 }
 
-.menuButtonWrapper {
+.logoWrapper {
+  position: relative;
+}
 
+.logo {
+  position: absolute;
+  width: 250px;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -15%);
+  margin: 60px 0;
+
+  @include phone {
+    width: 125px;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 35px 0;
+  }
+}
+
+.menuButtonWrapper {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  width: 250px;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  margin: 90px 0;
 }
 
 .body-container {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.logo {
-}
 
 .header {
   width: 100vw;
