@@ -15,7 +15,7 @@
         <img src="./assets/logo-trans2.png" alt="" class="logo">
       </div>
       <div class="menuButtonWrapper">
-        <i :class="mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-4x menu' "></i>
+        <i :class="isMobile"></i>
       </div>
     </div>
     <router-view />
@@ -28,15 +28,10 @@
       </div>
     </nav>
     <div class="body-container">
-    </div>
-    <div class="footer">
-      <a href="https://www.instagram.com/nu_ren_productions/" class="social">
-        <img src="./assets/034-instagram.svg">
-      </a>
-      <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
-        <img src="./assets/002-youtube.svg">
-      </a>
     </div> -->
+    <div class="footer">
+      Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    </div>
   </div>
 </template>
 
@@ -57,6 +52,9 @@ export default {
     },
     mobile() {
       return this.windowWidth <= 768;
+    },
+    isMobile(){
+      return this.mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-4x menu';
     }
   },
   async mounted() {
@@ -102,7 +100,7 @@ export default {
   position: absolute;
   width: 250px;
   top: 50%;
-  left: 15%;
+  left: 20%;
   transform: translate(-50%, -15%);
   margin: 60px 0;
 
@@ -121,11 +119,18 @@ export default {
 
 .menu {
   position: absolute;
-  width: 250px;
   top: 50%;
   left: 95%;
   transform: translate(-50%, -50%);
   margin: 90px 0;
+
+  @include phone {
+    top: 50%;
+    left: 70%;
+    transform: none;
+    margin: 43px 0;
+  }
+
 }
 
 .body-container {

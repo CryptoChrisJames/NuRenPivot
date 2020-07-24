@@ -15,6 +15,25 @@
       </div>
     </header>
     <div class="homeContent">
+      <div class="servicesWrapper">        
+        <section-head>Our Services</section-head>
+        <div class="services">
+          <h3>Video Production</h3>
+          <img src="../assets/symbols/021-video camera.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+
+          </p>
+        </div>
+        <div class="services">
+          <img src="../assets/symbols/009-director chair.svg" alt="" class="symbol">
+        </div>
+        <div class="services">
+          <img src="../assets/symbols/019-microphone.svg" alt="" class="symbol">
+        </div>
+        <div class="services">
+          <img src="../assets/symbols/003-4k film.svg" alt="" class="symbol">
+        </div>
+      </div>
       <section-head>Feature Films and Creative Media</section-head>
       <gallery></gallery>
     </div>
@@ -41,6 +60,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/_variables.scss';
+
 .videoHeaderContainer {
   position: relative;
   height: 100vh !important;
@@ -81,5 +102,30 @@ export default {
 
 .homeContent {
   position: relative;
+}
+
+.servicesWrapper {
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  margin: 25px auto;
+
+  @include phone {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.symbol {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 35px auto;
 }
 </style>
