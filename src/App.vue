@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div
+    <!-- <div
       v-if="env !== 'prod'"
       id="env-info"
     >
@@ -9,7 +9,7 @@
       >
         {{ env }}
       </h2>
-    </div>
+    </div> -->
     <div class="navigation">
       <div class="logoWrapper">
         <img src="./assets/logo-trans2.png" alt="" class="logo">
@@ -29,9 +29,11 @@
     </nav>
     <div class="body-container">
     </div> -->
-    <div class="footer">
+    <!-- <div class="footer">
+    </div> -->
+    <p style="justify-content: center; text-align: center;">
       Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-    </div>
+    </p>
   </div>
 </template>
 
@@ -61,6 +63,7 @@ export default {
     this.$store.commit('toggleLoading');
     await this.$store.dispatch('getVideoContent');
     this.$store.commit('toggleLoading');
+
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     });

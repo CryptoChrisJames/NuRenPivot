@@ -10,28 +10,64 @@
         >
         </iframe>
       </div>
-      <div class="videoHeaderConent">
-
+      <div class="videoHeaderContent" data-lax-translate-y="0 0,400 -400">
+        <b>Nu Renaissance Productions</b>
+        <button class="featuredButton">
+          New Production!
+        </button>
       </div>
+      <div class="arrowDown"></div>
     </header>
     <div class="homeContent">
-      <div class="servicesWrapper">        
-        <section-head>Our Services</section-head>
+      <section-head>Our Services</section-head>
+      <div class="servicesWrapper">
         <div class="services">
           <h3>Video Production</h3>
           <img src="../assets/symbols/021-video camera.svg" alt="" class="symbol">
           <p class="serviceDescription">
-
+            From treatments and mood boards to filming on set, we can take any idea
+            that you have from concept to exquisite visual creation.
           </p>
         </div>
         <div class="services">
+          <h3>Filmmaking</h3>
           <img src="../assets/symbols/009-director chair.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+            We have the foundation to produce and direct any script. If you can write
+            it, we can bring it to the big screen.
+          </p>
         </div>
         <div class="services">
+          <h3>Audio and Music Production</h3>
           <img src="../assets/symbols/019-microphone.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+            No film or video is complete without engaging audio and heartfelt music.
+            We have the means to create the fullest cinematic experience possible.
+          </p>
         </div>
         <div class="services">
+          <h3>Editing Services</h3>
           <img src="../assets/symbols/003-4k film.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+            We specialize in the post-produciton of video content. We have the capacity
+            for all of your editing needs.
+          </p>
+        </div>
+        <div class="services">
+          <h3>Film Consultation</h3>
+          <img src="../assets/symbols/017-check list.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+            From script and pitch consultation to planning the film rollout,
+            we have the experience to help you bring your projects to life.
+          </p>
+        </div>
+        <div class="services">
+          <h3>Marketing Consultation</h3>
+          <img src="../assets/symbols/026-review.svg" alt="" class="symbol">
+          <p class="serviceDescription">
+            Once your video has been completed, we can help take your project
+            to the next level by planning social media and marketing campaigns.
+          </p>
         </div>
       </div>
       <section-head>Feature Films and Creative Media</section-head>
@@ -61,6 +97,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/_variables.scss';
+@import '../styles/_colors.scss';
 
 .videoHeaderContainer {
   position: relative;
@@ -96,8 +133,46 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.videoHeaderConent {
+.videoHeaderContent {
+  color: $AOTLYellow;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Recursive', sans-serif;
   z-index: 10;
+
+  b {
+    font-size: 2.5rem;
+    font-weight: 900px;
+  }
+}
+
+.arrowDown {
+  position: absolute;
+  bottom: 5%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: $AOTLYellow;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+}
+
+.featuredButton {
+  margin: 10px;
+  padding: 15px;
+  color: $AOTLYellow;
+  background-color: transparent;
+  border: 2px solid $AOTLYellow;
+  border-radius: 3px;
+  outline: none;
+  transition: .45s ease;
+}
+
+.featuredButton:hover {
+  color: black;
+  background-color: $AOTLYellow;
 }
 
 .homeContent {
@@ -120,6 +195,10 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.serviceDescription {
+  padding: 15px 25px 50px 20px;
 }
 
 .symbol {
