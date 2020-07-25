@@ -121,6 +121,7 @@ export default {
 }
 
 .menu {
+  color: $AOTLYellow;
   position: absolute;
   top: 50%;
   left: 95%;

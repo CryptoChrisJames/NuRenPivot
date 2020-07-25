@@ -72,8 +72,10 @@
           </p>
         </div>
       </div>
-      <section-head>Feature Films and Creative Media</section-head>
+      <section-head>Creative Portfolio</section-head>
       <gallery></gallery>
+      <About />
+      <Contact />
     </div>
   </div>
 </template>
@@ -82,10 +84,12 @@
 import gallery from '../components/molecules/Gallery/Gallery.vue';
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
 import apiUrlGenerator from '../funcitons/apiUrlGenerator.js';
+import About from './About.vue';
+import Contact from "./Contact.vue";
 
 export default {
   name: 'Home',
-  components: { gallery, sectionHead },
+  components: { gallery, sectionHead, About, Contact },
   mounted() {
     this.$store.commit('resetCurrentVideo');
   },

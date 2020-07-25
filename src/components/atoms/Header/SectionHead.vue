@@ -21,7 +21,7 @@ export default {
     padding: 22px;
     line-height: .75;
     font-weight: 500;
-    color: lightgray;
+    color: $AOTLYellow;
     margin: 0;
 
     @include phone {

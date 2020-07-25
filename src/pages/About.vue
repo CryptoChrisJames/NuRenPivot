@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <section-head>About</section-head>
+    <section-head>About Us</section-head>
     <div class="aboutContainer">
       <img src="../assets/Chan.gif" class="pic">
       <div class="description">
