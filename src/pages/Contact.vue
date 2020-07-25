@@ -45,6 +45,11 @@ export default {
                 };
                 this.$store.dispatch("submitContact", contact);
                 this.submitted = true;
+                this.firstName = '';
+                this.lastName = '';
+                this.email = '';
+                this.comments = '';
+                this.submitted = true;
             }
         }
     }

@@ -83,5 +83,6 @@ export default {
 .desc {
   padding: 25px;
   justify-content: left;
+  font-family: 'Montserrat', sans-serif;
 }
 </style>
