@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <header class="videoHeaderContainer">
-      <div class="videoContainer">
+      <div v-parallax="-0.3" class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
@@ -10,13 +10,15 @@
         >
         </iframe>
       </div>
-      <div class="videoHeaderContent" data-lax-translate-y="0 0,400 -400">
+      <div v-parallax="-0.5" class="videoHeaderContent">
         <b>Nu Renaissance Productions</b>
-        <button class="featuredButton">
-          New Production!
-        </button>
+        <div v-parallax="-0.5" class="featuredButtonWrapper">
+          <button class="featuredButton">
+            New Production!
+          </button>
+        </div>
       </div>
-      <div class="arrowDown"></div>
+      <div v-parallax="-0.8" class="arrowWrapper"><div class="arrowDown"></div></div>
     </header>
     <div class="homeContent">
       <section-head>Our Services</section-head>
@@ -145,6 +147,14 @@ export default {
   }
 }
 
+.arrowWrapper {
+  position: absolute;
+  bottom: 26%;
+  left: 46.5%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .arrowDown {
   position: absolute;
   bottom: 5%;
@@ -157,6 +167,10 @@ export default {
   border-width: 0px 1px 1px 0px;
   transform: rotate(45deg);
   transition: border-width 150ms ease-in-out;
+}
+
+.featuredButtonWrapper {
+  width: 100%;
 }
 
 .featuredButton {
@@ -195,6 +209,10 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  h3 {
+    padding: 8px;
+  }
 }
 
 .serviceDescription {
