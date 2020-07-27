@@ -1,5 +1,6 @@
 <template>
   <div class="homepage">
+    <nav-bar />
     <header class="videoHeaderContainer">
       <div v-parallax="-0.3" class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
@@ -40,7 +41,7 @@
           </p>
         </div>
         <div class="services">
-          <h3>Audio and Music Production</h3>
+          <h3>Audio/Music Production</h3>
           <img src="../assets/symbols/019-microphone.svg" alt="" class="symbol">
           <p class="serviceDescription">
             No film or video is complete without engaging audio and heartfelt music.
@@ -84,12 +85,19 @@
 import gallery from '../components/molecules/Gallery/Gallery.vue';
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
 import apiUrlGenerator from '../funcitons/apiUrlGenerator.js';
+import NavBar from '../components/atoms/Header/NavigationBar.vue';
 import About from './About.vue';
 import Contact from "./Contact.vue";
 
 export default {
   name: 'Home',
-  components: { gallery, sectionHead, About, Contact },
+  components: {
+    gallery,
+    sectionHead,
+    About,
+    Contact,
+    NavBar
+  },
   mounted() {
     this.$store.commit('resetCurrentVideo');
   },
