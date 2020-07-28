@@ -1,4 +1,5 @@
 $desktopMin: 1024px;
+$desktopMax: 1815px;
 
 $tabletMin: 768px;
 $tabletMax: $desktopMin - 1px;
@@ -20,7 +21,13 @@ $phoneMax: $tabletMin - 1px;
 }
 
 @mixin desktop {
-    @media (min-width: #{$desktopMin}) {
+    @media (min-width: #{$desktopMin}) and (max-width: #{$desktopMax - 1}) {
+        @content;
+    }
+}
+
+@mixin widescreen {
+    @media (min-width: #{$desktopMax}) {
         @content;
     }
 }

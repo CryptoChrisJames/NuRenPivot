@@ -79,7 +79,11 @@ export default {
 
 .logoWrapper {
   @include desktop {
-    margin-left: 7%;
+    margin-left: 112px;
+  }
+
+  @include widescreen {
+    margin-left: 9%;
   }
 }
 
@@ -116,6 +120,12 @@ export default {
 
   @include desktop {
     margin: 0 45px;
+    padding-bottom: 35px; 
+  }
+
+  @include widescreen {
+    margin: 0 65px;
+    padding-bottom: 35px; 
   }
 }
 

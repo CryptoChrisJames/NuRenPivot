@@ -178,6 +178,11 @@ export default {
     height: 2vw;
     width: 2vw;
   }
+
+  @include widescreen {
+    height: 2vw;
+    width: 2vw;
+  }
 }
 
 .featuredButtonWrapper {
@@ -228,6 +233,14 @@ export default {
 
 .serviceDescription {
   padding: 15px 25px 50px 20px;
+
+  @include desktop {
+  padding: 15px 25% 50px 25%;
+  }
+
+  @include widescreen {
+  padding: 15px 25% 50px 25%;
+  }
 }
 
 .symbol {

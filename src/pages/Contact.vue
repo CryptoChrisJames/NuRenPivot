@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <sectionHead>Let's Connect</sectionHead>
+        <section-head>Let's Connect</section-head>
         <div class="inputField">
             <h3 class="inputTitle">First Name</h3>
             <input v-model="firstName" type="text"/>
@@ -72,10 +72,6 @@ export default {
         margin: 0 15%;
     }
 
-    h1 {
-        text-align: center;
-    }
-
     button {
         background-color: black;
         color: $AOTLYellow;
@@ -120,10 +116,6 @@ export default {
     }
 
     @media only screen and (min-width: 700px) {
-        h1{
-            float: left;
-            margin-left: 50px;
-        }
         form{
             width: 75%;
             margin: 0 auto;

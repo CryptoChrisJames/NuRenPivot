@@ -16,6 +16,7 @@ export default {
 @import '../../../styles/_colors.scss';
 @import '../../../styles/_variables.scss';
 .sectionHead {
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 22px;

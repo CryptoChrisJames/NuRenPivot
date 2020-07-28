@@ -10,22 +10,24 @@
           to our success.
         </h3>
         <section-head>The Team</section-head>
-        <div class="teamMemeberWrapper">
-          <div class="teamMember">
-            <h5>Chandonae Baskin</h5>
-            <div class="teamMemeberGif">
-              <img src="../assets/Chan.gif" class="gif">
+        <div class="teamSecion">
+          <div class="teamMemeberWrapper">
+            <div class="teamMember">
+              <h5>Chandonae Baskin</h5>
+              <div class="teamMemeberGif">
+                <img src="../assets/Chan.gif" class="gif">
+              </div>
+              <div class="position"><h6> Director | Producer | Cinematographer | Writer</h6></div>
             </div>
-            <div class="position"><h6> Director | Producer | Cinematographer | Writer</h6></div>
           </div>
-        </div>
-        <div class="teamMemeberWrapper">
-          <h5>Christopher James Smith</h5>
-          <div class="teamMember">
-            <div class="teamMemeberGif">
-              <img src="../assets/Chris.gif" class="gif">
+          <div class="teamMemeberWrapper">
+            <h5>Christopher James Smith</h5>
+            <div class="teamMember">
+              <div class="teamMemeberGif">
+                <img src="../assets/Chris.gif" class="gif">
+              </div>
+              <div class="position"><h6>Assistant Producer | Project Manager | DIT | Music Producer | Web Developer</h6></div>
             </div>
-            <div class="position"><h6>Assistant Producer | Project Manager | DIT | Music Producer | Web Developer</h6></div>
           </div>
         </div>
       </div>
@@ -58,8 +60,31 @@ export default {
   position: relative;
 }
 
+.teamSecion {
+  display: grid;
+  padding: 0 200px;
+  grid-template-columns: 1fr 1fr;
+
+  @include widescreen {
+    padding: 0;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+
+  @include tablet {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  @include phone {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
 .teamMemeberWrapper {
-  margin: 25px;
+  margin: 20px;
   padding: 8px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -90,6 +115,24 @@ export default {
 
   @include tablet {
     padding: 45px;
+  }
+
+  @include desktop {
+    padding: 45px 25% 45px 25%;
+  }
+
+  @include widescreen {
+    padding: 45px 25% 45px 25%;
+  }
+}
+
+.position {
+  @include desktop {
+    padding: 0 100px;
+  }
+
+  @include widescreen {
+    padding: 0 100px;
   }
 }
 </style>
