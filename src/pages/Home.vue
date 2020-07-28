@@ -1,6 +1,8 @@
 <template>
   <div class="homepage">
-    <nav-bar />
+    <nav-bar
+      :navCover="true"
+    />
     <header class="videoHeaderContainer">
       <div v-parallax="-0.3" class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
