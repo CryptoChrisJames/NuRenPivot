@@ -114,6 +114,9 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_variables.scss';
 @import '../styles/_colors.scss';
+.homepage {
+  position: relative;
+}
 
 .videoHeaderContainer {
   position: relative;
@@ -124,8 +127,6 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
-
 }
 
 .videoContainer {
@@ -176,6 +177,14 @@ export default {
   border-width: 0px 5px 5px 0px;
   transform: rotate(45deg);
   transition: border-width 150ms ease-in-out;
+
+  @include phone {
+    bottom: 15%;
+  }
+
+  @include tablet {
+    bottom: 15%;
+  }
 
   @include desktop {
     height: 2vw;
