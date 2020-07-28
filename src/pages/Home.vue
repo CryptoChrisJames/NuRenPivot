@@ -4,7 +4,7 @@
       :navCover="true"
     />
     <header class="videoHeaderContainer">
-      <div v-parallax="-0.3" class="videoContainer">
+      <div class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
@@ -13,9 +13,9 @@
         >
         </iframe>
       </div>
-      <div v-parallax="-0.5" class="videoHeaderContent">
+      <div class="videoHeaderContent">
         <b>Nu Renaissance Productions</b>
-        <div v-parallax="-0.5" class="featuredButtonWrapper">
+        <div class="featuredButtonWrapper">
           <button class="featuredButton">
             New Production!
           </button>
