@@ -77,6 +77,12 @@ export default {
   position: none;
 }
 
+.logoWrapper {
+  @include desktop {
+    margin-left: 7%;
+  }
+}
+
 .logo {
   width: 250px;
   top: 50%;
@@ -106,6 +112,10 @@ export default {
 
   @include tablet {
     margin: 0 35px;
+  }
+
+  @include desktop {
+    margin: 0 45px;
   }
 }
 
