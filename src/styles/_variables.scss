@@ -18,3 +18,9 @@ $phoneMax: $tabletMin - 1px;
         @content;
     }
 }
+
+@mixin desktop {
+    @media (min-width: #{$desktopMin}) {
+        @content;
+    }
+}

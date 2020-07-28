@@ -173,6 +173,11 @@ export default {
   border-width: 0px 5px 5px 0px;
   transform: rotate(45deg);
   transition: border-width 150ms ease-in-out;
+
+  @include desktop {
+    height: 2vw;
+    width: 2vw;
+  }
 }
 
 .featuredButtonWrapper {
