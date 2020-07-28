@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div
+    <!-- <div
       v-if="env !== 'prod'"
       id="env-info"
     >
@@ -9,7 +9,7 @@
       >
         {{ env }}
       </h2>
-    </div>
+    </div> -->
     <router-view />
     <!-- <nav class="header">
       <img class="banner" src='./assets/white.jpg'>

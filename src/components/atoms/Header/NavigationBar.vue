@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     mobile() {
-      return this.windowWidth <= 768;
+      return this.windowWidth <= 766;
     },
     isMobile(){
       return this.mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-4x menu';
@@ -54,10 +54,6 @@ export default {
   z-index: 20;
 }
 
-.logoWrapper {
-  position: relative;
-}
-
 .logo {
   position: absolute;
   width: 250px;
@@ -73,10 +69,6 @@ export default {
     transform: none;
     margin: 35px 0;
   }
-}
-
-.menuButtonWrapper {
-  position: relative;
 }
 
 .menu {
