@@ -117,6 +117,7 @@ export default {
 
 .videoHeaderContainer {
   position: relative;
+  min-height: -webkit-fill-available;
   height: 100vh !important;
   display: flex;
   flex-direction: column;
@@ -131,6 +132,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  min-height: -webkit-fill-available;
   width: 100vw !important;
   height: 100vh !important;
   overflow: hidden;
@@ -138,6 +140,7 @@ export default {
 }
 
 .videoContainer iframe {
+  min-height: -webkit-fill-available;
   height: 100vh !important;
   width: 100vw !important;
   min-height: 1020px !important;
