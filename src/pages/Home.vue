@@ -21,7 +21,7 @@
           </button>
         </div>
       </div>
-      <div v-parallax="-0.8" class="arrowWrapper"><div class="arrowDown"></div></div>
+      <div class="arrowDown"></div>
     </header>
     <div class="homeContent">
       <section-head>Our Services</section-head>
@@ -161,14 +161,6 @@ export default {
   }
 }
 
-.arrowWrapper {
-  position: absolute;
-  bottom: 26%;
-  left: 46.5%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
 .arrowDown {
   position: absolute;
   bottom: 5%;
@@ -178,7 +170,7 @@ export default {
   width: 5vw;
   border-style: solid;
   border-color: $AOTLYellow;
-  border-width: 0px 1px 1px 0px;
+  border-width: 0px 5px 5px 0px;
   transform: rotate(45deg);
   transition: border-width 150ms ease-in-out;
 }
