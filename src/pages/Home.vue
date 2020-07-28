@@ -3,8 +3,8 @@
     <nav-bar
       :navCover="true"
     />
-    <header class="videoHeaderContainer">
-      <div class="videoContainer">
+    <header v-parallax="-0.2" class="videoHeaderContainer">
+      <div v-parallax="-0.4" class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
