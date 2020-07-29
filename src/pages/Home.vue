@@ -102,6 +102,13 @@ export default {
   },
   mounted() {
     this.$store.commit('resetCurrentVideo');
+
+    this.$nextTick(() => {
+      window.addEventListener('resize', () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
+    })
   },
   methods: {
     getContent(content) {
@@ -122,6 +129,7 @@ export default {
   position: relative;
   min-height: -webkit-fill-available;
   height: 100vh !important;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,6 +144,7 @@ export default {
   min-height: -webkit-fill-available;
   width: 100vw !important;
   height: 100vh !important;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   background: var(--primary-color) url('https://player.vimeo.com/video/334230264?background=1') no-repeat center center/cover;
 }
@@ -143,6 +152,7 @@ export default {
 .videoContainer iframe {
   min-height: -webkit-fill-available;
   height: 100vh !important;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw !important;
   min-height: 1020px !important;
   min-width: 1980px !important;
