@@ -1,6 +1,7 @@
 <template>
     <div class="content">
         <section-head>Let's Connect</section-head>
+        <br />
         <div class="inputField">
             <h3 class="inputTitle">First Name</h3>
             <input v-model="firstName" type="text"/>

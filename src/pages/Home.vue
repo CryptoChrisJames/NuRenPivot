@@ -168,6 +168,11 @@ export default {
     font-size: 2.5rem;
     font-weight: 900px;
   }
+
+  @include widescreen {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 .brandAndCTA {
@@ -204,11 +209,13 @@ export default {
   @include desktop {
     height: 2vw;
     width: 2vw;
+    left: 49%;
   }
 
   @include widescreen {
     height: 2vw;
     width: 2vw;
+    left: 49%;
   }
 }
 

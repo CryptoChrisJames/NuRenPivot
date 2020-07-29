@@ -99,8 +99,16 @@ export default {
 }
 
 .gif {
-  width: 300px;
+  width: 275px;
   margin: 15px auto;
+
+  @include desktop {
+    width: 300px;
+  }
+
+  @include widescreen {
+    width: 300px;
+  }
 }
 
 .description {
