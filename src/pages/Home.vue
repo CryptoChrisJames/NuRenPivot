@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <header class="videoHeaderContainer">
-      <div class="videoContainer">
+      <div v-parallax="-0.2" class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
@@ -10,14 +10,18 @@
         >
         </iframe>
       </div>
-      <div class="videoHeaderContent">
+      <div v-parallax="-0.6" class="videoHeaderContent">
         <nav-bar />
-        <b>Nu Renaissance Productions</b>
-        <button class="featuredButton">
-          New Production!
-        </button>
+        <div class="brandAndCTA">
+          <b>Nu Renaissance Productions</b>
+          <div class="featuredButtonWrapper">
+            <button class="featuredButton">
+              New Production!
+            </button>
+          </div>
+        </div>
+        <div class="arrowDown"></div>
       </div>
-      <div class="arrowDown"></div>
     </header>
     <div class="homeContent">
       <section-head>Our Services</section-head>
@@ -150,6 +154,11 @@ export default {
 }
 
 .videoHeaderContent {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  margin-bottom: 0;
   color: $AOTLYellow;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Recursive', sans-serif;
@@ -161,9 +170,19 @@ export default {
   }
 }
 
+.brandAndCTA {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .arrowDown {
   position: absolute;
   bottom: 5%;
+  left: 47.5%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
   box-sizing: border-box;
   height: 5vw;
@@ -175,7 +194,7 @@ export default {
   transition: border-width 150ms ease-in-out;
 
   @include phone {
-    bottom: 15%;
+    bottom: 10%;
   }
 
   @include tablet {
@@ -191,6 +210,10 @@ export default {
     height: 2vw;
     width: 2vw;
   }
+}
+
+.titleWrapper {
+  width: 100%;
 }
 
 .featuredButtonWrapper {
