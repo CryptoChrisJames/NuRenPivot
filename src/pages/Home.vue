@@ -1,10 +1,7 @@
 <template>
   <div class="homepage">
-    <nav-bar
-      :navCover="true"
-    />
-    <header v-parallax="-0.2" class="videoHeaderContainer">
-      <div v-parallax="-0.4" class="videoContainer">
+    <header class="videoHeaderContainer">
+      <div class="videoContainer">
         <iframe src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
@@ -14,12 +11,11 @@
         </iframe>
       </div>
       <div class="videoHeaderContent">
+        <nav-bar />
         <b>Nu Renaissance Productions</b>
-        <div class="featuredButtonWrapper">
-          <button class="featuredButton">
-            New Production!
-          </button>
-        </div>
+        <button class="featuredButton">
+          New Production!
+        </button>
       </div>
       <div class="arrowDown"></div>
     </header>

@@ -43,13 +43,26 @@ export default {
 @import '../../../styles/_variables.scss';
 .navigationWrapper {
   width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
 }
 
 .logo {
   height: 48px;
+
+  @include tablet {
+    height: 40px;
+  }
+
+  @include phone {
+    height: 40px;
+  }
 }
 
 .menu {
-  color: black;
+  color: $AOTLYellow;
 }
 </style>
