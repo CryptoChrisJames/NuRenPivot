@@ -1,23 +1,13 @@
 <template>
-  <div :class="setNavType()">
-    <div class="logoWrapper">
-      <img src="../../../assets/logo-trans2.png" alt="" class="logo">
-    </div>
-    <div class="menuButtonWrapper">
-      <i :class="isMobile"></i>
-    </div>
+  <div class="navigationWrapper">
+    <img src="../../../assets/logo-trans2.png" alt="" class="logo">
+    <i :class="isMobile"></i>
   </div>
 </template>
 
 <script>
 export default {
   name: "NavigationBar",
-  props: {
-    navCover: {
-        type: Boolean,
-        default: false,
-    },
-  },
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -28,7 +18,7 @@ export default {
       return this.windowWidth <= 766;
     },
     isMobile(){
-      return this.mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-4x menu';
+      return this.mobile ? 'fa fa-bars fa-2x menu' : 'fa fa-bars fa-3x menu';
     }
   },
   async mounted() {
@@ -37,15 +27,6 @@ export default {
     });
   },
   methods: {
-    setNavType() {
-      var navType = ['navigationWrapper'];
-      if (this.navCover) {
-        navType.push('navigationWrapper--cover');
-      } else {
-        navType.push('navigationWrapper--top');
-      }
-      return navType;
-    },
     onResize(){
       this.windowWidth = window.innerWidth;
     },
@@ -62,74 +43,13 @@ export default {
 @import '../../../styles/_variables.scss';
 .navigationWrapper {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  z-index: 20;
-}
-
-.navigationWrapper--cover {
-  position: absolute;
-}
-
-.navigationWrapper--top {
-  position: none;
-}
-
-.logoWrapper {
-  @include desktop {
-    margin-left: 112px;
-  }
-
-  @include widescreen {
-    margin-left: 9%;
-  }
 }
 
 .logo {
-  width: 250px;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -15%);
-  margin: 60px 0;
-
-  @include tablet {
-    width: 175px;
-    top: 0;
-    left: 0;
-    transform: none;
-    margin: 35px 0;
-  }
-
-  @include phone {
-    width: 125px;
-    top: 0;
-    left: 0;
-    transform: none;
-    margin: 35px 0;
-  }
-}
-
-.menuButtonWrapper {
-  margin: 0 25px;
-
-  @include tablet {
-    margin: 0 35px;
-  }
-
-  @include desktop {
-    margin: 0 45px;
-    padding-bottom: 35px; 
-  }
-
-  @include widescreen {
-    margin: 0 65px;
-    padding-bottom: 35px; 
-  }
+  height: 48px;
 }
 
 .menu {
-  color: $AOTLYellow;
+  color: black;
 }
 </style>
