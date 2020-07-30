@@ -2,13 +2,12 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from './pages/Home.vue';
 import Stream from './pages/Stream.vue';
-import About from './pages/About.vue';
-import Contact from './pages/Contact.vue';
+import AllOfTheLights from './pages/AllOfTheLights.vue';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: 'history',  
+  mode: 'history',
   routes: [
     {
         path: '/',
@@ -20,13 +19,9 @@ export default new VueRouter({
         component: Stream,
         params: true,
     },{
-        path: '/about',
-        name: 'about',
-        component: About,
-    },{
-        path: '/contact',
-        name: 'contact',
-        component: Contact,
+        path: '/allofthelights',
+        name: 'allofthelights',
+        component: AllOfTheLights,
     },
 ],
 });
