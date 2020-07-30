@@ -26,7 +26,7 @@
               <div class="teamMemeberGif">
                 <img src="../assets/Chris.gif" class="gif">
               </div>
-              <div class="position"><h6>Assistant Producer | Project Manager | DIT | Music Producer | Web Developer</h6></div>
+              <div class="position"><h6>Assistant Producer | Project Manager | DIT |<br /> Music Producer | Web Developer</h6></div>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default {
 .desc {
   font-size: 18px;
   padding: 25px;
-  text-align: center;
+  text-align: left;
   font-family: 'Montserrat', sans-serif;
 
   @include tablet {

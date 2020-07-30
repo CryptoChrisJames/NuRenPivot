@@ -1,8 +1,10 @@
 <template>
   <div class="homepage">
-    <header class="videoHeaderContainer">
-      <div v-parallax="-0.2" class="videoContainer">
-        <iframe src="https://player.vimeo.com/video/440484598?background=1"
+    <section class="videoHeaderContainer" :style="{ height: this.windowH + 'px', width: this.windowW + 'px' }">
+      <div v-parallax="-0.2" class="videoContainer" :style="{ height: this.windowH + 'px', width: this.windowW + 'px' }">
+        <iframe
+          :style="{ height: this.windowH + 'px', width: this.windowW + 'px' }"
+          src="https://player.vimeo.com/video/440484598?background=1"
           frameborder="0"
           webkitallowfullscreen
           mozallowfullscreen
@@ -22,8 +24,8 @@
         </div>
         <div class="arrowDown"></div>
       </div>
-    </header>
-    <div class="homeContent">
+    </section>
+    <section class="homeContent">
       <section-head>Our Services</section-head>
       <div class="servicesWrapper">
         <div class="services">
@@ -79,7 +81,7 @@
       <gallery></gallery>
       <About />
       <Contact />
-    </div>
+    </section>
   </div>
 </template>
 
@@ -100,21 +102,30 @@ export default {
     Contact,
     NavBar
   },
-  mounted() {
+  data() {
+    return {
+      windowW: window.innerWidth,
+      windowH: window.innerHeight,
+    };
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+  },
+  async mounted() {
     this.$store.commit('resetCurrentVideo');
-
     this.$nextTick(() => {
-      window.addEventListener('resize', () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      });
-    })
+      window.addEventListener('resize', this.onResize);
+    });
   },
   methods: {
     getContent(content) {
       return apiUrlGenerator.getContent(content);
     },
-  }
+    onResize() {
+      this.windowW = window.innerWidth;
+      this.windowH = window.innerHeight;
+    },
+  },
 };
 </script>
 
@@ -127,9 +138,6 @@ export default {
 
 .videoHeaderContainer {
   position: relative;
-  min-height: -webkit-fill-available;
-  height: 100vh !important;
-  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,19 +149,11 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  min-height: -webkit-fill-available;
-  width: 100vw !important;
-  height: 100vh !important;
-  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   background: var(--primary-color) url('https://player.vimeo.com/video/334230264?background=1') no-repeat center center/cover;
 }
 
 .videoContainer iframe {
-  min-height: -webkit-fill-available;
-  height: 100vh !important;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw !important;
   min-height: 1020px !important;
   min-width: 1980px !important;
   object-fit: cover;
