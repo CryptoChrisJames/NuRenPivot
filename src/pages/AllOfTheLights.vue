@@ -1,15 +1,10 @@
 <template>
-    <div class="AOTL">
-        <section class="landing">
-            <div class="titlePoster">
-                <img :src="getContent('AOTLTitle.jpg')" alt="" class="title">
-                <div class="navWrapper">
-                    <navbar />
-                </div>
-            </div>
-            <p>test</p>
+    <div class="aotl">
+        <section class="posterContainer">
+            
         </section>
     </div>
+<img :src="getContent('AOTLTitle.jpg')" alt="" class="title">
 </template>
 
 <script>
@@ -36,20 +31,16 @@ export default {
 @import '../styles/_colors.scss';
 @import '../styles/_variables.scss';
 
-.titlePoster {
-    position: relative;
-    min-width: 100%;
-    min-height: 100%;
+.aotl {
+  position: relative;
 }
 
-.title {
-    position: absolute;
-    width: 100%;
-}
-
-.navWrapper {
-    position: absolute;
-    padding: 15px;
-    width: 100%;
+.posterContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 </style>
