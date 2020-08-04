@@ -131,7 +131,6 @@ export default {
 .comingSoon {
     text-align: center;
     padding: 12px;
-    border: 2px solid $AOTLPurple;
 }
 
 .movie {
@@ -171,7 +170,6 @@ export default {
 }
 
 .contentImg {
-    padding: 15px;
     width: 100%;
     height: auto;
 }
