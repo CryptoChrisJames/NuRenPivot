@@ -35,6 +35,9 @@ const addVideoContentToStore = (state, videoContent) => {
   state.videoContentObjs = videoContent;
 }
 
+const setShowAOTL = (state, showAOTL) => {
+  state.showAOTL = showAOTL;
+}
 export default {
   addVideoListToStore,
   toggleLoading,
@@ -43,4 +46,5 @@ export default {
   analyzeList,
   resetCurrentVideo,
   addVideoContentToStore,
+  setShowAOTL,
 };
