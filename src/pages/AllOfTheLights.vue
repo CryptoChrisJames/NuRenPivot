@@ -32,20 +32,22 @@
                 <p>Make sure to check here, Aug. 14th, 2020!</p>
             </div>
             <div class="contentPanel">
-                <div class="contentLeft">
-                    <sectionHead>Synopsis</sectionHead>
-                    <p class="synopsis">
-                        A night of fun with some good friends and girls
-                        ends abruptly when gunshots go off. Noah is extremely
-                        upset with Hunter’s erratic behavior and confronts him
-                        about it. Hunter, doesn’t want to end the night prematurely,
-                        so he persuades Noah to keep the party going.
-                        The perception of race is tested when Noah’s
-                        white friend pulls a gun out on a cop, and he must
-                        talk him down before the situation gets worse.
-                    </p>
+                <div class="contentBox contentLeft">
+                    <div class="synWrapper">
+                        <sectionHead>Synopsis</sectionHead>
+                        <p class="synopsis">
+                            A night of fun with some good friends and girls
+                            ends abruptly when gunshots go off. Noah is extremely
+                            upset with Hunter’s erratic behavior and confronts him
+                            about it. Hunter, doesn’t want to end the night prematurely,
+                            so he persuades Noah to keep the party going.
+                            The perception of race is tested when Noah’s
+                            white friend pulls a gun out on a cop, and he must
+                            talk him down before the situation gets worse.
+                        </p>
+                    </div>
                 </div>
-                <div class="contentRight">
+                <div class="contentBox contentRight">
                     <img class="contentImg" :src="getContent('Noah-And-Hunter.png')" alt="">
                 </div>
             </div>
@@ -143,9 +145,16 @@ export default {
     height: auto;
 }
 
+
 .synopsis {
     padding: 20px;
     text-align: center;
+}
+
+.contentBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contentPanel {
@@ -153,6 +162,10 @@ export default {
     grid-template-columns: 1fr 1fr;
 
     @include phone{
+        grid-template-columns: 1fr;
+    }
+
+    @include tablet{
         grid-template-columns: 1fr;
     }
 }
