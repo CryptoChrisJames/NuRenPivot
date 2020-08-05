@@ -48,9 +48,36 @@
                     </div>
                 </div>
                 <div class="contentBox contentRight">
-                    <img class="contentImg" :src="getContent('Noah-And-Hunter.png')" alt="">
+                    <img class="contentImg" :src="getContent('NoahxHunter.png')" alt="">
                 </div>
             </div>
+            <div class="contentPanel">
+                <div class="contentBox contentLeft">
+                    <img class="contentImg" :src="getContent('DirectorChan.jpg')" alt="">
+                </div>
+                <div class="contentBox contentRight">
+                    <div class="dsWrapper">
+                        <sectionHead>Director's Statement</sectionHead>
+                        <p class="synopsis">
+                            I have always been fascinated with lights
+                            and the various abstract meanings behind them.
+                            All of the Lights is a story about the perception of
+                            race and, no matter what you do, you can’t
+                            escape the reality of being a black man in America.
+                            This film was inspired by the impact of police brutality
+                            and racism that sits in my subconscious
+                            while searching for a solution to these issues.
+                            We explore a friendship between two guys that
+                            represents the two different sides of America, and
+                            how sometimes it’s hard to see different
+                            perspectives when stereotypes are so dominant.
+                            The lighting in this film displays the light of
+                            life and also the light everyone black person fears.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <sectionHead>The Cast</sectionHead>
         </section>
     </div>
 </template>
@@ -161,6 +188,7 @@ export default {
     grid-template-columns: 1fr 1fr;
 
     @include phone{
+        margin-bottom: 15px;
         grid-template-columns: 1fr;
     }
 
