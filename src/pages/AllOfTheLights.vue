@@ -78,6 +78,27 @@
                 </div>
             </div>
             <sectionHead>The Cast</sectionHead>
+            <div class="slideshowWrapper">
+                <div class="slideshowHeader">
+                    <h3 class="actor">{{ currentCastMember.name }}</h3>
+                    as
+                    <br>
+                    <h5 class="character">{{ currentCastMember.role }}</h5>
+                </div>
+                <div class="slideshowImage">
+                    <img class="contentImg" :src="getContent(currentCastMember.imgKey)" alt="">
+                </div>
+                <div class="btn-group castSelector" role="group" aria-label="Basic example">
+                    <button
+                        v-for="(member, idx) in castListing"
+                        :key="idx"
+                        :class="evalSelection(idx)"
+                        @click="setCastSelection(idx)"
+                    >
+                        {{ member.role }}
+                    </button>
+                </div>
+            </div>
         </section>
     </div>
 </template>
@@ -89,6 +110,41 @@ import sectionHead from '../components/atoms/Header/SectionHead.vue';
 
 export default {
     name: "AllOfTheLights",
+    data() {
+        return {
+            currentCastMember: {},
+            castListing: [
+                {
+                    name: "Tay Epps",
+                    role: "Noah",
+                    imgKey: "Noah.png",
+                },
+                {
+                    name: "Blake Thompson",
+                    role: "Hunter",
+                    imgKey: "Hunter.png",
+                },
+                {
+                    name: "Julia Vega",
+                    role: "Lexi",
+                    imgKey: "Noah-And-Lexi.png",
+                },
+                {
+                    name: "Sam Gerard",
+                    role: "Chelsea",
+                    imgKey: "Chelsea.png",
+                },
+                {
+                    name: "Fernando Ochoa",
+                    role: "Ofc. Gonzales",
+                    imgKey: "OfficerGonzales.png",
+                },
+            ]
+        };
+    },
+    mounted(){
+        this.setCastSelection(0);
+    },
     computed: {
         showAOTL() {
             return this.$store.state.showAOTL;
@@ -105,6 +161,15 @@ export default {
         getAPIUrl() {
             return config.currentSecurity() + config.currentEnvAPI() + '/design/';
         },
+        setCastSelection(key) {
+            this.currentCastMember = this.castListing[key];
+        },
+        evalSelection(idx) {
+            let currentClass = 'castMemberButton';
+            currentClass += this.currentCastMember.role == this.castListing[idx].role ? ' selected' : '';
+            return currentClass;
+
+        }
     },
 };
 </script>
@@ -200,5 +265,35 @@ export default {
 .contentImg {
     width: 100%;
     height: auto;
+}
+
+.castSelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.castMemberButton {
+    background-color: transparent;
+    color: $AOTLYellow;
+    padding: 10px;
+    border: 1px solid $AOTLYellow;
+    font-size: 15px;
+    outline: none;
+}
+
+.slideshowHeader {
+    text-align: center;
+}
+
+.actor {
+    color: $AOTLYellow;
+}
+
+.selected {
+    background-color: $AOTLYellow;
+    color: black;
 }
 </style>
