@@ -17,7 +17,10 @@
         <div class="brandAndCTA">
           <b>Nu Renaissance Productions</b>
           <div class="featuredButtonWrapper">
-            <button class="featuredButton">
+            <button
+              class="featuredButton"
+              @click="goToAOTL()"
+            >
               New Production!
             </button>
           </div>
@@ -128,6 +131,9 @@ export default {
       this.windowW = window.innerWidth;
       this.windowH = window.innerHeight;
     },
+    goToAOTL() {
+      this.$router.push('allofthelights');
+    }
   },
 };
 </script>

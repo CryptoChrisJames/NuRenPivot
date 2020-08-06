@@ -77,6 +77,38 @@
                     </div>
                 </div>
             </div>
+            <div class="contentPanel">
+                <div class="commercialWrapper">
+                    <div class="contentBox contentLeft">
+                        <div class="synWrapper">
+                        <section-head>Official Trailer</section-head>
+                            <iframe
+                                src="https://player.vimeo.com/video/430534265"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                allow="autoplay; fullscreen"
+                                allowfullscreen
+                            >
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="contentBox contentRight">
+                        <div class="synWrapper">
+                        <section-head>Teaser</section-head>
+                            <iframe
+                                src="https://player.vimeo.com/video/433446709"
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                allow="autoplay; fullscreen"
+                                allowfullscreen
+                            >
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <sectionHead>The Cast</sectionHead>
             <div class="slideshowWrapper">
                 <div class="slideshowHeader">
@@ -86,7 +118,7 @@
                     <h5 class="character">{{ currentCastMember.role }}</h5>
                 </div>
                 <div class="slideshowImage">
-                    <img class="contentImg" :src="getContent(currentCastMember.imgKey)" alt="">
+                    <img class="ssImg" :src="getContent(currentCastMember.imgKey)" alt="">
                 </div>
                 <div class="btn-group castSelector" role="group" aria-label="Basic example">
                     <button
@@ -99,6 +131,33 @@
                     </button>
                 </div>
             </div>
+            <section-head>Behind the Scenes</section-head>
+            <div class="btsWrapper">
+                <p class="btsStatement">
+                    <span class="highlight">All of the Lights</span> was written,
+                    revised and proofread between early 2018 to early
+                    2019 by Chandonae Baskin. Chandonae began
+                    pre-production mid 2019 with assistance from
+                    Tahani Khawaji and Christopher Smith managing
+                    the project. Throughout the rest of 2019, Chandonae would
+                    finish recruiting, rehearsing and filming the project.
+                    Some of the highlights from the filming process can be seen here.
+                </p>
+                <div class="btsVideoWrapper">
+                    <iframe
+                        src="https://player.vimeo.com/video/433775515"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+                <div class="btsCarWrapper">
+                    <carousel />
+                </div>
+            </div>
         </section>
     </div>
 </template>
@@ -107,6 +166,7 @@
 import config from '../../config.js';
 import navbar from '../components/atoms/Header/NavigationBar.vue';
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
+import carousel from '../components/organisms/Carousel/Carousel.vue';
 
 export default {
     name: "AllOfTheLights",
@@ -117,27 +177,27 @@ export default {
                 {
                     name: "Tay Epps",
                     role: "Noah",
-                    imgKey: "Noah.png",
+                    imgKey: "Noah.jpg",
                 },
                 {
                     name: "Blake Thompson",
                     role: "Hunter",
-                    imgKey: "Hunter.png",
+                    imgKey: "Hunter.JPG",
                 },
                 {
                     name: "Julia Vega",
                     role: "Lexi",
-                    imgKey: "Noah-And-Lexi.png",
+                    imgKey: "Lexi.jpg",
                 },
                 {
                     name: "Sam Gerard",
                     role: "Chelsea",
-                    imgKey: "Chelsea.png",
+                    imgKey: "Chelsea.jpg",
                 },
                 {
                     name: "Fernando Ochoa",
                     role: "Ofc. Gonzales",
-                    imgKey: "OfficerGonzales.png",
+                    imgKey: "Gonzales.jpg",
                 },
             ]
         };
@@ -153,6 +213,7 @@ export default {
     components: {
         navbar,
         sectionHead,
+        carousel,
     },
     methods: {
         getContent(key) {
@@ -180,6 +241,10 @@ export default {
 .aotl {
     font-family: 'Montserrat', sans-serif;
     color: $AOTLTeal;
+}
+
+.highlight {
+    color: $AOTLYellow;
 }
 
 .headerSection {
@@ -227,7 +292,7 @@ export default {
 
 .movie {
     color: $AOTLYellow;
-    text-align: center;
+    text-align: left;
 }
 
 .poster {
@@ -239,7 +304,7 @@ export default {
 
 .synopsis {
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .contentBox {
@@ -265,6 +330,17 @@ export default {
 .contentImg {
     width: 100%;
     height: auto;
+}
+
+.slideshowImage {
+    display: block;
+}
+
+.ssImg {
+    display: block;
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .castSelector {
@@ -295,5 +371,9 @@ export default {
 .selected {
     background-color: $AOTLYellow;
     color: black;
+}
+
+.btsStatement {
+    padding: 18px;
 }
 </style>
