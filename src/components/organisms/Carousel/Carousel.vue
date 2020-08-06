@@ -32,6 +32,13 @@ import config from '../../../../config.js';
 
 export default {
   name: "Carousel",
+  props: {
+    imageKeys: {
+      type: Array,
+      default: () => [],
+      required: true,
+    },
+  },
   methods: {
     getContent(key) {
         return this.getAPIUrl() + key;

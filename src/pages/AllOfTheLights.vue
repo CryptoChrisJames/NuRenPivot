@@ -155,7 +155,7 @@
                     </iframe>
                 </div>
                 <div class="btsCarWrapper">
-                    <carousel />
+                    <carousel :imageKeys="btsImages" />
                 </div>
             </div>
         </section>
@@ -199,7 +199,10 @@ export default {
                     role: "Ofc. Gonzales",
                     imgKey: "Gonzales.jpg",
                 },
-            ]
+            ],
+            btsImages: [
+                'blah'
+            ],
         };
     },
     mounted(){
