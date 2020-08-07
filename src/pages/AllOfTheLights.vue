@@ -79,7 +79,7 @@
             </div>
             <div class="contentPanel">
                 <div class="contentBox contentLeft">
-                    <div class="synWrapper">
+                    <div class="commercialWrapper">
                     <section-head>Official Trailer</section-head>
                         <iframe
                             src="https://player.vimeo.com/video/430534265"
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="contentBox contentRight">
-                    <div class="synWrapper">
+                    <div class="commercialWrapper">
                     <section-head>Teaser</section-head>
                         <iframe
                             src="https://player.vimeo.com/video/433446709"
@@ -142,16 +142,18 @@
                     Some of the highlights from the filming process can be seen here.
                 </p>
                 <div class="btsVideoWrapper">
+                    <div class="btsVideo">
                         <h4 class="btsHeader">BTS Video</h4>
-                    <iframe
-                        src="https://player.vimeo.com/video/433775515"
-                        width="100%"
-                        height="100%"
-                        frameborder="0"
-                        allow="autoplay; fullscreen"
-                        allowfullscreen
-                    >
-                    </iframe>
+                        <iframe
+                            src="https://player.vimeo.com/video/433775515"
+                            width="100%"
+                            height="100%"
+                            frameborder="0"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen
+                        >
+                        </iframe>
+                    </div>
                 </div>
                 <div class="btsCarWrapper">
                         <h4 class="btsHeader">BTS Pictures</h4>
@@ -170,7 +172,7 @@
                     </p>
                 </div>
                 <div class="musicWrapper">
-                    <div class="contentPanel">
+                    <div class="musicPanel">
                         <div class="contentBox contentLeft">
                             <div class="tidalWrapper">
                                 <section-head>Galaxy</section-head>
@@ -196,8 +198,10 @@
                             </div>
                         </div>
                     </div>
-                    <section-head>AOTL Playlist</section-head>
-                    <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/playlists/2ad14fc5-814c-4603-a13d-9008550c7d3f?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
+                    <div class="playlist">
+                        <section-head>AOTL Playlist</section-head>
+                        <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/playlists/2ad14fc5-814c-4603-a13d-9008550c7d3f?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -229,16 +233,16 @@ export default {
                 {
                     name: "Julia Vega",
                     role: "Lexi",
-                    imgKey: "Lexi.jpg",
+                    imgKey: "Lexi-min.jpg",
                 },
                 {
                     name: "Sam Gerard",
                     role: "Chelsea",
-                    imgKey: "Chelsea.jpg",
+                    imgKey: "Chelsea-min.jpg",
                 },
                 {
                     name: "Fernando Ochoa",
-                    role: "Ofc. Gonzales",
+                    role: "Gonzales",
                     imgKey: "Gonzales.jpg",
                 },
             ],
@@ -350,6 +354,14 @@ export default {
     padding: 15px;
     width: 100%;
     height: auto;
+
+    @include tablet {
+        width: 68%;
+    }
+
+    @include desktop {
+        width: 55%;
+    }
 }
 
 
@@ -389,9 +401,17 @@ export default {
 
 .ssImg {
     display: block;
-    width: 85%;
+    width: 50%;
     height: auto;
     margin: 0 auto;
+
+    @include tablet {
+        width: 45%;
+    }
+
+    @include desktop {
+        width: 38%;
+    }
 }
 
 .castSelector {
@@ -405,7 +425,7 @@ export default {
 .castMemberButton {
     background-color: transparent;
     color: $AOTLYellow;
-    padding: 10px;
+    padding: 10px 4px;
     border: 1px solid $AOTLYellow;
     font-size: 15px;
     outline: none;
@@ -434,17 +454,40 @@ export default {
 }
 
 .btsVideoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 35px;
+}
+
+.btsVideo {
+    @include tablet {
+        height: 600px;
+        width: 600px;
+    }
+
+    @include desktop {
+        height: 600px;
+        width: 600px;
+    }
 }
 
 .musicStatement {
     padding: 18px;
+
+    @include desktop {
+        padding: 45px 200px;
+    }
+
+    @include widescreen {
+        padding: 45px 200px;
+    }
 }
 
 .tidalWrapper {
     position: relative;
     padding-bottom: 100%;
-    height: 0;
+    height: 350px;
     overflow: hidden;
     max-width: 100%;
 }
@@ -455,5 +498,35 @@ export default {
     width: 100%;
     height: 350px;
     margin: 0 auto;
+}
+
+.playlist {
+    padding-bottom: 65px;
+}
+
+.commercialWrapper {
+    @include tablet {
+        height: 600px;
+        width: 600px;
+    }
+
+    @include desktop {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.musicPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include phone{
+        margin-bottom: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    @include tablet{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 </style>
