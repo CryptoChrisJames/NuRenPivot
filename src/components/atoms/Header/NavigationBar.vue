@@ -1,7 +1,7 @@
 <template>
   <div class="navigationWrapper">
-    <img src="../../../assets/logo-trans2.png" alt="" class="logo">
-    <i :class="isMobile"></i>
+    <a href="/"><img src="../../../assets/logo-trans2.png" alt="" class="logo"></a>
+    <i :class="isMobile" />
   </div>
 </template>
 
