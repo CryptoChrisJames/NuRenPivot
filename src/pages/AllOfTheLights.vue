@@ -16,15 +16,17 @@
                 friend or running away.
             </h5>
             <div v-if="showAOTL" class="movie">
-                <h1>All Of The Lights</h1>
-                <iframe src="https://player.vimeo.com/video/433721875"
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                >
-                </iframe>
+                <div class="movieWrapper">
+                    <h1>All Of The Lights</h1>
+                    <iframe src="https://player.vimeo.com/video/433721875"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
             </div>
             <div v-else class="comingSoon">
                 <img :src="getContent('poster.jpg')" alt="" class="poster">
@@ -293,6 +295,7 @@ export default {
 <style lang="scss">
 @import '../styles/_colors.scss';
 @import '../styles/_variables.scss';
+
 .aotl {
     font-family: 'Montserrat', sans-serif;
     color: $AOTLTeal;
@@ -321,8 +324,10 @@ export default {
 
 .headerImgWrapper {
     width: 100%;
+    max-width: 1340px;
     display: block;
     position: relative;
+    margin: 0 auto;
 }
 
 .headerImg {
@@ -347,7 +352,29 @@ export default {
 
 .movie {
     color: $AOTLYellow;
-    text-align: left;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+
+    @include tablet {
+        height: 750px;
+        width: 650px;
+    }
+
+    @include desktop {
+        height: 750px;
+        width: 650px;
+    }
+
+    @include widescreen {
+        height: 800px;
+        width: 800px;
+    }
+}
+
+.movieWrapper {
+    height: 100%;
+    width: 100%;
 }
 
 .poster {
@@ -357,10 +384,17 @@ export default {
 
     @include tablet {
         width: 68%;
+        max-width: 68%;
     }
 
     @include desktop {
         width: 55%;
+        max-width: 55%;
+    }
+
+    @include widescreen {
+        width: 25%;
+        max-width: 25%;
     }
 }
 
@@ -412,6 +446,10 @@ export default {
     @include desktop {
         width: 38%;
     }
+
+    @include widescreen {
+        width: 20%;
+    }
 }
 
 .castSelector {
@@ -446,6 +484,14 @@ export default {
 
 .btsStatement {
     padding: 18px;
+
+    @include desktop {
+        padding: 0 250px;
+    }
+
+    @include widescreen {
+        padding: 0 250px;
+    }
 }
 
 .btsHeader {
@@ -470,6 +516,17 @@ export default {
         height: 600px;
         width: 600px;
     }
+
+    @include widescreen {
+        height: 600px;
+        width: 600px;
+    }
+}
+
+.btsCarWrapper {
+    max-width: 1024px;
+    display: block;
+    margin: 0 auto;
 }
 
 .musicStatement {
@@ -501,7 +558,10 @@ export default {
 }
 
 .playlist {
+    display: block;
+    margin: 0 auto;
     padding-bottom: 65px;
+    max-width: 1024px;
 }
 
 .commercialWrapper {
