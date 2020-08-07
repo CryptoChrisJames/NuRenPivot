@@ -78,34 +78,32 @@
                 </div>
             </div>
             <div class="contentPanel">
-                <div class="commercialWrapper">
-                    <div class="contentBox contentLeft">
-                        <div class="synWrapper">
-                        <section-head>Official Trailer</section-head>
-                            <iframe
-                                src="https://player.vimeo.com/video/430534265"
-                                width="100%"
-                                height="100%"
-                                frameborder="0"
-                                allow="autoplay; fullscreen"
-                                allowfullscreen
-                            >
-                            </iframe>
-                        </div>
+                <div class="contentBox contentLeft">
+                    <div class="synWrapper">
+                    <section-head>Official Trailer</section-head>
+                        <iframe
+                            src="https://player.vimeo.com/video/430534265"
+                            width="100%"
+                            height="100%"
+                            frameborder="0"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen
+                        >
+                        </iframe>
                     </div>
-                    <div class="contentBox contentRight">
-                        <div class="synWrapper">
-                        <section-head>Teaser</section-head>
-                            <iframe
-                                src="https://player.vimeo.com/video/433446709"
-                                width="100%"
-                                height="100%"
-                                frameborder="0"
-                                allow="autoplay; fullscreen"
-                                allowfullscreen
-                            >
-                            </iframe>
-                        </div>
+                </div>
+                <div class="contentBox contentRight">
+                    <div class="synWrapper">
+                    <section-head>Teaser</section-head>
+                        <iframe
+                            src="https://player.vimeo.com/video/433446709"
+                            width="100%"
+                            height="100%"
+                            frameborder="0"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen
+                        >
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -144,6 +142,7 @@
                     Some of the highlights from the filming process can be seen here.
                 </p>
                 <div class="btsVideoWrapper">
+                        <h4 class="btsHeader">BTS Video</h4>
                     <iframe
                         src="https://player.vimeo.com/video/433775515"
                         width="100%"
@@ -155,7 +154,50 @@
                     </iframe>
                 </div>
                 <div class="btsCarWrapper">
+                        <h4 class="btsHeader">BTS Pictures</h4>
                     <carousel :imageKeys="btsImages" />
+                </div>
+            </div>
+            <div class="musicSectionWrapper">
+                <section-head>The Music</section-head>
+                <div class="musicStatement">
+                    <p>Chandonae is a naturally creative and artistic person.
+                        Durning the writing, post and pre-production of the project,
+                        music was heavily consumed and used as a direct inspiration
+                        for the ambiance of the film. The songs featured in the film
+                        were created by the talented Satin Sage (formally KiddSpectro)
+                        and allowed to be used in the film.
+                    </p>
+                </div>
+                <div class="musicWrapper">
+                    <div class="contentPanel">
+                        <div class="contentBox contentLeft">
+                            <div class="tidalWrapper">
+                                <section-head>Galaxy</section-head>
+                                <iframe
+                                    class="tidalWindow"
+                                    src="https://embed.tidal.com/tracks/112833200?layout=gridify"
+                                    frameborder="0"
+                                    allowfullscreen
+                                >
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="contentBox contentRight">
+                            <div class="tidalWrapper">
+                                <section-head>Pretend</section-head>
+                                <iframe
+                                    class="tidalWindow"
+                                    src="https://embed.tidal.com/tracks/112833198?layout=gridify"
+                                    frameborder="0"
+                                    allowfullscreen
+                                >
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <section-head>AOTL Playlist</section-head>
+                    <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/playlists/2ad14fc5-814c-4603-a13d-9008550c7d3f?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
                 </div>
             </div>
         </section>
@@ -201,7 +243,13 @@ export default {
                 },
             ],
             btsImages: [
-                'blah'
+                'Director.JPG',
+                'DollarCity.JPG',
+                'MissedShot.JPG',
+                'FinalDay1.JPG',
+                'PartyScene1.JPG',
+                'SettingUpCar.JPG',
+                'CarRig.JPG',
             ],
         };
     },
@@ -233,7 +281,7 @@ export default {
             currentClass += this.currentCastMember.role == this.castListing[idx].role ? ' selected' : '';
             return currentClass;
 
-        }
+        },
     },
 };
 </script>
@@ -378,5 +426,34 @@ export default {
 
 .btsStatement {
     padding: 18px;
+}
+
+.btsHeader {
+    color: $AOTLYellow;
+    text-align: center;
+}
+
+.btsVideoWrapper {
+    padding-bottom: 35px;
+}
+
+.musicStatement {
+    padding: 18px;
+}
+
+.tidalWrapper {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.tidalWindow {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
 }
 </style>

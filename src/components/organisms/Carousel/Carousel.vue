@@ -1,20 +1,22 @@
 <template>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      <li
+        v-for="(img, idx) in imageKeys"
+        :key="idx"
+        data-target="#carouselExampleIndicators"
+        :data-slide-to="idx"
+        :class="idx == 0 ? 'active' : ''"
+      >
+      </li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <img class="carousel-item active" :src="getContent('FunkJam.png')" />
-      <img class="carousel-item" :src="getContent('Michelle.png')" />
-      <img class="carousel-item" :src="getContent('Blue.png')" />
-      <img class="carousel-item" :src="getContent('Aric.png')" />
-      <img class="carousel-item" :src="getContent('Crypto.png')" />
-      <img class="carousel-item" :src="getContent('Aric2.png')" />
+      <img
+        v-for="(img, idx) in imageKeys"
+        :key="idx"
+        :class="['carousel-item', idx == 0 ? 'active' : '']"
+        :src="getContent(img)"
+      />
     </div>
     <a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="false"></span>
@@ -49,7 +51,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-  
-</style>
