@@ -20,10 +20,10 @@
           </div>
         </div>
         <div class="socialWrapper">
-          <a href=""><i class="social fab fa-facebook-square"></i></a>
-          <a href=""><i class="social fab fa-instagram-square"></i></a>
-          <a href=""><i class="social fab fa-vimeo-square"></i></a>
-          <a href=""><i class="social fab fa-youtube-square"></i></a>
+          <a href="https://www.facebook.com/AOTLShort"><i class="social fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/nu_ren_productions/"><i class="social fab fa-instagram"></i></a>
+          <a href="https://vimeo.com/chandonae"><i class="social fab fa-vimeo-v"></i></a>
+          <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA"><i class="social fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -92,6 +92,11 @@ export default {
 .social {
   padding: 0px 25px;
   font-size: 25px;
+  color: $AOTLYellow;
+}
+
+.social:hover {
+  color: $AOTLDarkYellow;
 }
 
 .contentWrapper {
