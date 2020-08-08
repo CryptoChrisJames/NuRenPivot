@@ -106,7 +106,7 @@ export default {
     sectionHead,
     About,
     Contact,
-    NavBar
+    NavBar,
   },
   data() {
     return {

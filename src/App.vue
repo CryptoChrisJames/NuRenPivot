@@ -11,6 +11,22 @@
       </h2>
     </div> -->
     <router-view />
+    <div class="footer">
+      <div class="contentWrapper">
+        <div class="copyrightWrapper">
+          <div class="copyright">
+            <a href="/"><img src="./assets/logo-trans2.png" alt="" class="logo"></a>
+            <span>© Nu Renaissance 2020, All Rights Reserved.</span>
+          </div>
+        </div>
+        <div class="socialWrapper">
+          <a href=""><i class="social fab fa-facebook-square"></i></a>
+          <a href=""><i class="social fab fa-instagram-square"></i></a>
+          <a href=""><i class="social fab fa-vimeo-square"></i></a>
+          <a href=""><i class="social fab fa-youtube-square"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,7 +57,57 @@ export default {
 <style lang="scss" scoped>
 @import './styles/_colors.scss';
 @import './styles/_variables.scss';
+
 .content {
   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.footer {
+  padding-top: 44px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.logo {
+  padding-right: 15px;
+  height: 48px;
+
+  @include tablet {
+    height: 40px;
+  }
+
+  @include phone {
+    height: 40px;
+  }
+}
+
+.socialWrapper {
+  display: flex;
+  padding: 3rem 0px;
+  justify-content: center !important;
+}
+
+.social {
+  padding: 0px 25px;
+  font-size: 25px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include phone{
+      grid-template-columns: 1fr;
+  }
+
+  @include tablet{
+      grid-template-columns: 1fr;
+  }
+}
+
+.contentWrapper {
+  align-items: center;
 }
 </style>
