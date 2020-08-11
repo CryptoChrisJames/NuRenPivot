@@ -388,8 +388,8 @@ export default {
     }
 
     @include desktop {
-        width: 55%;
-        max-width: 55%;
+        width: 30%;
+        max-width: 30%;
     }
 
     @include widescreen {
@@ -444,7 +444,7 @@ export default {
     }
 
     @include desktop {
-        width: 38%;
+        width: 25%;
     }
 
     @include widescreen {

@@ -18,10 +18,10 @@
         <div class="menuOptionsWrapper">
           <div class="menuOptions">
             <div class="option">
-              <router-link class="menuOption" to="/"> <b>HOME</b> </router-link>
+              <router-link class="menuOption" to="/"> HOME </router-link>
             </div>
             <div class="option">
-              <router-link class="menuOption" to="allofthelights"> <b>ALL OF THE LIGHTS</b> </router-link>
+              <router-link class="menuOption" to="allofthelights"> ALL OF THE LIGHTS </router-link>
             </div>
           </div>
         </div>
@@ -77,6 +77,7 @@ export default {
 @import '../../../styles/_colors.scss';
 @import '../../../styles/_variables.scss';
 .navigationWrapper {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   display: flex;
   -webkit-box-pack: justify;
@@ -134,6 +135,7 @@ export default {
 }
 
 .menuOption {
+  font-weight: bolder;
   text-decoration: none;
 }
 
