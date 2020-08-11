@@ -131,6 +131,31 @@
                     </button>
                 </div>
             </div>
+            <section-head>Credits</section-head>
+            <div class="creditsWrapper">
+                <div class="creditsLeft">
+                    <ul class="Credits">
+                        <li
+                            class="credit"
+                            v-for="(p, idx) in creditPosition"
+                            :key="idx"
+                        >
+                            {{ p }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="creditsRight">
+                    <ul class="Credits">
+                        <li
+                            class="credit"
+                            v-for="(r, idx) in creditRecipient"
+                            :key="idx"
+                        >
+                            {{ r }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <section-head>Behind the Scenes</section-head>
             <div class="btsWrapper">
                 <p class="btsStatement">
@@ -257,6 +282,65 @@ export default {
                 'PartyScene1.jpg',
                 'SettingUpCar.jpg',
                 'CarRig.jpg',
+            ],
+            creditPosition: [
+                'Director',
+                'Writer',
+                'Producer',
+                'Asst. Producer',
+                'Dir. of Photography',
+                'Editor',
+                'Music Director',
+                'Sound Recordist',
+                'Executive Producer',
+                'Executive Producer',
+                'Production Manager',
+                'First Asst. Dir.',
+                'Second Asst. Dir.',
+                'Floor Runner',
+                'Script Supervisor',
+                'Sound Maintenance',
+                '1st Assistant Camera',
+                'Casting Director',
+                'Assoc. Casting Dir.',
+                'VFX',
+                'Production Asst.',
+                'Production Asst.',
+                'Crafty',
+                'BTS',
+                'EPK',
+                'Digital Colorist',
+                'Foley Artist',
+            ],
+            creditRecipient: [
+                'Chandonae Baskin',
+                'Chandonae Baskin',
+                'Chandonae Baskin',
+                'Tahani Khawji',
+                'Justin Woolen',
+                'Chandonae Baskin',
+                'Christopher Smith',
+                'John-William Goines',
+                'Chandonae Baskin',
+                'Christopher Smith',
+                'Christopher Smith',
+                'Tahani Khawji',
+                'Callie Haney',
+                'Carlton Fripp',
+                'Kelita Browning',
+                'John-William Goines',
+                'Robbie Ballew',
+                'Lori Fischer',
+                'Kyla Hawkins',
+                'Sahil Haider',
+                'Othman Alafsi',
+                'Taylor William',
+                'Namudi Harley',
+                'Christopher Smith',
+                'Chandonae Baskin',
+                'Chandonae Baskin',
+                'Chandonae Baskin',
+
             ],
         };
     },
@@ -589,5 +673,35 @@ export default {
     @include tablet{
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.creditsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: $AOTLYellow;
+}
+
+.Credits {
+    list-style-type: none;
+    padding: 6px;
+
+    @include tablet {
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    @include desktop {
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    @include widescreen {
+        padding: 8px;
+        font-size: 20px;
+    }
+}
+
+.creditsLeft {
+    text-align: right;
 }
 </style>
