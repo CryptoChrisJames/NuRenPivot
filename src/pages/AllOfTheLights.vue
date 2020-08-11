@@ -230,7 +230,7 @@ export default {
                 {
                     name: "Blake Thompson",
                     role: "Hunter",
-                    imgKey: "Hunter.JPG",
+                    imgKey: "Hunter.jpg",
                 },
                 {
                     name: "Julia Vega",
@@ -249,13 +249,14 @@ export default {
                 },
             ],
             btsImages: [
-                'Director.JPG',
-                'DollarCity.JPG',
-                'MissedShot.JPG',
-                'FinalDay1.JPG',
-                'PartyScene1.JPG',
-                'SettingUpCar.JPG',
-                'CarRig.JPG',
+                'Arrested.jpg',
+                'Director.jpg',
+                'DollarCity.jpg',
+                'MissedShot.jpg',
+                'FinalDay1.jpg',
+                'PartyScene1.jpg',
+                'SettingUpCar.jpg',
+                'CarRig.jpg',
             ],
         };
     },
