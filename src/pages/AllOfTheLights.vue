@@ -15,7 +15,7 @@
                 risking arrest by helping his provocative white
                 friend or running away.
             </h5>
-            <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/poster.jpg" alt="" class="poster">
+            <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/7730c07c-56ef-406c-a18a-7505bf1d033b.jpg" alt="" class="poster">
             <div v-if="showAOTL" class="movie">
                 <div class="movieWrapper">
                     <h1>All Of The Lights</h1>
@@ -74,7 +74,7 @@
                             how sometimes it’s hard to see different
                             perspectives when stereotypes are so dominant.
                             The lighting in this film displays the light of
-                            life and also the light everyone black person fears.
+                            life and also the light every black person fears.
                         </p>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                     </button>
                 </div>
             </div>
-            <section-head>Credits</section-head>
+            <section-head>The Crew</section-head>
             <div class="creditsWrapper">
                 <div class="creditsLeft">
                     <ul class="Credits">
@@ -672,7 +672,6 @@ export default {
 .creditsWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    color: $AOTLYellow;
 }
 
 .Credits {
@@ -695,7 +694,12 @@ export default {
     }
 }
 
+.creditsRight {
+    color: $AOTLYellow;
+}
+
 .creditsLeft {
+    color: $AOTLTeal;
     text-align: right;
 }
 </style>
