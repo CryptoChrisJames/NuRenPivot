@@ -5,7 +5,7 @@
                 <navbar />
             </div>
             <div class="headerImgWrapper">
-                <img src="../assets/AOTLHeader.jpg" alt="" class="headerImg">
+                <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/header.jpg" alt="" class="headerImg">
             </div>
         </section>
         <section class="contentSection">
@@ -15,6 +15,7 @@
                 risking arrest by helping his provocative white
                 friend or running away.
             </h5>
+            <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/poster.jpg" alt="" class="poster">
             <div v-if="showAOTL" class="movie">
                 <div class="movieWrapper">
                     <h1>All Of The Lights</h1>
@@ -29,7 +30,6 @@
                 </div>
             </div>
             <div v-else class="comingSoon">
-                <img :src="getContent('poster.jpg')" alt="" class="poster">
                 <h2>Movie Coming Soon!</h2>
                 <p>Make sure to check here, Aug. 14th, 2020!</p>
             </div>
@@ -50,12 +50,12 @@
                     </div>
                 </div>
                 <div class="contentBox contentRight">
-                    <img class="contentImg" :src="getContent('NoahxHunter.png')" alt="">
+                    <img class="contentImg" src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/NoahxHunter.png" alt="">
                 </div>
             </div>
             <div class="contentPanel">
                 <div class="contentBox contentLeft">
-                    <img class="contentImg" :src="getContent('DirectorChan.jpg')" alt="">
+                    <img class="contentImg" src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/DirectorChan.jpg" alt="">
                 </div>
                 <div class="contentBox contentRight">
                     <div class="dsWrapper">
@@ -118,7 +118,7 @@
                     <h5 class="character">{{ currentCastMember.role }}</h5>
                 </div>
                 <div class="slideshowImage">
-                    <img class="ssImg" :src="getContent(currentCastMember.imgKey)" alt="">
+                    <img class="ssImg" :src="currentCastMember.imgKey" alt="">
                 </div>
                 <div class="btn-group castSelector" role="group" aria-label="Basic example">
                     <button
@@ -236,7 +236,6 @@
 </template>
 
 <script>
-import config from '../../config.js';
 import navbar from '../components/atoms/Header/NavigationBar.vue';
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
 import carousel from '../components/organisms/Carousel/Carousel.vue';
@@ -250,38 +249,38 @@ export default {
                 {
                     name: "Tay Epps",
                     role: "Noah",
-                    imgKey: "Noah.jpg",
+                    imgKey: "https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Noah.jpg",
                 },
                 {
                     name: "Blake Thompson",
                     role: "Hunter",
-                    imgKey: "Hunter.jpg",
+                    imgKey: "https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Hunter.jpg",
                 },
                 {
                     name: "Julia Vega",
                     role: "Lexi",
-                    imgKey: "Lexi-min.jpg",
+                    imgKey: "https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Lexi-min.jpg",
                 },
                 {
                     name: "Sam Gerard",
                     role: "Chelsea",
-                    imgKey: "Chelsea-min.jpg",
+                    imgKey: "https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Chelsea-min.jpg",
                 },
                 {
                     name: "Fernando Ochoa",
                     role: "Gonzales",
-                    imgKey: "Gonzales.jpg",
+                    imgKey: "https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Gonzales.jpg",
                 },
             ],
             btsImages: [
-                'Arrested.jpg',
-                'Director.jpg',
-                'DollarCity.jpg',
-                'MissedShot.jpg',
-                'FinalDay1.jpg',
-                'PartyScene1.jpg',
-                'SettingUpCar.jpg',
-                'CarRig.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Arrested.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/Director.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/DollarCity.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/MissedShot.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/FinalDay1.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/PartyScene1.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/SettingUpCar.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/CarRig.jpg',
             ],
             creditPosition: [
                 'Director',
@@ -358,12 +357,6 @@ export default {
         carousel,
     },
     methods: {
-        getContent(key) {
-            return this.getAPIUrl() + key;
-        },
-        getAPIUrl() {
-            return config.currentSecurity() + config.currentEnvAPI() + '/design/';
-        },
         setCastSelection(key) {
             this.currentCastMember = this.castListing[key];
         },
@@ -371,7 +364,6 @@ export default {
             let currentClass = 'castMemberButton';
             currentClass += this.currentCastMember.role == this.castListing[idx].role ? ' selected' : '';
             return currentClass;
-
         },
     },
 };
@@ -463,6 +455,8 @@ export default {
 }
 
 .poster {
+    display: block;
+    margin: 0 auto;
     padding: 15px;
     width: 100%;
     height: auto;

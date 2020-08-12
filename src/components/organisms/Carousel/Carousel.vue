@@ -15,7 +15,7 @@
         v-for="(img, idx) in imageKeys"
         :key="idx"
         :class="['carousel-item', idx == 0 ? 'active' : '']"
-        :src="getContent(img)"
+        :src="img"
       />
     </div>
     <a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
