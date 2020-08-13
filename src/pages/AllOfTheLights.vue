@@ -196,6 +196,17 @@
                         and allowed to be used in the film.
                     </p>
                 </div>
+                <h3 class="SatinHeader">Satin Sage</h3>
+                <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/SatinSage-min.png" alt="" class="SatinSage">
+                <p class="SatinSageDesc">
+                    Satin Sage, born Jeremiah Cooper, is an electronic music producer, musician,
+                    and dancer originally from Nashville, TN. The currently Charlotte-based artist
+                    brings innovation and energy to his craft.
+                    Influenced by the works of Kaytranada, Pomo, Sam Gellaitry,
+                    and many more, much of his style focuses on blending traditional concepts
+                    in HipHop, Funk, and R&B with electronic elements, along with using
+                    orchestral/tribal soundscapes in his productions.
+                </p>
                 <div class="musicWrapper">
                     <div class="musicPanel">
                         <div class="contentBox contentLeft">
@@ -279,6 +290,18 @@ export default {
                 'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/PartyScene1.jpg',
                 'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/SettingUpCar.jpg',
                 'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/CarRig.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/7fe52962-930f-413a-b33c-11c5dd6268c6.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/385cff83-a2ac-4af5-b70d-3049569bb4cf.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/6db4f519-9ed4-4022-8339-de5daad8fade.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/de9146be-9f55-4998-8da1-bd0e3a61322b.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/0b179c06-a27c-49da-8c57-57ec1487afe1.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/710a2d3b-0e7c-4fb3-a956-6e4a49d0b31f.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/8ace47d3-a8bb-43ad-b0a9-2039df4b56ca.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/3eced093-ab46-469e-b767-55f7cf0839fd.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/044fcefc-f8aa-45ce-bf16-6e441856717c.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/43c59910-a594-4eea-ae4f-64f2b300f60d.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/e6aeff4c-6760-45e7-96e5-c64b8006688a.jpg',
+                'https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/ab0852bc-4fe1-4e43-9d57-75411b887853.jpg',
             ],
             creditPosition: [
                 'Director',
@@ -704,5 +727,48 @@ export default {
 .smallHeader {
     text-align: center;
     color: $AOTLYellow;
+}
+
+.SatinSage {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+
+    @include tablet {
+        width: 50%;
+    }
+
+    @include desktop {
+        width: 40%;
+    }
+
+    @include widescreen {
+        width: 25%;
+    }
+}
+
+.SatinHeader {
+    margin: 10px;
+    text-align: center;
+    color: $AOTLYellow;
+}
+
+.SatinSageDesc {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+
+    @include tablet {
+        padding: 30px;
+    }
+
+    @include desktop {
+        padding: 70px;
+    }
+
+    @include widescreen {
+        padding: 50px 150px;
+    }
 }
 </style>
