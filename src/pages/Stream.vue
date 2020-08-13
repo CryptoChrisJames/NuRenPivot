@@ -1,5 +1,6 @@
 <template>
   <div class="page-container">
+    <navBar class="navBar" />
     <div v-if="currentVideo" class="pageContent">
       <section-head>{{ currentVideo.displayName }}</section-head>
       <p>{{ currentVideo.description }}</p>
@@ -19,9 +20,11 @@
 <script>
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
 import gallery from '../components/molecules/Gallery/Gallery.vue';
+import navBar from '../components/atoms/Header/NavigationBar.vue';
+
 export default {
   name: 'Stream',
-  components: { sectionHead, gallery },
+  components: { sectionHead, gallery, navBar },
   computed: {
     currentVideo() {
       return this.$store.state.currentVideo;
@@ -60,5 +63,9 @@ export default {
 .sorry {
   text-align: center;
   padding: 120px;
+}
+
+.navBar {
+  padding: 25px;
 }
 </style>

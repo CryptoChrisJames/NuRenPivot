@@ -152,6 +152,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+  max-width: 100%;
 }
 
 .videoContainer {
@@ -195,7 +196,6 @@ export default {
 }
 
 .brandAndCTA {
-  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
