@@ -4,7 +4,6 @@
       v-if="isLoading"
       class="loading"
     >
-      <loader />
     </span>
     <div
         v-else
@@ -24,10 +23,9 @@
 
 <script>
 import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
-import loader from '../../atoms/Loader/Loader.vue';
 export default {
   name: 'Gallery',
-  components: { galleryItem, loader },
+  components: { galleryItem, },
   computed: {
     projectObjs() {
       return this.$store.state.videoContentObjs;

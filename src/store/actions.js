@@ -6,6 +6,7 @@ const apiUrl = config.currentSecurity() + config.currentEnvAPI();
 
 const projectsRoute = "/project/";
 const contentRoute = "/content/";
+const showAOTLRoute = "/switch/AOTL";
 
 const getVideoListandObjects = async ({commit}) => {
   const videoKeysUrl = apiUrl + projectsRoute + "videos";
@@ -40,8 +41,16 @@ const getVideoContent = async ({commit}) => {
   const videoContent = await axios.get(contentUrl);
   commit("addVideoContentToStore", videoContent.data);
 }
+
+const getAOTLSwitch = async ({commit}) => {
+  const showAOTL = apiUrl + showAOTLRoute;
+  const result = await axios.get(showAOTL);
+  commit("setShowAOTL", result.data);
+};
+
 export default {
   getVideoListandObjects,
   submitContact,
   getVideoContent,
+  getAOTLSwitch,
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div
+    <!-- <div
       v-if="env !== 'prod'"
       id="env-info"
     >
@@ -9,31 +9,31 @@
       >
         {{ env }}
       </h2>
-    </div>
-    <nav class="header">
-      <img class="banner" src='./assets/white.jpg'>
-      <div class="links">
-        <router-link class="tabLink" to="/">Home</router-link>
-        <router-link class="tabLink" to="/about">About</router-link>
-        <router-link class="tabLink" to="/contact">Contact</router-link>
-      </div>
-    </nav>
-    <div class="body-container">
-      <router-view />
-    </div>
+    </div> -->
+    <router-view />
     <div class="footer">
-      <a href="https://www.instagram.com/nu_ren_productions/" class="social">
-        <img src="./assets/034-instagram.svg">
-      </a>
-      <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA" class="social">
-        <img src="./assets/002-youtube.svg">
-      </a>
+      <div class="contentWrapper">
+        <div class="copyrightWrapper">
+          <div class="copyright">
+            <a href="/"><img src="./assets/logo-trans2.png" alt="" class="logo"></a>
+            <span>© Nu Renaissance 2020, All Rights Reserved.</span>
+          </div>
+        </div>
+        <div class="socialWrapper">
+          <a href="https://www.facebook.com/AOTLShort"><i class="social fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/nu_ren_productions/"><i class="social fab fa-instagram"></i></a>
+          <a href="https://vimeo.com/chandonae"><i class="social fab fa-vimeo-v"></i></a>
+          <a href="https://www.youtube.com/channel/UCbMEhrBBQ4jTiC7R3RwSMWA"><i class="social fab fa-youtube"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import config from '../config.js';
+import apiUrlGenerator from './funcitons/apiUrlGenerator.js';
+
 export default {
   name: 'app',
   computed: {
@@ -46,87 +46,73 @@ export default {
     await this.$store.dispatch('getVideoContent');
     this.$store.commit('toggleLoading');
   },
+  methods: {
+    getContent(content) {
+      return apiUrlGenerator.getContent(content);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import './styles/_colors.scss';
 @import './styles/_variables.scss';
+
 .content {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.body-container {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-.banner {
-  margin: 6px 0;
-  width: 30%;
-
-  @include tablet {
-    width: 43%;
-  }
-
-  @include phone {
-    display: block;
-    margin: 0 auto;
-    width: 75%;
-  }
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  @include phone {
-    grid-template-columns: 1fr;
-  }
-}
-
-.links {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0 15% 0 50%;
-
-  @include tablet {
-    padding: 0;
-  }
-
-  @include phone {
-    padding: 0;
-  }
-}
-
-.tabLink {
-  margin: 0 auto;
-  padding: 30% 0;
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-}
-
 .footer {
-  display: flex;
-  margin: 50px 35% 50px 35%;
+  padding-top: 44px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.logo {
+  padding-right: 15px;
+  height: 48px;
 
   @include tablet {
-    margin: 50px 15% 50px 15%;
+    height: 40px;
   }
 
   @include phone {
-    margin: 50px 0 50px 0;
+    height: 40px;
   }
+}
+
+.socialWrapper {
+  display: flex;
+  padding: 3rem 0px;
+  justify-content: center !important;
 }
 
 .social {
-  flex: 50%;
+  padding: 0px 25px;
+  font-size: 25px;
+  color: $AOTLYellow;
+}
 
-  img {
-    display: block;
-    margin: auto;
-    width: 50px;
-    height: auto;
+.social:hover {
+  color: $AOTLDarkYellow;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include phone{
+      grid-template-columns: 1fr;
   }
+
+  @include tablet{
+      grid-template-columns: 1fr;
+  }
+}
+
+.contentWrapper {
+  align-items: center;
 }
 </style>

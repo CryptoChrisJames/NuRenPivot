@@ -1,5 +1,7 @@
 <template>
     <div class="content">
+        <section-head>Let's Connect</section-head>
+        <br />
         <div class="inputField">
             <h3 class="inputTitle">First Name</h3>
             <input v-model="firstName" type="text"/>
@@ -16,8 +18,13 @@
 </template>
 
 <script>
+import sectionHead from '../components/atoms/Header/SectionHead.vue';
+
 export default {
     'name': 'Contact',
+    components: {
+        sectionHead,
+    },
     data() {
         return {
             firstName: '',
@@ -39,6 +46,11 @@ export default {
                 };
                 this.$store.dispatch("submitContact", contact);
                 this.submitted = true;
+                this.firstName = '';
+                this.lastName = '';
+                this.email = '';
+                this.comments = '';
+                this.submitted = true;
             }
         }
     }
@@ -50,60 +62,67 @@ export default {
 @import '../styles/_variables.scss';
 
 .content {
+    font-family: 'Montserrat', sans-serif;
     margin: 0 33%;
 
     @include tablet {
         margin: 0 25%;
     }
-    
+
     @include phone {
         margin: 0 15%;
     }
 
-    h1 {
-        text-align: center;
-    }
     button {
+        background-color: black;
+        color: $AOTLYellow;
         width:100%;
         box-shadow: none;
-        border: 1px solid black;
+        border: 1px solid $AOTLYellow;
         border-radius: 25px;
         outline: none;
         margin-bottom: 3em;
-    }    
-    button:hover{
-        background-color: lightgrey;
+        transition: 0.5s ease;
     }
+
+    button:hover{
+        background-color: $AOTLYellow;
+        color: black;
+    }
+
     input {
+        color: lightgray;
         margin: 5px;
         width:100%;
         box-shadow: none;
-        border: 1px solid black;
+        background-color: transparent;
+        border: 1px solid lightgray;
         border-top: 0;
         border-left: 0;
         border-right: 0;
         margin-bottom: 3em;
         outline: none;
     }
+
     textarea {
+        color: lightgray;
         width:100%;
         height: 155px;
         box-shadow: none;
-        border: 1px solid black;
+        background-color: transparent;
+        border: 1px solid lightgray;
         border-radius: 25px;
         outline: none;
         margin-bottom: 3em;
     }
+
     @media only screen and (min-width: 700px) {
-        h1{
-            float: left;
-            margin-left: 50px;
-        }
         form{
             width: 75%;
             margin: 0 auto;
         }
     }
+
     @media only screen and (min-width: 1020px) {
         form{
             width: 50%;
