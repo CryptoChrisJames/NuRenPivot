@@ -16,7 +16,7 @@
                 friend or running away.
             </h5>
             <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/7730c07c-56ef-406c-a18a-7505bf1d033b.jpg" alt="" class="poster">
-            <div v-if="showAOTL" class="movie">
+            <div v-if="showAOTL" class="movie videoPanel">
                 <div class="movieWrapper">
                     <h1>All Of The Lights</h1>
                     <iframe src="https://player.vimeo.com/video/433721875"
@@ -81,32 +81,8 @@
             </div>
             <div class="contentPanel">
                 <div class="contentBox contentLeft">
-                    <div class="commercialWrapper">
-                    <section-head>Official Trailer</section-head>
-                        <iframe
-                            src="https://player.vimeo.com/video/430534265"
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
                 </div>
                 <div class="contentBox contentRight">
-                    <div class="commercialWrapper">
-                    <section-head>Teaser</section-head>
-                        <iframe
-                            src="https://player.vimeo.com/video/433446709"
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
                 </div>
             </div>
             <sectionHead>The Cast</sectionHead>
@@ -169,26 +145,48 @@
                     Some of the highlights from the filming process can be seen here.
                 </p>
                 <div class="btsVideoWrapper">
-                    <div class="btsVideo">
-                        <h4 class="btsHeader">BTS Video</h4>
-                        <iframe
-                            src="https://player.vimeo.com/video/433775515"
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
+                    <iframe
+                        class="videoPanel"
+                        src="https://player.vimeo.com/video/433775515"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                    >
+                    </iframe>
                 </div>
                 <div class="btsCarWrapper">
-                        <h4 class="btsHeader">BTS Pictures</h4>
                     <carousel :imageKeys="btsImages" />
                 </div>
             </div>
+            <section-head>Extras</section-head>
+            <div class="commercialWrapper videoPanel">
+                <iframe
+                    class="videoPanel"
+                    src="https://player.vimeo.com/video/430534265"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
+            <div class="commercialWrapper videoPanel">
+                <iframe
+                    class="videoPanel"
+                    src="https://player.vimeo.com/video/433446709"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
             <div class="musicSectionWrapper">
-                <section-head>The Music</section-head>
+                <h4 class="smallHeader">The Music</h4>
                 <div class="musicStatement">
                     <p>Chandonae is a naturally creative and artistic person.
                         Durning the writing, post and pre-production of the project,
@@ -432,20 +430,29 @@ export default {
     text-align: center;
     display: block;
     margin: 0 auto;
+}
+
+.videoPanel {
+    display: block;
+    margin: 0 auto;
+
+    @include phone {
+        padding: 25px 0;
+    }
 
     @include tablet {
-        height: 750px;
+        height: 650px;
         width: 650px;
     }
 
     @include desktop {
-        height: 750px;
-        width: 650px;
+        height: 1024px;
+        width: 1024px;
     }
 
     @include widescreen {
-        height: 800px;
-        width: 800px;
+        height: 1300px;
+        width: 1300px;
     }
 }
 
@@ -573,11 +580,6 @@ export default {
     }
 }
 
-.btsHeader {
-    color: $AOTLYellow;
-    text-align: center;
-}
-
 .btsVideoWrapper {
     display: flex;
     justify-content: center;
@@ -644,10 +646,6 @@ export default {
 }
 
 .commercialWrapper {
-    @include tablet {
-        height: 600px;
-        width: 600px;
-    }
 
     @include desktop {
         height: 100%;
@@ -701,5 +699,10 @@ export default {
 .creditsLeft {
     color: $AOTLTeal;
     text-align: right;
+}
+
+.smallHeader {
+    text-align: center;
+    color: $AOTLYellow;
 }
 </style>
