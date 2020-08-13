@@ -18,10 +18,10 @@
         <div class="menuOptionsWrapper">
           <div class="menuOptions">
             <div class="option">
-              <router-link class="menuOption" to="/"> HOME </router-link>
+              <a href="/" class="menuOption"> HOME </a>
             </div>
             <div class="option">
-              <router-link class="menuOption" to="allofthelights"> ALL OF THE LIGHTS </router-link>
+              <a href="/allofthelights" class="menuOption"> ALL OF THE LIGHTS </a>
             </div>
           </div>
         </div>
