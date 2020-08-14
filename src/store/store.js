@@ -12,7 +12,7 @@ const state = {
   currentVideo: null,
   currentGallery: [],
   videoContentObjs: [],
-  showAOTL: false,
+  showAOTL: true,
 };
 
 export default new Vuex.Store({
