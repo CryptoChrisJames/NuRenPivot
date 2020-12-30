@@ -143,9 +143,8 @@ export default {
   top: 0;
   left: 0;
   overflow: hidden;
-  background: var(--primary-color) url('https://player.vimeo.com/video/334230264?background=1') no-repeat center center/cover;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .videoContainer iframe {
@@ -153,6 +152,7 @@ export default {
   min-width: 1980px !important;
   object-fit: cover;
   position: absolute !important;
+  display: block;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
