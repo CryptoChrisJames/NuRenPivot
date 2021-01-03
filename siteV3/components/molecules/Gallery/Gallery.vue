@@ -18,12 +18,11 @@ import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
 export default {
   name: 'Gallery',
   components: { galleryItem },
-  props: {
-    contentObjs: {
-      type: Array,
-      default: () => [],
-    },
-  },
+  computed: {
+    contentObjs() {
+      return this.$store.state.videoContentObjs;
+    }
+  }
 };
 </script>
 

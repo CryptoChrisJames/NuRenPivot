@@ -50,17 +50,20 @@ const store = () => {
                   duplicate === state.currentVideo )), 1);
         }
       },  
-
+      
       addVideoContentToStore(state, videoContent) {
         state.videoContentObjs = videoContent;
       },  
-
       setShowAOTL(state, showAOTL) {
         state.showAOTL = showAOTL;
       },
     },
-    
-    actions: {      
+    actions: {            
+      async nuxtServerInit ({ commit }) {
+        const contentUrl = apiUrl + contentRoute;
+        const videoContent = await axios.get(contentUrl);
+        commit("addVideoContentToStore", videoContent.data);
+      },
       async getVideoListandObjects ({commit}) {
         const videoKeysUrl = apiUrl + projectsRoute + "videos";
         const keys = await axios.get(videoKeysUrl);
