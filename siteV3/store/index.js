@@ -16,7 +16,6 @@ const store = () => {
     state: () => ({
       videoList: [],
       videoObjects: [],
-      loadingData: false,
       currentVideo: null,
       currentGallery: [],
       videoContentObjs: [],
@@ -27,10 +26,6 @@ const store = () => {
         state.videoList = videoPayload.keys;
         state.videoObjects = videoPayload.videoObjects;
         state.currentGallery = state.videoList;
-      },
-      
-      toggleLoading(state) {
-        state.loadingData = !state.loadingData;
       },
       
       setCurrentVideo(state, videoId) {
@@ -44,6 +39,7 @@ const store = () => {
       resetCurrentVideo(state) {
         state.currentVideo = null;
       },  
+
       analyzeList(state) {
         state.currentGallery = state.videoList;
         if(state.currentVideo) {
@@ -54,13 +50,16 @@ const store = () => {
                   duplicate === state.currentVideo )), 1);
         }
       },  
+
       addVideoContentToStore(state, videoContent) {
         state.videoContentObjs = videoContent;
       },  
+
       setShowAOTL(state, showAOTL) {
         state.showAOTL = showAOTL;
       },
     },
+    
     actions: {      
       async getVideoListandObjects ({commit}) {
         const videoKeysUrl = apiUrl + projectsRoute + "videos";

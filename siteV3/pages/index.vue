@@ -80,7 +80,7 @@
         </div>
       </div>
       <section-head>Creative Portfolio</section-head>
-      <gallery></gallery>
+      <gallery :contentObjs="contentObjs"></gallery>
       <About />
       <Contact />
     </section>
@@ -97,6 +97,7 @@ import apiUrlGenerator from '~/helpers/apiUrlGenerator.js';
 import NavBar from '../components/atoms/Header/NavigationBar.vue';
 import About from '../components/organisms/About.vue';
 import Contact from "../components/organisms/Contact.vue";
+import config from "../config.js";
 
 export default {
   name: 'Home',
@@ -106,6 +107,16 @@ export default {
     About,
     Contact,
     NavBar,
+  },
+  async asyncData(context) {
+    const contentRoute = "/content/";
+    const apiUrl = config.currentSecurity() + config.currentEnvAPI();
+    const contentUrl = apiUrl + contentRoute;
+
+    const contentObjs = await context.app.$axios.$get(contentUrl);
+    return {
+      contentObjs,
+    };
   },
   async mounted() {
     this.$store.commit('resetCurrentVideo');

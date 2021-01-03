@@ -41,11 +41,6 @@ export default {
       return config.currentEnv();
     },
   },
-  async mounted() {
-    this.$store.commit('toggleLoading');
-    await this.$store.dispatch('getVideoContent');
-    this.$store.commit('toggleLoading');
-  },
   methods: {
     getContent(content) {
       return apiUrlGenerator.getContent(content);

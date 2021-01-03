@@ -2,7 +2,7 @@
   <span class="galleryWrapper">
     <div class="galleryContainer">
       <span
-        v-for="obj in projectObjs"
+        v-for="obj in contentObjs"
         v-bind:key="obj.id"
       >
         <gallery-item
@@ -18,12 +18,10 @@ import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
 export default {
   name: 'Gallery',
   components: { galleryItem },
-  computed: {
-    projectObjs() {
-      return this.$store.state.videoContentObjs;
-    },
-    isLoading() {
-      return this.$store.state.loadingData;
+  props: {
+    contentObjs: {
+      type: Array,
+      default: () => [],
     },
   },
 };
