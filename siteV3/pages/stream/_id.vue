@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <navBar class="navBar" />
-    <div v-if="currentVideo" class="pageContent">
+    <div v-show="currentVideo" class="pageContent">
       <section-head>{{ currentVideo.displayName }}</section-head>
       <p>{{ currentVideo.description }}</p>
       <div class="stream" v-html="currentVideo.vimeoLink">

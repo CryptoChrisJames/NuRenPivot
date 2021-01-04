@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div
-      v-if="env !== 'prod'"
+      v-show="env !== 'prod'"
       id="env-info"
     >
       <h2

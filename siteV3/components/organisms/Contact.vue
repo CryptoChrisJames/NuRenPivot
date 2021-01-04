@@ -11,7 +11,7 @@
             <input v-model="email" type="text"/>
             <h3 class="inputTitle">Comments*</h3>
             <textarea v-model="comments" />
-            <h3 v-if="submitted" class="inputTitle">Thanks for contacting us! We will review your submission and respond to you soon.</h3>
+            <h3 v-show="submitted" class="inputTitle">Thanks for contacting us! We will review your submission and respond to you soon.</h3>
             <button @click="submit" class="submit">Submit</button>
         </div>
     </div>

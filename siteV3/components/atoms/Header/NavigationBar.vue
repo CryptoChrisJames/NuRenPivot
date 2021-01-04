@@ -4,8 +4,8 @@
     <i
       @click="toggleMenu()"
       :class="['fa fa-bars', isMobile, 'menu']"
-    />
-    <div v-if="menuOpen" class="menuScreen">
+    ></i>
+    <div v-show="menuOpen" class="menuScreen">
       <div class="menuScreenContent">
         <div class="menuHeaderWrapper">
           <a href="/"><img src="../../../assets/logo-trans2.png" alt="" class="logo"></a>
