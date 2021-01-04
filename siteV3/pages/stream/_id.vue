@@ -10,9 +10,6 @@
       <section-head>See More</section-head>
       <gallery />
     </div>
-    <h1 v-else class="sorry">
-        Loading...
-    </h1>
   </div>
 </template>
 
