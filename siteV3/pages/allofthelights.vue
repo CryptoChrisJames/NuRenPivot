@@ -16,7 +16,7 @@
                 friend or running away.
             </h5>
             <img src="https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/7730c07c-56ef-406c-a18a-7505bf1d033b.jpg" alt="" class="poster">
-            <div v-show="showAOTL" class="movie videoPanel">
+            <div v-if="showAOTL" class="movie videoPanel">
                 <div class="movieWrapper">
                     <h1>All Of The Lights</h1>
                     <iframe src="https://player.vimeo.com/video/433721875"
