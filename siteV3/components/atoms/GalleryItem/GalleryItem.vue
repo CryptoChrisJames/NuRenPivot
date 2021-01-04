@@ -7,25 +7,23 @@
         @mouseenter="isSelected"
         @mouseleave="notSelected"
       >
-        <client-only>            
-          <div
-            class="overlay"
-            v-if="isHovering"
-          >
-            <h5>
-              {{ videoName }}
-            </h5>
-          </div>
-          <div
-            class="overlay"
-            v-if="currentlyWatching"
-          >
-            <h5>
-              Now Playing
-            </h5>
-          </div>
-          <img :src="videoThumbnail" alt=""></img>
-        </client-only>
+        <div
+          class="overlay"
+          v-if="isHovering"
+        >
+          <h5>
+            {{ videoName }}
+          </h5>
+        </div>
+        <div
+          class="overlay"
+          v-if="currentlyWatching"
+        >
+          <h5>
+            Now Playing
+          </h5>
+        </div>
+        <img :src="videoThumbnail" alt=""></img>
       </div>
     </a>
   </div>
