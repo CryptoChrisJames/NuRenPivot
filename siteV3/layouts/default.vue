@@ -1,15 +1,5 @@
 <template>
   <div class="content">
-    <div
-      v-show="env !== 'prod'"
-      id="env-info"
-    >
-      <h2
-        style="text-align: center"
-      >
-        {{ env }}
-      </h2>
-    </div>
     <Nuxt />
     <div class="footer">
       <div class="contentWrapper">
