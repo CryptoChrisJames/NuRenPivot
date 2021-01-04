@@ -2,23 +2,21 @@
   <div
     class="galleryCard"
   >
-    <no-ssr>      
-      <a @click="videoSelected">
-        <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
-          <div class="overlay" v-show="isHovering">
-            <h5>
-              {{ videoName }}
-            </h5>
-          </div>
-          <div class="overlay" v-show="currentlyWatching">
-            <h5>
-              Now Playing
-            </h5>
-          </div>
-          <slot></slot>
+    <a @click="videoSelected">
+      <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
+        <div class="overlay" v-show="isHovering">
+          <h5>
+            {{ videoName }}
+          </h5>
         </div>
-      </a>
-    </no-ssr>
+        <div class="overlay" v-show="currentlyWatching">
+          <h5>
+            Now Playing
+          </h5>
+        </div>
+        <slot></slot>
+      </div>
+    </a>
   </div>
 </template>
 
@@ -35,8 +33,13 @@ export default {
     },
     data() {
         return {
-          isHovering: false,
+          isHovering: true,
         };
+    },
+    created() {
+      this.$nextTick(() => {
+        this.isHovering = false;
+      });
     },
     computed: {
         videoName() {
