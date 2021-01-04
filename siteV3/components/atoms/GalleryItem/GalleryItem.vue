@@ -17,7 +17,7 @@
         </div>
         <div
           class="overlay"
-          v-else-if="currentlyWatching"
+          v-if="currentlyWatching"
         >
           <h5>
             Now Playing
