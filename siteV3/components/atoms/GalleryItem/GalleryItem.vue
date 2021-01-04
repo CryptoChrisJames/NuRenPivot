@@ -2,21 +2,23 @@
   <div
     class="galleryCard"
   >
-    <a @click="videoSelected">
-      <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
-        <div class="overlay" v-show="isHovering">
-          <h5>
-            {{ videoName }}
-          </h5>
+    <no-ssr>      
+      <a @click="videoSelected">
+        <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
+          <div class="overlay" v-show="isHovering">
+            <h5>
+              {{ videoName }}
+            </h5>
+          </div>
+          <div class="overlay" v-show="currentlyWatching">
+            <h5>
+              Now Playing
+            </h5>
+          </div>
+          <slot></slot>
         </div>
-        <div class="overlay" v-show="currentlyWatching">
-          <h5>
-            Now Playing
-          </h5>
-        </div>
-        <slot></slot>
-      </div>
-    </a>
+      </a>
+    </no-ssr>
   </div>
 </template>
 
