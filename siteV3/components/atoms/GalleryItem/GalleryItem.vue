@@ -4,12 +4,12 @@
   >
     <a @click="videoSelected">
       <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
-        <div class="overlay" v-if="isHovering">
+        <div class="overlay" v-show="isHovering">
           <h5>
             {{ videoName }}
           </h5>
         </div>
-        <div class="overlay" v-if="currentlyWatching">
+        <div class="overlay" v-show="currentlyWatching">
           <h5>
             Now Playing
           </h5>
@@ -54,7 +54,7 @@ export default {
         this.$router.replace(`/stream/${this.videoContent._id}`);
       },
       isSelected() {
-          this.isHovering = true;
+        this.isHovering = true;
       },
       notSelected() {
         this.isHovering = false;
