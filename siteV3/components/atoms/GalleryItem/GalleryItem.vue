@@ -33,13 +33,8 @@ export default {
     },
     data() {
         return {
-          isHovering: true,
+          isHovering: false,
         };
-    },
-    created() {
-      this.$nextTick(() => {
-        this.isHovering = false;
-      });
     },
     computed: {
         videoName() {
