@@ -1,8 +1,8 @@
 import Config from './config.json';
 
 const currentEnv = () => {
-    if(process.env.NUXT_ENV) {
-        return process.env.NUXT_ENV;
+    if(process.env.NUXT_ENV_ENVIRONMENT) {
+        return process.env.NUXT_ENV_ENVIRONMENT;
     } else {
         return 'dev';
     }
