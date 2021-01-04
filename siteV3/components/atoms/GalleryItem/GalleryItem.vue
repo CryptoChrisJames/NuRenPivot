@@ -2,33 +2,35 @@
   <div
     class="galleryCard"
   >
-    <a @click="videoSelected">
-      <div class="img__box"
-        @mouseenter="isSelected"
-        @mouseleave="notSelected"
-      >
-        <div
-          class="overlay"
-          v-if="isHovering"
+    <client-only>      
+      <a @click="videoSelected">
+        <div class="img__box"
+          @mouseenter="isSelected"
+          @mouseleave="notSelected"
         >
-          <h5>
-            {{ videoName }}
-          </h5>
+          <div
+            class="overlay"
+            v-if="isHovering"
+          >
+            <h5>
+              {{ videoName }}
+            </h5>
+          </div>
+          <div
+            class="overlay"
+            v-else-if="currentlyWatching"
+          >
+            <h5>
+              Now Playing
+            </h5>
+          </div>
+          <img
+            :src="videoThumbnail"
+            alt=""
+          >
         </div>
-        <div
-          class="overlay"
-          v-else-if="currentlyWatching"
-        >
-          <h5>
-            Now Playing
-          </h5>
-        </div>
-        <img
-          :src="videoThumbnail"
-          alt=""
-        >
-      </div>
-    </a>
+      </a>
+    </client-only>
   </div>
 </template>
 
