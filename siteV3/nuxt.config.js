@@ -1,4 +1,9 @@
 export default {
+  generate: {
+    minify: {
+      collapseWhitespace: false
+    },
+  },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/index.css',
