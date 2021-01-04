@@ -80,9 +80,6 @@
         </div>
       </div>
       <section-head>Creative Portfolio</section-head>
-      <no-ssr>
-        <gallery></gallery>
-      </no-ssr>
       <About />
       <Contact />
     </section>
