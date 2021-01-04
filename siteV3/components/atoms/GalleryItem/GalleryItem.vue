@@ -3,27 +3,18 @@
     class="galleryCard"
   >
     <a @click="videoSelected">
-      <div class="img__box"
-        @mouseenter="isSelected"
-        @mouseleave="notSelected"
-      >
-        <div
-          class="overlay"
-          v-if="isHovering"
-        >
+      <div class="img__box" @mouseenter="isSelected" @mouseleave="notSelected">
+        <div class="overlay" v-if="isHovering">
           <h5>
             {{ videoName }}
           </h5>
         </div>
-        <div
-          class="overlay"
-          v-if="currentlyWatching"
-        >
+        <div class="overlay" v-if="currentlyWatching">
           <h5>
             Now Playing
           </h5>
         </div>
-        <img :src="videoThumbnail" alt=""></img>
+        <slot></slot>
       </div>
     </a>
   </div>
@@ -46,9 +37,6 @@ export default {
         };
     },
     computed: {
-        videoThumbnail() {
-          return this.getApiUrl() + this.videoContent.thumbnail;
-        },
         videoName() {
           return this.videoContent.displayName;
         },
@@ -60,9 +48,6 @@ export default {
         },
     },
     methods: {
-      getApiUrl() {
-        return config.currentSecurity() + config.currentEnvAPI() + '/content/';
-      },
       videoSelected() {
         window.scrollTo(0,0);
         this.$store.commit('setCurrentVideo', this.videoContent._id);

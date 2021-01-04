@@ -7,7 +7,9 @@
       >
         <gallery-item
           :videoContent="obj"
-        />
+        >
+          <img :src="videoThumbnail(obj.thumbnail)" />
+        </gallery-item>
       </span>
     </div>
   </span>
@@ -15,13 +17,23 @@
 
 <script>
 import galleryItem from '../../atoms/GalleryItem/GalleryItem.vue';
+import config from '../../../config.js';
+
 export default {
   name: 'Gallery',
   components: { galleryItem },
   computed: {
     contentObjs() {
       return this.$store.state.videoContentObjs;
-    }
+    },
+  },
+  methods: {    
+    getApiUrl() {
+      return config.currentSecurity() + config.currentEnvAPI() + '/content/';
+    },
+    videoThumbnail(src) {
+      return this.getApiUrl() + src;
+    },
   }
 };
 </script>
