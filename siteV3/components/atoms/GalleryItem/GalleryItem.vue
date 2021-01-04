@@ -26,7 +26,7 @@
         <img
           :src="videoThumbnail"
           alt=""
-        >
+        />
       </div>
     </a>
   </div>
