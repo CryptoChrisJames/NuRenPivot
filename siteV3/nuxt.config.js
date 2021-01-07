@@ -1,5 +1,6 @@
 export default {
   generate: {
+    fallback: "404.html",
     minify: {
       collapseWhitespace: false
     },
@@ -29,6 +30,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/prismic'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -43,6 +45,12 @@ export default {
       './styles/_colors.scss',
       './styles/_variables.scss',
     ]
+  },
+
+  prismic: {
+    endpoint: "https://your-repo-name.cdn.prismic.io/api/v2",
+    // linkResolver: "",
+    // htmlSerializer: "",
   },
 
   googleAnalytics: {
