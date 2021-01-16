@@ -4,8 +4,10 @@
         <navbar />
     </div>
     <div class="headerWrapper">
-      <img src="../assets/AfterDuskLogo.png" alt="">
+      <img :src="logo" alt="">
     </div>
+    <h1>{{ logline }}</h1>
+    <h1>{{ synopsis }}</h1>
   </div>
 </template>
 
@@ -14,6 +16,27 @@ import navbar from '../components/atoms/Header/NavigationBar.vue';
 export default {
   name: 'AfterDusk',
   components: { navbar },
+  computed: {
+    logo() {
+      return this.document.logo.url;
+    },
+    logline() {
+      return this.document.logline[0].text;
+    },
+    synopsis() {
+      return this.document.synopsis[0].text;
+    },
+  },
+  async asyncData({ $prismic, error }) {
+    try {
+      const document = (await $prismic.api.getSingle('after_dusk')).data;
+      return {
+        document,
+      }
+    } catch (e) {
+        error({ statusCode: 404, message: 'Page Not Found' });
+    }
+  },
 };
 </script>
 
