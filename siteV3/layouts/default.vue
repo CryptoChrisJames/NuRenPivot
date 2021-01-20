@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div
+    <!-- <div
       v-show="env !== 'prod'"
       id="env-info"
     >
@@ -9,7 +9,7 @@
       >
         {{ env }}
       </h2>
-    </div>
+    </div> -->
     <Nuxt />
     <div class="footer">
       <div class="contentWrapper">
