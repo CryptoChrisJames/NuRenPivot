@@ -61,8 +61,29 @@ export default {
     margin: 7px 0;
     padding: 10px 0;
     overflow-x: scroll;
-    overflow-y: hidden;
     white-space: nowrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    display: block;
+
+    @include tablet {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    @include widescreen {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.crewPicker::-webkit-scrollbar {
+  display: none;
 }
 
 .crewPosition {
@@ -70,6 +91,7 @@ export default {
     font-weight: bold;
     display: inline-block;
     padding: 10px;
+    margin-bottom: 15px;
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
     cursor: pointer;
@@ -90,6 +112,18 @@ export default {
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
     filter: grayscale(1);
+
+    @include tablet {
+        width: 60%;
+    }
+
+    @include desktop {
+        width: 50%;
+    }
+
+    @include widescreen {
+        width: 25%;
+    }
 }
 
 .crewBio {
@@ -97,6 +131,19 @@ export default {
     display: block;
     margin: 0 auto;
     padding: 35px;
+
+    @include tablet {
+        font-size: 30px;
+    }
+
+    @include desktop {
+        font-size: 35px;
+    }
+
+    @include widescreen {
+        font-size: 35px;
+        padding: 20px 300px;
+    }
 }
 
 .selected {
