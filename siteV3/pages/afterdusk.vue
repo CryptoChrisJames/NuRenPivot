@@ -17,7 +17,7 @@
           We're currently accepting donations to help fund our vision. 
           We're offering awesome perks to top donors!
         </p>
-        <a href="https://www.facebook.com/AfterDuskShort" target="_blank" rel="noopener noreferrer" class="donate">
+        <a href="https://www.indiegogo.com/projects/after-dusk/x/25633441#/" target="_blank" rel="noopener noreferrer" class="donate">
           Click Here To Donate!
         </a>
       </div>
