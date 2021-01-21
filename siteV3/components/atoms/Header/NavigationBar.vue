@@ -21,6 +21,9 @@
               <a href="/" class="menuOption"> HOME </a>
             </div>
             <div class="option">
+              <a href="/afterdusk" class="menuOption"> AFTER DUSK </a>
+            </div>
+            <div class="option">
               <a href="/allofthelights" class="menuOption"> ALL OF THE LIGHTS </a>
             </div>
           </div>

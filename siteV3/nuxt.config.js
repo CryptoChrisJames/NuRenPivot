@@ -1,5 +1,6 @@
 export default {
   generate: {
+    fallback: "404.html",
     minify: {
       collapseWhitespace: false
     },
@@ -29,6 +30,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/prismic'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -45,6 +47,12 @@ export default {
     ]
   },
 
+  prismic: {
+    endpoint: "https://nuren.cdn.prismic.io/api/v2",
+    // linkResolver: "",
+    // htmlSerializer: "",
+  },
+
   googleAnalytics: {
     id: 'UA-134957187-2'
   },
@@ -57,13 +65,13 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { property:"og:title", content:"Nu Renaissance Productions" },
-      { property:"og:description", content:"Watch our new short film 'All of the Lights' today!" },
-      { property:"og:image", content:"https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/header.jpg" },
-      { property:"og:url", content:"https://nurenproductions.com/allofthelights" },
+      { property:"og:description", content:"After Dusk is the newest gritty and suspenseful production from Nu Renaissance, currently in the funding stage of production!" },
+      { property:"og:image", content:"https://res.cloudinary.com/nuren/image/upload/v1611159523/NuRen/AfterDuskLogo.png" },
+      { property:"og:url", content:"https://nurenproductions.com/afterdusk" },
       { property:"twitter:title", content:"Nu Renaissance Productions" },
-      { property:"twitter:description", content:"Watch our new short film 'All of the Lights' today!" },
-      { property:"twitter:image", content:"https://cdn.image4.io/obsidiantech/f_auto/nuren/aotl/header.jpg" },
-      { property:"twitter:url", content:"https://nurenproductions.com/allofthelights" },
+      { property:"twitter:description", content:"After Dusk is the newest gritty and suspenseful production from Nu Renaissance, currently in the funding stage of production!" },
+      { property:"twitter:image", content:"https://res.cloudinary.com/nuren/image/upload/v1611159523/NuRen/AfterDuskLogo.png" },
+      { property:"twitter:url", content:"https://nurenproductions.com/afterdusk" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

@@ -1,32 +1,19 @@
 <template>
-  <div class="homepage">
-    <section class="videoHeaderContainer">
-      <div class="videoContainer">
-        <iframe
-          src="https://player.vimeo.com/video/440484598?background=1"
-          frameborder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowfullscreen
-        >
-        </iframe>
-      </div>
-      <div class="videoHeaderContent">
-        <nav-bar />
-        <div class="brandAndCTA">
-          <b>Nu Renaissance Productions</b>
-          <div class="featuredButtonWrapper">
-            <button
-              class="featuredButton"
-              @click="goToAOTL()"
-            >
-              New Production!
-            </button>
-          </div>
+  <div class="homepage">    
+    <hero :videoLink="heroLink">
+      <div class="brandAndCTA">
+        <b>Nu Renaissance Productions</b>
+        <div class="featuredButtonWrapper">
+          <button
+            class="featuredButton"
+            @click="goToAOTL()"
+          >
+            New Production!
+          </button>
         </div>
-        <div class="arrowDown"></div>
       </div>
-    </section>
+      <div class="arrowDown"></div>
+    </hero>
     <section class="homeContent">
       <section-head>Our Services</section-head>
       <div class="servicesWrapper">
@@ -91,6 +78,7 @@
 </template>
 
 <script>
+import Hero from '../components/organisms/Hero/Hero.vue';
 import gallery from '../components/molecules/Gallery/Gallery.vue';
 import sectionHead from '../components/atoms/Header/SectionHead.vue';
 import apiUrlGenerator from '~/helpers/apiUrlGenerator.js';
@@ -106,6 +94,13 @@ export default {
     About,
     Contact,
     NavBar,
+    Hero,
+  },
+  data() {
+    const heroLink = "https://player.vimeo.com/video/440484598?background=1";
+    return {
+      heroLink,
+    };
   },
   async mounted() {
     this.$store.commit('resetCurrentVideo');
