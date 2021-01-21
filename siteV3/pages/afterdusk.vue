@@ -140,10 +140,6 @@ export default {
 }
 
 .donate {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  text-decoration: none;
   color: $ADYellow;
   border: 2px solid $ADYellow;
   width: 100%;
