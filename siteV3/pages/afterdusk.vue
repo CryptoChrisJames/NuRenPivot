@@ -140,28 +140,33 @@ export default {
 }
 
 .donate {
-  color: $ADYellow;
-  border: 2px solid $ADYellow;
+  display: block;
+  margin: 0 auto;
   width: 100%;
+  text-decoration: none;
+  color: $ADYellow;
+  background-color: black;
+  border: 2px solid $ADYellow;
   padding: 8px 0;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
-  margin: 25px 0;
   transition: 300ms ease;
+  outline: none;
+
+  @include tablet {
+      width: 70%;
+      padding: 25px 0;
+  }
 
   @include desktop {
       width: 70%;
-      display: block;
-      margin: 0 auto;
       padding: 25px 0;
   }
 
   @include widescreen {
       width: 50%;
-      display: block;
-      margin: 0 auto;
       padding: 25px 0;
   }
 }
