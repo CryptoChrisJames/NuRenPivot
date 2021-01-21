@@ -3,7 +3,7 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li
-          v-for="(img, idx) in imageKeys"
+          v-for="(img, idx) in urls"
           :key="idx"
           data-target="#carouselExampleIndicators"
           :data-slide-to="idx"
@@ -13,7 +13,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <img
-          v-for="(img, idx) in imageKeys"
+          v-for="(img, idx) in urls"
           :key="idx"
           :class="['carousel-item', idx == 0 ? 'active' : '']"
           :src="img"
@@ -36,21 +36,37 @@ import config from '../../../config.js';
 
 export default {
   name: "Carousel",
+  data() {
+    const urls = [];
+    return {
+      urls,
+    };
+  },
   props: {
     imageKeys: {
       type: Array,
       default: () => [],
-      required: true,
     },
+    imageUrls: {
+      type: Array,
+      default: () => [],      
+    }
   },
-  methods: {
-    getContent(key) {
-        return this.getAPIUrl() + key;
-    },
-    getAPIUrl() {
-        return config.currentSecurity() + config.currentEnvAPI() + '/design/';
-    },
-  }
+  mounted() {
+    if(this.imageUrls.length > 0) {
+      this.urls = this.imageUrls;
+    } else {
+      this.urls = this.imageKeys;
+    }
+  },
+  // methods: {
+  //   getContent(key) {
+  //       return this.getAPIUrl() + key;
+  //   },
+  //   getAPIUrl() {
+  //       return config.currentSecurity() + config.currentEnvAPI() + '/design/';
+  //   },
+  // }
 };
 </script>
 

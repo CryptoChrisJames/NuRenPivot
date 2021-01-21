@@ -13,7 +13,7 @@
         <a href="https://www.tiktok.com/@afterduskshort?lang=en" target="_blank" rel="noopener noreferrer"><i class="social fab fa-tiktok"></i></a>
       </div>
       <div v-show="showCrowdfunding" class="crowdfunding">
-        <p class="cta">
+        <p class="cta page-spacing">
           We're currently accepting donations to help fund our vision. 
           We're offering awesome perks to top donors!
         </p>
@@ -23,12 +23,16 @@
       </div>
       <!-- Film -->
       <section-head>Logline</section-head>
-      <h1 class="logline">{{ logline }}</h1>
+      <h1 class="logline page-spacing">{{ logline }}</h1>
       <!-- Poster -->
       <section-head>Synopsis</section-head>
       <h1 class="synopsis">{{ synopsis }}</h1>
+      <section-head>Stills</section-head>
+      <carousel :imageUrls="stills"></carousel>
       <!-- Director's Statement -->
       <!-- Cast -->
+      <section-head>Cast</section-head>
+      <cast-picker :prismicObjs="castData"></cast-picker>
       <section-head>Crew</section-head>
       <crew-picker :prismicObjs="crewData"></crew-picker>
     </section>
@@ -39,9 +43,17 @@
 import Hero from '../components/organisms/Hero/Hero.vue';
 import SectionHead from '../components/atoms/Header/SectionHead.vue';
 import CrewPicker from '../components/organisms/Picker/CrewPicker.vue';
+import CastPicker from '../components/organisms/Picker/CastPicker.vue';
+import Carousel from '../components/organisms/Carousel/Carousel.vue';
 export default {
   name: 'AfterDusk',
-  components: { Hero, SectionHead, CrewPicker },
+  components: { 
+    Hero,
+    SectionHead, 
+    CrewPicker,
+    CastPicker,
+    Carousel,
+  },
   computed: {
     logo() {
       return this.document.logo.url;
@@ -61,6 +73,15 @@ export default {
     showCrowdfunding() {
       return this.document.flagcrowdfund;
     },
+    castData() {
+      return this.document.cast;
+    },
+    stills() {
+      const stillsObjs = this.document.stills;
+      return stillsObjs.map(obj => {
+        return obj.still.url;
+      });
+    },
   },
   async asyncData({ $prismic, error }) {
     try {
@@ -76,10 +97,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.AfterDuskContent {
-  padding: 25px;
-}
-
 .logline {
   font-size: 28px;
   text-align: center;
@@ -89,6 +106,10 @@ export default {
         font-size: 30px;
         padding: 0 50px;
     }
+}
+
+.page-spacing {
+  padding: 0 30px;
 }
 
 .logoWrapper {
@@ -142,7 +163,7 @@ export default {
 .donate {
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 95%;
   text-decoration: none;
   color: $ADYellow;
   background-color: black;
@@ -179,6 +200,7 @@ export default {
 .synopsis {
   font-size: 20px;
   margin: 35px 0;
+  padding: 10px 25px;
 
     @include tablet {
         font-size: 25px;

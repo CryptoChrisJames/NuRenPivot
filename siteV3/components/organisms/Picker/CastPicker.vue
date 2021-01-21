@@ -1,23 +1,23 @@
 <template>
     <div class="pickerWrapper">
-        <ul class="crewPicker">
-            <li v-for="(item, index) in Objs" :key="index" :class="['crewPosition', index == currentIndex ? 'selected' : '']">
+        <ul class="castPicker">
+            <li v-for="(item, index) in Objs" :key="index" :class="['castPosition', index == currentIndex ? 'selected' : '']">
                 <a @click="setIndex(index)">
-                    {{ item.position }}
+                    {{ item.role }}
                 </a>
             </li>
         </ul>
-        <div v-for="(item, index) in Objs" :key="index" class="crewPanel" :hidden="index != currentIndex">
-            <h2 class="crewName">{{ item.name }}</h2>
-            <img :src="item.headshot" alt="" class="crewPhoto">
-            <p class="crewBio">{{ item.bio }}</p>
+        <div v-for="(item, index) in Objs" :key="index" class="castPanel" :hidden="index != currentIndex">
+            <h2 class="castName">{{ item.name }}</h2>
+            <img :src="item.headshot" alt="" class="castPhoto">
+            <p class="castBio">{{ item.bio }}</p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "CrewPicker",
+    name: "castPicker",
     data() {
         const Objs = [];
         const currentIndex = 0;
@@ -40,9 +40,8 @@ export default {
     mounted() {
         this.Objs = this.prismicObjs.map((obj) => {
             return {
-                'position': obj.position[0].text,
                 'name': obj.name[0].text,
-                'bio': obj.bio[0].text,
+                'role': obj.role[0].text,
                 'headshot': obj.headshot.url,
             };
         });
@@ -56,15 +55,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.crewPicker {
+.castPicker {
     list-style-type: none;
     margin: 7px 0;
-    padding: 10px 25px;
+    padding: 10px 0;
     overflow-x: scroll;
     white-space: nowrap;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     display: block;
+    text-align: center;
 
     @include tablet {
         width: 75%;
@@ -82,11 +82,11 @@ export default {
     }
 }
 
-.crewPicker::-webkit-scrollbar {
+.castPicker::-webkit-scrollbar {
   display: none;
 }
 
-.crewPosition {
+.castPosition {
     font-size: 25px;
     font-weight: bold;
     display: inline-block;
@@ -97,14 +97,14 @@ export default {
     cursor: pointer;
 }
 
-.crewName {
+.castName {
     color: $ADRed;
     font-size: 40px;
     text-align: center;
     padding: 10px;
 }
 
-.crewPhoto {
+.castPhoto {
     width: 85%;
     height: auto;
     display: block;
@@ -126,7 +126,7 @@ export default {
     }
 }
 
-.crewBio {
+.castBio {
     font-size: 20px;
     display: block;
     margin: 0 auto;
@@ -134,7 +134,6 @@ export default {
 
     @include tablet {
         font-size: 30px;
-        padding: 50px;
     }
 
     @include desktop {
