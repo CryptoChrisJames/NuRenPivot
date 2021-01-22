@@ -23,7 +23,7 @@
       </div>
       <!-- Film -->
       <section-head>Logline</section-head>
-      <h1 class="logline page-spacing">{{ logline }}</h1>
+      <h1 class="logline">{{ logline }}</h1>
       <!-- Poster -->
       <section-head>Synopsis</section-head>
       <h1 class="synopsis">{{ synopsis }}</h1>
@@ -101,10 +101,16 @@ export default {
   font-size: 28px;
   text-align: center;
   color: $ADRed;
+  padding: 0 30px;
+
+    @include tablet {
+        font-size: 30px;
+        padding: 0 80px;
+    }
 
     @include desktop {
         font-size: 30px;
-        padding: 0 50px;
+        padding: 0 75px;
     }
 }
 
@@ -204,11 +210,12 @@ export default {
 
     @include tablet {
         font-size: 25px;
+        padding: 0 75px;
     }
 
     @include desktop {
         font-size: 30px;
-        padding: 0 50px;
+        padding: 0 100px;
     }
 
     @include widescreen {

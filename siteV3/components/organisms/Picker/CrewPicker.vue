@@ -114,11 +114,11 @@ export default {
     filter: grayscale(1);
 
     @include tablet {
-        width: 60%;
+        width: 50%;
     }
 
     @include desktop {
-        width: 50%;
+        width: 35%;
     }
 
     @include widescreen {
@@ -134,11 +134,12 @@ export default {
 
     @include tablet {
         font-size: 30px;
-        padding: 50px;
+        padding: 30px 100px;
     }
 
     @include desktop {
         font-size: 35px;
+        padding: 20px 150px;
     }
 
     @include widescreen {
