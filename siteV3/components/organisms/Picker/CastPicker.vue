@@ -55,14 +55,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pickerWrapper {
+    padding: 10px 30px;
+}
+
 .castPicker {
     list-style-type: none;
     margin: 7px 0;
     padding: 10px 0;
     overflow-x: scroll;
     white-space: nowrap;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
     display: block;
     text-align: center;
 
@@ -77,13 +79,28 @@ export default {
     }
 
     @include widescreen {
-        width: 50%;
+        width: 30%;
         margin: 0 auto;
     }
 }
 
-.castPicker::-webkit-scrollbar {
-  display: none;
+.castPicker::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    background-color: rgba(134, 34, 34, 0.747);
+}
+
+.castPicker::-webkit-scrollbar
+{
+    height: 7px;
+    width: 12px;
+}
+
+.castPicker::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: $ADRed;
 }
 
 .castPosition {

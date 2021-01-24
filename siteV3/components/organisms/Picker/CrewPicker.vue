@@ -56,14 +56,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pickerWrapper {
+    padding: 10px 30px;
+}
+
 .crewPicker {
     list-style-type: none;
     margin: 7px 0;
-    padding: 10px 25px;
+    padding: 20px 25px;
     overflow-x: scroll;
     white-space: nowrap;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
     display: block;
 
     @include tablet {
@@ -77,13 +79,28 @@ export default {
     }
 
     @include widescreen {
-        width: 50%;
+        width: 30%;
         margin: 0 auto;
     }
 }
 
-.crewPicker::-webkit-scrollbar {
-  display: none;
+.crewPicker::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    background-color: rgba(134, 34, 34, 0.747);
+}
+
+.crewPicker::-webkit-scrollbar
+{
+    height: 7px;
+    width: 12px;
+}
+
+.crewPicker::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: $ADRed;
 }
 
 .crewPosition {
@@ -130,7 +147,7 @@ export default {
     font-size: 20px;
     display: block;
     margin: 0 auto;
-    padding: 35px;
+    padding: 35px 0;
 
     @include tablet {
         font-size: 30px;
