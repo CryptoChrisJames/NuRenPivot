@@ -88,7 +88,7 @@ export default {
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
     border-radius: 10px;
-    background-color: rgba(134, 34, 34, 0.747);
+    background-color: rgba(131, 9, 9, 0.747);
 }
 
 .castPicker::-webkit-scrollbar
