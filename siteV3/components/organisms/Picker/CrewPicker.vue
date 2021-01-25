@@ -7,7 +7,7 @@
                 </a>
             </li>
         </ul>
-        <div v-for="(item, index) in Objs" :key="index" class="crewPanel" :hidden="index != currentIndex">
+        <div v-for="(item, index) in Objs" :key="item.name" class="crewPanel" :hidden="index != currentIndex">
             <h2 class="crewName">{{ item.name }}</h2>
             <img :src="item.headshot" alt="" class="crewPhoto">
             <p class="crewBio">{{ item.bio }}</p>
@@ -38,18 +38,21 @@ export default {
         }
     },
     mounted() {
-        this.Objs = this.prismicObjs.map((obj) => {
-            return {
-                'position': obj.position[0].text,
-                'name': obj.name[0].text,
-                'bio': obj.bio[0].text,
-                'headshot': obj.headshot.url,
-            };
-        });
+        this.Objs = this.parsePrismicObjs(this.prismicObjs);
     },
     methods: {
         setIndex(index) {
             this.currentIndex = index;
+        },
+        parsePrismicObjs(objs) {
+            return objs.map((obj) => {
+                return {
+                    'position': obj.position[0].text,
+                    'name': obj.name[0].text,
+                    'bio': obj.bio[0].text,
+                    'headshot': obj.headshot.url,
+                };
+            });
         },
     },
 };
